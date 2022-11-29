@@ -36,3 +36,5 @@ boroughs = ["Westminster", "Wandsworth", "Waltham Forest", "Tower Hamlets", "Sut
 boroughs.each do |b|
   Borough.create(name: b)
 end
+
+User.create(email:"ben@test.com", password:"123456", borough_id:"1")
