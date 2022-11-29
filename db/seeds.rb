@@ -5,12 +5,19 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
+require 'csv'
 puts "Cleaning database..."
 
 
 User.destroy_all
+puts "Destroying Users"
+Rule.destroy_all
+puts "Destroying Rules"
 Borough.destroy_all
+puts "Destroying Boroughs"
+Packaging.destroy_all
+puts "Destroying Packagings"
+
 
 
 Packaging.create(
@@ -38,11 +45,35 @@ Packaging.create(
     {category: "Other", type: "Unknown"},
   ]
 )
+puts "Packagings created"
 
-boroughs = ["Westminster", "Wandsworth", "Waltham Forest", "Tower Hamlets", "Sutton", "Southwark", "Richmond upon Thames", "Redbridge", "Newham", "Merton", "Lewisham", "Lambeth", "Kingston upon Thames", "Kensington and Chelsea", "Islington", "Hounslow", "Hillingdon", "Havering", "Harrow", "Haringey", "Hammersmith and Fulham", "Hackney", "Greenwich", "Enfield", "Ealing", "Croydon", "Camden", "Bromley", "Brent", "Bexley", "Barnet", "Barking and Dagenham"]
+
+boroughs = ["Westminster","Tower Hamlets", "Islington","Hammersmith and Fulham", "Hackney", "Greenwich", "Camden"]
 boroughs.each do |b|
   Borough.create(name: b)
 end
 
+puts "Boroughs created"
+
+filepath = "./db/files/boroughs.csv"
+CSV.foreach(filepath, headers: :first_row) do |row|
+  puts "#{row['Borough']} #{row['Category']} #{row['Type']} can #{row['Recycled'] == "N" ? "not" :""} be recycled"
+  b = Borough.find_by(name: row["Borough"])
+  p b
+  packaging = Packaging.find_by(category: row["Category"], type: row["Type"])
+  p packaging
+  Rule.create!( borough: b, packaging: packaging, is_recycled: row["Recycled"] == "N" ? false : true)
+end
+
+# Borough.all.each do |borough|
+#   Packaging.all.each do |package|
+#     Rule.create!( borough: borough, packaging: package )
+#   end
+# end
+
+puts "Rules created"
+
 User.create(email:"ben@test.com", password:"123456", borough_id:"1")
 User.create(email:"pia@test.com", password:"123456", borough_id:"2")
+
+puts "Users created"
