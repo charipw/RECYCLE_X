@@ -5,3 +5,28 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Packaging.create(
+  [
+    {category: "Rigid plastic", type: "PET"},
+    {category: "Rigid plastic", type: "HDPE"},
+    {category: "Rigid plastic", type: "PP"},
+    {category: "Rigid plastic", type: "PVC"},
+    {category: "Rigid plastic", type: "Polystyrene"},
+    {category: "Rigid plastic", type: "Mixed Plastic"},
+    {category: "Rigid plastic", type: "Other Plastic"},
+    {category: "Plastic film", type: "Mixed Plastic"},
+    {category: "Plastic film", type: "HDPE"},
+    {category: "Plastic film", type: "LDPE"},
+    {category: "Plastic film", type: "PP"},
+    {category: "Glass", type: "Glass"},
+    {category: "Metals", type: "Aluminium"},
+    {category: "Metals", type: "Foil"},
+    {category: "Metals", type: "Steel"},
+    {category: "Paper", type: "Paper"},
+    {category: "Paper", type: "Card"},
+    {category: "Biodegradable", type: "Compostable"},
+    {category: "Biodegradable", type: "Biodegradable"},
+    {category: "Other", type: "Composite"},
+    {category: "Other", type: "Unknown"},
+  ]
+)
