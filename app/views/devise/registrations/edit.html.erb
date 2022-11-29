@@ -12,7 +12,8 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
-    <%= f.input :borough_id,
+    <% @boroughs = Borough.all%>
+    <%= f.input :borough_id, as: :select, :collection => @boroughs.each {|b| b.name}, prompt: 'Select Borough',label:'Where do you live?', input_html: { multiple: true },
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "borough" }%>
