@@ -69,7 +69,8 @@
                             required: true,
                             autofocus: true,
                             input_html: { autocomplete: "email" }%>
-                <%= f.input :borough_id,
+                <%  @boroughs = Borough.all%>
+                <%= f.input :borough_id, as: :select, :collection => @boroughs.each {|b| b.name}, prompt: 'Select Borough',
                             required: true,
                             autofocus: true,
                             input_html: { autocomplete: "borough" }%>
