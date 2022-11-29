@@ -12,15 +12,10 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
-
-    <%= f.input :username,
+    <%= f.input :borough_id,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "username" }%>
-    <%= f.input :postcode,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "location" }%>
+                input_html: { autocomplete: "borough" }%>
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
