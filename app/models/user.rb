@@ -4,5 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   belongs_to :borough
-  has_many :items
+  has_many :item_users, dependent: :destroy
+  has_many :items, through: :item_users
 end
