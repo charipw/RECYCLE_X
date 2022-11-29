@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_125210) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_125452) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -41,7 +41,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_125210) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "borough_id", null: false
+    t.bigint "packaging_id", null: false
     t.index ["borough_id"], name: "index_rules_on_borough_id"
+    t.index ["packaging_id"], name: "index_rules_on_packaging_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,5 +61,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_125210) do
   end
 
   add_foreign_key "rules", "boroughs"
+  add_foreign_key "rules", "packagings"
   add_foreign_key "users", "boroughs"
 end
