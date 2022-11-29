@@ -1,4 +1,4 @@
 class ItemUsersController < ApplicationController
-  def scan
+  def barcode
   end
 end
