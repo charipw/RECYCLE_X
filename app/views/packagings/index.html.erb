@@ -1,1 +1,15 @@
 <h1>Hello</h1>
+
+<%= form_with url: packagings_path, method: :get, id:"search-bar", class: "d-flex" do %>
+<%= text_field_tag :query,
+  params[:query],
+class: "form-control",
+placeholder: "Find a category"
+ %>
+<%= submit_tag "🔎", class: "btn-search" %>
+<% end %>
+
+<%= @packagings.each do |package| %>
+  <h3><%= link_to package.category , packaging_path(package.id) %></h3>
+  <p><%= package.type %></p>
+<% end %>

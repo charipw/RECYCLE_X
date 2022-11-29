@@ -38,3 +38,4 @@ boroughs.each do |b|
 end
 
 User.create(email:"ben@test.com", password:"123456", borough_id:"1")
+User.create(email:"pia@test.com", password:"123456", borough_id:"2")
