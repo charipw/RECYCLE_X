@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+boroughs = ["Westminster", "Wandsworth", "Waltham Forest", "Tower Hamlets", "Sutton", "Southwark", "Richmond upon Thames", "Redbridge", "Newham", "Merton", "Lewisham", "Lambeth", "Kingston upon Thames", "Kensington and Chelsea", "Islington", "Hounslow", "Hillingdon", "Havering", "Harrow", "Haringey", "Hammersmith and Fulham", "Hackney", "Greenwich", "Enfield", "Ealing", "Croydon", "Camden", "Bromley", "Brent", "Bexley", "Barnet", "Barking and Dagenham"]
+boroughs.each do |b|
+  Borough.create(name: b)
+end
