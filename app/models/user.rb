@@ -4,6 +4,4 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   belongs_to :borough
-  validates :username, uniqueness: {case_sensitive: false }
-  validates :username, :postcode, presence: true
 end
