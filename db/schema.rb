@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_28_161308) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_114617) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,8 +23,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_161308) do
   create_table "packagings", force: :cascade do |t|
     t.text "category"
     t.text "type"
-    t.string "eco_score"
-    t.integer "carbon_footprint"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,8 +30,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_161308) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "username"
-    t.string "postcode"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
