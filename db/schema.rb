@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_114202) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_122820) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "boroughs", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "eco_score"
+    t.integer "carbon_footprint"
+    t.text "name"
+    t.string "barcode"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
