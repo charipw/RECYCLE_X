@@ -10,3 +10,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.wrapper {
+  min-height: 71%;
+  margin-bottom: auto;
+}
+
+html, body {
+  height: 100%;
+}
