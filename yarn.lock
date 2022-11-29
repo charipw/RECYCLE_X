@@ -453,6 +453,11 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+html5-qrcode@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/html5-qrcode/-/html5-qrcode-2.3.3.tgz#e88fb2088e3475e22e2d938eb7e3df9b90d4ae52"
+  integrity sha512-3mA9N7wKM+nEFemBo1vCNgypJBFv2WvBXeacLx9b+Z8sueW1cUHq6p5fQ9aIBDK0DNBvtqhhW+79hdJPUHGwrA==
+
 import-local@^3.0.2:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/import-local/-/import-local-3.1.0.tgz#b4479df8a5fd44f6cdce24070675676063c95cb4"
