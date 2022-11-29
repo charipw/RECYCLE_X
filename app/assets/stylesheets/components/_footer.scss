@@ -1,27 +1,28 @@
 .footer {
-  margin-top: 2vh;
-  background: #F4F4F4;
+  // margin-top: 2vh;
+  background: #16123F;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+  padding: 0px 15px;
+  color: #ABD699;
   width: 100%;
+  margin-top: auto;
 }
 .footer-links {
-  display: flex;
+  // display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: black;
+  color: #ABD699;
   opacity: 0.15;
-  // text-decoration: none;
+  text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
-  opacity: 2;
+  opacity: 1;
 }
 .footer .fa-heart {
   color: #D23333;
