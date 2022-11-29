@@ -50,6 +50,8 @@ gem "sassc-rails"
 
 gem "pg_search"
 
+gem "rqrcode", "~> 2.0"
+
 gem "devise"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
