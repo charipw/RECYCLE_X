@@ -7,10 +7,15 @@ Rails.application.routes.draw do
   get 'scan', to: 'item_users#new'
   get 'barcode', to: 'item_users#barcode', as: :barcode
 
-  resources :items, only: %i[new create show]
+  resources :items, only: %i[new create show] do
+    collection do
+      get "find/:barcode", to: "items#find"
+    end
+  end
   resources :rules
   get '/my_products', to: 'item_users#index'
   get '/my_products/:id', to: 'item_users#show', as: "product"
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
