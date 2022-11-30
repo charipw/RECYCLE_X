@@ -24,13 +24,16 @@ export default class extends Controller {
               .then(response => response.json())
               .then(result => {
                 console.log(result["product"]);
+                console.log(result["product"]["code"]);
                 console.log(result["product"]["brands"]);
                 console.log(result["product"]["packaging"]);
                 console.log(result["product"]["packaging_tags"]);
                 console.log(result["product"]["ecoscore_grade"]);
-
-                "https://images.openfoodfacts.org/images/products/005/557/742/0249/front_fr.9.200.jpg"
-
+                fetch(`/items/find/${result["product"]["code"]}`, {headers: {"Accept": "application/json"}})
+                  .then(response => response.json())
+                  .then((data) => {
+                    console.log(data)
+                  })
 
               })
 
