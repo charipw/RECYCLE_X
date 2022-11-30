@@ -1,5 +1,5 @@
 .footer {
-  // margin-top: 2vh;
+  margin-top: 2vh;
   background: #16123F;
   display: flex;
   align-items: center;
@@ -9,8 +9,8 @@
   color: #ABD699;
   width: 100%;
   margin-top: auto;
-  // position: absolute;
-  // bottom: 0;
+  position: sticky;
+  bottom: 0;
 }
 .footer-links {
   // display: flex;
@@ -21,11 +21,13 @@
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
-  padding: 0px 10px;
+  padding: 10px 10px;
+  // align-items: center;
 }
 .footer-links a:hover {
   opacity: 1;
 }
-.footer .fa-heart {
+.footer .fa-home .fa-user-circle .fa-search {
   color: #D23333;
+  opacity: 1;
 }
