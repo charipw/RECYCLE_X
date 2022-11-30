@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :items, only: %i[new create show]
   resources :rules
   get '/my_products', to: 'item_users#index'
-  get '/my_products/:id', to: 'item_users#show'
+  get '/my_products/:id', to: 'item_users#show', as: "product"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
