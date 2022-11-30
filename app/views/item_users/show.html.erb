@@ -11,11 +11,26 @@
           <div class="card-body pb-0">
             <div class="d-flex justify-content-between">
               <div>
-              <% i = Item.find_by id: @item_user.item_id%>
+              <% i = Item.find_by id: @item.item_id%>
                 <h3 class="text-dark"><%= i.name %></h3>
-                <p class="small text-muted">Barcode: <%= i.barcode %></p>
-                 <p>Eco-score: <%= i.eco_score %></p>
-              <p>Carbon-footprint: <%= i.carbon_footprint %></p>
+                <p class="small text-muted"><i class='fas fa-barcode'></i> <%= i.barcode %></p>
+                <p>Eco-score: <%= i.eco_score %>
+                <% if i.eco_score == "A" %>
+                  <% 4.times do %>
+                    <i class="fa-solid fa-leaf" style="color:green"></i>
+                  <% end  %>
+                <% elsif i.eco_score == "B" %>
+                  <% 3.times do %>
+                    <i class="fa-solid fa-leaf" style="color:green"></i>
+                  <% end  %>
+                <% elsif i.eco_score == "C" %>
+                  <% 2.times do %>
+                    <i class="fa-solid fa-leaf" style="color:green"></i>
+                  <% end  %>
+                <% elsif i.eco_score == "D" %>
+                  <i class="fa-solid fa-leaf" style="color:green"></i>
+                <% end  %></p>
+                <p>Carbon-footprint: <%= i.carbon_footprint %> <i class="fa-solid fa-shoe-prints" style="color:red"></i></p>
               </div>
               <div>
             </div>
