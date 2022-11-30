@@ -11,7 +11,7 @@
           <div class="card-body pb-0">
             <div class="d-flex justify-content-between">
               <div>
-              <% i = Item.find_by id: @item_user.item_id%>
+              <% i = Item.find_by id: @item.item_id%>
                 <h3 class="text-dark"><%= i.name %></h3>
                 <p class="small text-muted">Barcode: <%= i.barcode %></p>
                  <p>Eco-score: <%= i.eco_score %></p>
