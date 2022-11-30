@@ -6,8 +6,7 @@
           <div class="rounded-top text-white d-flex flex-row" style="background-color: #121451f; height:200px;">
             <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
               <%= image_tag asset_path('profile.png'), class:"img-fluid img-thumbnail mt-4 mb-2",
-                style:"width: 150px; z-index: 1; border-color: #ae91c1fc; background-color: #cab3c9;
-"%>
+                style:"width: 150px; z-index: 1; border-color: #ae91c1fc; background-color: #cab3c9;"%>
             </div>
             <div class="ms-3" style="margin-top: 80px;">
               <h5 style= "color:black;" >USER</h5>
@@ -30,13 +29,16 @@
             <div class="mb-5">
               <p class="lead fw-normal mb-1">Account Details</p>
               <div class="p-4" style="background-color: #f8f9fa;">
-                <p class="font-italic mb-1">Email: <%= @user.email%> </p></p>
-		            <p class="font-italic mb-1">Borough: <%= @user.borough.name%></p></p>
+                <p class="font-italic mb-1">Email: <%= @user.email%> </p>
+		            <p class="font-italic mb-1">Borough: <%= @user.borough.name%></p>
               </div>
             </div>
 
           </div>
            <%=link_to "Edit profile", edit_user_registration_path(@user), class:"btn btn-outline-dark"%>
+           <% if user_signed_in? %>
+            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class:"btn btn-outline-dark" %>
+           <%end%>
         </div>
       </div>
     </div>
