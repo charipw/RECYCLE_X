@@ -81,10 +81,10 @@ user_3 = User.create(email:"charleen@test.com", password:"123456", borough_id:"3
 
 puts "Users created"
 
-item_1 = Item.create(eco_score: "bad", carbon_footprint: 2000, name: "Gatorade", barcode: "22222222" )
-item_2 = Item.create(eco_score: "good", carbon_footprint: 40, name: "Leibniz Kekse", barcode: "22222222" )
-item_3 = Item.create(eco_score: "okay", carbon_footprint: 300, name: "Lays chips", barcode: "33333333" )
-item_4 = Item.create(eco_score: "okay", carbon_footprint: 500, name: "Pegroni", barcode: "22222222" )
+item_1 = Item.create(eco_score: "D", carbon_footprint: 2000, name: "Gatorade", barcode: "22222222" )
+item_2 = Item.create(eco_score: "A", carbon_footprint: 40, name: "Leibniz Kekse", barcode: "22222222" )
+item_3 = Item.create(eco_score: "C", carbon_footprint: 300, name: "Lays chips", barcode: "33333333" )
+item_4 = Item.create(eco_score: "C", carbon_footprint: 500, name: "Pegroni", barcode: "22222222" )
 
 puts "Items created"
 
