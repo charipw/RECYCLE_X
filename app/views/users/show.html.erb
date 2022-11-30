@@ -3,14 +3,15 @@
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-lg-9 col-xl-7">
         <div class="card">
-          <div class="rounded-top text-white d-flex flex-row" style="background-color: #395144; height:200px;">
+          <div class="rounded-top text-white d-flex flex-row" style="background-color: #121451f; height:200px;">
             <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
               <%= image_tag asset_path('profile.png'), class:"img-fluid img-thumbnail mt-4 mb-2",
-                style:"width: 150px; z-index: 1"%>
+                style:"width: 150px; z-index: 1; border-color: #ae91c1fc; background-color: #cab3c9;
+"%>
             </div>
             <div class="ms-3" style="margin-top: 80px;">
-              <h5>USER</h5>
-              <p><%= @user.borough.name%></p>
+              <h5 style= "color:black;" >USER</h5>
+              <p style= "color:black;"><%= @user.borough.name%></p>
             </div>
           </div>
           <div class="p-4 text-black" style="background-color: #BDD2B6;">
