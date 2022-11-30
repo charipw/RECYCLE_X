@@ -1,0 +1,23 @@
+
+<div class="container">
+<br>
+<h1>Your Product History</h1>
+<br>
+    <% @useritems.each do |item|%>
+      <%i = Item.find_by id: item.item_id  %>
+      <% if item.user_id == @user.id %>
+        <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+          <div class="bg-white rounded shadow h-100">
+            <div class="p-3 rounded-bottom d-flex flex-column">
+              <strong><%= i.name %> <span class="text-muted font-weight-normal">• <%= i.carbon_footprint %></span></strong>
+              <small class="text-muted"><%= i.eco_score %></small>
+              <small class="text-muted"><%= i.barcode %></small>
+              <div class="d-flex align-items-end justify-content-between pt-4">
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+  </div>
+  <hr class="my-5">
