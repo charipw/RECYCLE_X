@@ -1,1 +1,11 @@
 <h1>Hello</h1>
+
+<div class="container mt-5">
+<% @rules.each do |rule| %>
+<p>Rule id: <%= rule.id %></p>
+<p> Borough: <%= rule.borough.name %></p>
+<p> Packaging: <%= rule.packaging.type %></p>
+<p> Recycled ? <%= rule.is_recycled %></p>
+<% end %>
+
+</div>

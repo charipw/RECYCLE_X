@@ -75,5 +75,7 @@ puts "Rules created"
 
 User.create(email:"ben@test.com", password:"123456", borough_id:"1")
 User.create(email:"pia@test.com", password:"123456", borough_id:"2")
+User.create(email:"charleen@test.com", password:"123456", borough_id:"3")
+
 
 puts "Users created"
