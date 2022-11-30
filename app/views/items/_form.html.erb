@@ -1,0 +1,13 @@
+<%= simple_form_for item do |f| %>
+  <%= f.input :name %><br><br>
+  <%= f.input :barcode %><br><br>
+  <%= f.input :eco_score %><br><br>
+  <%= f.input :carbon_footprint %><br><br>
+  <%= f.input :photo, as: :file %>
+    <%= f.simple_fields_for :item_packagings, ItemPackaging.new do |item_packagings_form| %>
+      <%= item_packagings_form.association :packaging, collection: Packaging.all, label_method: :type   %>
+    <% end %>
+  <%= f.submit %>
+<% end %>
+
+</div>
