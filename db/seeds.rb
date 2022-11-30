@@ -48,7 +48,7 @@ Packaging.create(
 puts "Packagings created"
 
 
-boroughs = ["Westminster","Tower Hamlets", "Islington","Hammersmith and Fulham", "Hackney", "Greenwich", "Camden"]
+boroughs = ["Westminster","Tower Hamlets", "Islington","Hammersmith and Fulham", "Hackney", "Greenwich", "Camden", "Kensington and Chelsea", "Lambeth", "Lewisham","Southwark", "Wandsworth"]
 boroughs.each do |b|
   Borough.create(name: b)
 end
@@ -73,8 +73,11 @@ end
 
 puts "Rules created"
 
+
 user_1 = User.create(email: "ben@test.com", password: "123456", borough_id: "1")
 user_2 = User.create(email: "pia@test.com", password: "123456", borough_id: "2")
+user_3 = User.create(email:"charleen@test.com", password:"123456", borough_id:"3")
+
 
 puts "Users created"
 
@@ -90,5 +93,7 @@ ItemUser.create(user_id: user_1.id, item_id: item_1.id)
 ItemUser.create(user_id: user_1.id, item_id: item_2.id)
 ItemUser.create(user_id: user_1.id, item_id: item_3.id)
 ItemUser.create(user_id: user_2.id, item_id: item_4.id)
+ItemUser.create(user_id: user_3.id, item_id: item_3.id)
+ItemUser.create(user_id: user_3.id, item_id: item_2.id)
 
 puts "Items Users created"

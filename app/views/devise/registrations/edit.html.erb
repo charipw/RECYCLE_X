@@ -23,6 +23,7 @@
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: false,
+                hint: "leave it blank if you don't want to change it",
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :current_password,
                 hint: "we need your current password to confirm your changes",

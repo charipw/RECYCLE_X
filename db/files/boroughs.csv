@@ -146,3 +146,108 @@ Westminster,Rigid plastic,PET,Y
 Westminster,Rigid plastic,Polystyrene,N
 Westminster,Rigid plastic,PP,Y
 Westminster,Rigid plastic,PVC,N
+Kensington and Chelsea,Rigid plastic,PET,Y
+Kensington and Chelsea,Rigid plastic,HDPE,Y
+Kensington and Chelsea,Rigid plastic,PP,Y
+Kensington and Chelsea,Rigid plastic,PVC,N
+Kensington and Chelsea,Rigid plastic,Polystyrene,N
+Kensington and Chelsea,Rigid plastic,Mixed Plastic,N
+Kensington and Chelsea,Rigid plastic,Other Plastic,N
+Kensington and Chelsea,Plastic film,Mixed Plastic,N
+Kensington and Chelsea,Plastic film,HDPE,N
+Kensington and Chelsea,Plastic film,LDPE,N
+Kensington and Chelsea,Plastic film,PP,N
+Kensington and Chelsea,Glass,Glass,Y
+Kensington and Chelsea,Metals,Aluminium,Y
+Kensington and Chelsea,Metals,Foil,N
+Kensington and Chelsea,Metals,Steel,Y
+Kensington and Chelsea,Paper,Paper,Y
+Kensington and Chelsea,Paper,Card,Y
+Kensington and Chelsea,Biodegradable,Compostable,N
+Kensington and Chelsea,Biodegradable,Biodegradable,N
+Kensington and Chelsea,Other,Composite,Y
+Kensington and Chelsea,Other,Unknown,N
+Lambeth,Rigid plastic,PET,Y
+Lambeth,Rigid plastic,HDPE,Y
+Lambeth,Rigid plastic,PP,Y
+Lambeth,Rigid plastic,PVC,N
+Lambeth,Rigid plastic,Polystyrene,N
+Lambeth,Rigid plastic,Mixed Plastic,N
+Lambeth,Rigid plastic,Other Plastic,N
+Lambeth,Plastic film,Mixed Plastic,N
+Lambeth,Plastic film,HDPE,N
+Lambeth,Plastic film,LDPE,N
+Lambeth,Plastic film,PP,N
+Lambeth,Glass,Glass,Y
+Lambeth,Metals,Aluminium,Y
+Lambeth,Metals,Foil,N
+Lambeth,Metals,Steel,Y
+Lambeth,Paper,Paper,Y
+Lambeth,Paper,Card,Y
+Lambeth,Biodegradable,Compostable,N
+Lambeth,Biodegradable,Biodegradable,N
+Lambeth,Other,Composite,Y
+Lambeth,Other,Unknown,N
+Lewisham,Rigid plastic,PET,Y
+Lewisham,Rigid plastic,HDPE,Y
+Lewisham,Rigid plastic,PP,Y
+Lewisham,Rigid plastic,PVC,N
+Lewisham,Rigid plastic,Polystyrene,N
+Lewisham,Rigid plastic,Mixed Plastic,N
+Lewisham,Rigid plastic,Other Plastic,N
+Lewisham,Plastic film,Mixed Plastic,N
+Lewisham,Plastic film,HDPE,N
+Lewisham,Plastic film,LDPE,N
+Lewisham,Plastic film,PP,N
+Lewisham,Glass,Glass,Y
+Lewisham,Metals,Aluminium,Y
+Lewisham,Metals,Foil,Y
+Lewisham,Metals,Steel,Y
+Lewisham,Paper,Paper,N
+Lewisham,Paper,Card,N
+Lewisham,Biodegradable,Compostable,N
+Lewisham,Biodegradable,Biodegradable,N
+Lewisham,Other,Composite,Y
+Lewisham,Other,Unknown,N
+Southwark,Rigid plastic,PET,Y
+Southwark,Rigid plastic,HDPE,Y
+Southwark,Rigid plastic,PP,Y
+Southwark,Rigid plastic,PVC,N
+Southwark,Rigid plastic,Polystyrene,N
+Southwark,Rigid plastic,Mixed Plastic,N
+Southwark,Rigid plastic,Other Plastic,N
+Southwark,Plastic film,Mixed Plastic,N
+Southwark,Plastic film,HDPE,N
+Southwark,Plastic film,LDPE,N
+Southwark,Plastic film,PP,N
+Southwark,Glass,Glass,Y
+Southwark,Metals,Aluminium,Y
+Southwark,Metals,Foil,Y
+Southwark,Metals,Steel,Y
+Southwark,Paper,Paper,Y
+Southwark,Paper,Card,Y
+Southwark,Biodegradable,Compostable,N
+Southwark,Biodegradable,Biodegradable,N
+Southwark,Other,Composite,Y
+Southwark,Other,Unknown,N
+Wandsworth,Rigid plastic,PET,Y
+Wandsworth,Rigid plastic,HDPE,Y
+Wandsworth,Rigid plastic,PP,Y
+Wandsworth,Rigid plastic,PVC,N
+Wandsworth,Rigid plastic,Polystyrene,N
+Wandsworth,Rigid plastic,Mixed Plastic,N
+Wandsworth,Rigid plastic,Other Plastic,N
+Wandsworth,Plastic film,Mixed Plastic,N
+Wandsworth,Plastic film,HDPE,N
+Wandsworth,Plastic film,LDPE,N
+Wandsworth,Plastic film,PP,N
+Wandsworth,Glass,Glass,Y
+Wandsworth,Metals,Aluminium,Y
+Wandsworth,Metals,Foil,N
+Wandsworth,Metals,Steel,Y
+Wandsworth,Paper,Paper,Y
+Wandsworth,Paper,Card,Y
+Wandsworth,Biodegradable,Compostable,N
+Wandsworth,Biodegradable,Biodegradable,N
+Wandsworth,Other,Composite,Y
+Wandsworth,Other,Unknown,N
