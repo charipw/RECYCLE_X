@@ -1,0 +1,27 @@
+
+<section style="background-color: #eee;">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+        <div class="card shadow h-100" style="border-radius: 15px;">
+          <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light p-3 rounded-bottom d-flex flex-column"
+            data-mdb-ripple-color="light">
+            <%= image_tag asset_path('productdefault.png'), height: 100, crop: :fill, style:"border-top-left-radius: 15px; border-top-right-radius: 15px;", class:"img-fluid"%><br>
+          </div>
+          <div class="card-body pb-0">
+            <div class="d-flex justify-content-between">
+              <div>
+              <% i = Item.find_by id: @item_user.item_id%>
+                <h3 class="text-dark"><%= i.name %></h3>
+                <p class="small text-muted">Barcode: <%= i.barcode %></p>
+                 <p>Eco-score: <%= i.eco_score %></p>
+              <p>Carbon-footprint: <%= i.carbon_footprint %></p>
+              </div>
+              <div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
