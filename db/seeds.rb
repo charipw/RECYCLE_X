@@ -73,7 +73,22 @@ end
 
 puts "Rules created"
 
-User.create(email:"ben@test.com", password:"123456", borough_id:"1")
-User.create(email:"pia@test.com", password:"123456", borough_id:"2")
+user_1 = User.create(email: "ben@test.com", password: "123456", borough_id: "1")
+user_2 = User.create(email: "pia@test.com", password: "123456", borough_id: "2")
 
 puts "Users created"
+
+item_1 = Item.create(eco_score: "bad", carbon_footprint: 2000, name: "Gatorade", barcode: "22222222" )
+item_2 = Item.create(eco_score: "good", carbon_footprint: 40, name: "Leibniz Kekse", barcode: "22222222" )
+item_3 = Item.create(eco_score: "okay", carbon_footprint: 300, name: "Lays chips", barcode: "33333333" )
+item_4 = Item.create(eco_score: "okay", carbon_footprint: 500, name: "Pegroni", barcode: "22222222" )
+
+puts "Items created"
+
+ItemUser.create(user_id: user_2.id, item_id: item_1.id)
+ItemUser.create(user_id: user_1.id, item_id: item_1.id)
+ItemUser.create(user_id: user_1.id, item_id: item_2.id)
+ItemUser.create(user_id: user_1.id, item_id: item_3.id)
+ItemUser.create(user_id: user_2.id, item_id: item_4.id)
+
+puts "Items Users created"
