@@ -1,6 +1,10 @@
 class Packaging < ApplicationRecord
   self.inheritance_column = :_type_disabled
 
+  def name_of_method
+    "#{category} - #{type}"
+  end
+
   # include PgSearch::Model
   # pg_search_scope :search_by_category_and_type,
   #   against: [ :category, :type ],
