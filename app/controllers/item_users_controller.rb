@@ -1,5 +1,5 @@
 class ItemUsersController < ApplicationController
-  before_action :set_item_users, only: [:show]
+  before_action :set_item_user, only: [:show]
   def barcode
   end
 
@@ -10,12 +10,11 @@ class ItemUsersController < ApplicationController
   end
 
   def show
-    @user = current_user
   end
 
   private
 
-  def set_item_users
+  def set_item_user
     @item = ItemUser.find(params[:id])
   end
 end
