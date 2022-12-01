@@ -6,7 +6,9 @@ class ItemsController < ApplicationController
   def find
     @item = Item.find_by(barcode: params[:barcode])
     respond_to do |format|
+      p @item
       if @item.nil?
+        p 'nil!'
         # Load data from Open food fact API and create an item using the data from the API
         # If data does not exist in the API
         # Then
