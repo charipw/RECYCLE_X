@@ -1,10 +1,10 @@
 class ItemsController < ApplicationController
 
-  
+
   def new
     @item = Item.new
   end
-  
+
   def find
     @item = Item.find_by(barcode:params[:barcode])
     respond_to do |format|
@@ -19,6 +19,5 @@ class ItemsController < ApplicationController
         format.html {render :show }
       end
     end
-   end
-
+  end
 end
