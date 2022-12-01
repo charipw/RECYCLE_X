@@ -9,3 +9,6 @@ application.register("barcode", BarcodeController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import ItemFormController from "./item_form_controller"
+application.register("item-form", ItemFormController)
