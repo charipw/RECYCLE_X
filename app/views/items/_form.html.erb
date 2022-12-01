@@ -1,16 +1,17 @@
-<<<<<<< HEAD
-=======
+
 <%= simple_form_for item do |f| %>
+<div data-controller="item-form">
   <%= f.input :name, input_html: {data: {barcode_target: "nameInput"}}%>
  <%= f.input :barcode, input_html: {data: {barcode_target: "barcodeInput"}}%>
   <%= f.input :eco_score, input_html: {data: {barcode_target: "ecoscoreInput"}}%>
   <%= f.input :photo, as: :file %>
   <div data-item-form-target="packagingWrapper">
     <%= f.simple_fields_for :item_packagings, ItemPackaging.new do |item_packagings_form| %>
-      <%= item_packagings_form.association :packaging, collection: Packaging.all, label_method: :category   %>
-      <%= item_packagings_form.association :packaging, collection: Packaging.all, label_method: :type   %>
+      <%= item_packagings_form.association :packaging, label_method: :category   %>
+      <%= item_packagings_form.association :packaging, label_method: :type   %>
     <% end %>
   </div>
   <button data-item-form-target="packagingButton" data-action="click->item-form#addForm">Add Packaging</button>
   <%= f.submit %>
+</div>
 <% end %>

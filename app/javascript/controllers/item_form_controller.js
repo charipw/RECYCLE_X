@@ -12,6 +12,7 @@ export default class extends Controller {
 
   addForm(e) {
     e.preventDefault()
-    console.log("Clicked button! Add a new form for a packaging")
+    // console.dir(this.packagingWrapperTarget)
+    this.packagingWrapperTarget.insertAdjacentHTML("beforeEnd", this.packagingWrapperTarget.innerHTML)
   }
 }
