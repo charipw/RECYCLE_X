@@ -3,6 +3,7 @@ import { Html5QrcodeScanner} from "html5-qrcode";
 
 // Connects to data-controller="barcode"
 export default class extends Controller {
+  static targets = ["content"]
   connect() {
     let lastResult, countResults = 0;
 
@@ -20,23 +21,29 @@ export default class extends Controller {
               redirect: 'follow'
             };
             console.log(decodedText);
-            fetch(`https://world.openfoodfacts.org/api/v0/product/${decodedText}.json`, requestOptions)
+            fetch(`/items/find/${decodedText}`, {headers: {"Accept": "application/json"}})
               .then(response => response.json())
-              .then(result => {
-                console.log(result["product"]);
-                console.log(result["product"]["code"]);
-                console.log(result["product"]["brands"]);
-                console.log(result["product"]["packaging"]);
-                console.log(result["product"]["packaging_tags"]);
-                console.log(result["product"]["ecoscore_grade"]);
-
-                fetch(`/items/find/${result["product"]["code"]}`, {headers: {"Accept": "application/json"}})
-                  .then(response => response.json())
-                  .then((data) => {
-                    console.log(data)
-                  })
+              .then((data) => {
+                console.log(data)
+                if (data.form) {
+                  this.contentTarget.innerHTML = data.form
+                  fetch(`https://world.openfoodfacts.org/api/v0/product/${decodedText}.json`, requestOptions)
+                    .then(response => response.json())
+                    .then(result => {
+                      console.log(result["product"]);
+                      console.log(result["product"]["code"]);
+                      console.log(result["product"]["product_name"]);
+                      console.log(result["product"]["packaging"]);
+                      console.log(result["product"]["packaging_tags"]);
+                      console.log(result["product"]["ecoscore_grade"]);
+                    })
+                } else {
+                  this.contentTarget.innerHTML = data.show
+                }
 
               })
+
+
 
 
               // .catch(error => console.log('error', error));
