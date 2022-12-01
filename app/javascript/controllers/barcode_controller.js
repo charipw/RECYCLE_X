@@ -3,7 +3,7 @@ import { Html5QrcodeScanner} from "html5-qrcode";
 
 // Connects to data-controller="barcode"
 export default class extends Controller {
-  static targets = ["content"]
+  static targets = ["content", "barcodeInput", "nameInput", "ecoscoreInput", "packagingtagsInput"]
   connect() {
     let lastResult, countResults = 0;
 
@@ -28,14 +28,39 @@ export default class extends Controller {
                 if (data.form) {
                   this.contentTarget.innerHTML = data.form
                   fetch(`https://world.openfoodfacts.org/api/v0/product/${decodedText}.json`, requestOptions)
-                    .then(response => response.json())
-                    .then(result => {
-                      console.log(result["product"]);
-                      console.log(result["product"]["code"]);
+                  .then(response => response.json())
+                  .then(result => {
+                    console.log(this.barcodeInputTarget)
+                    console.log(result["product"]);
+                    console.log(result["product"]["code"]);
+                      if((result["product"]["code"]) == undefined) {
+                        console.log("hello")
+                      } else {
+                        this.barcodeInputTarget.value = result["product"]["code"]
+                      }
+
                       console.log(result["product"]["product_name"]);
+                      if((result["product"]["product_name"]) == undefined) {
+                        console.log("hello")
+                      } else {
+                        this.nameInputTarget.value = result["product"]["product_name"]
+                      }
                       console.log(result["product"]["packaging"]);
+                      if((result["product"]["packaging"]) == undefined) {
+                        console.log("hello")
+                      }
                       console.log(result["product"]["packaging_tags"]);
+                      if((result["product"]["packaging_tags"]) == undefined) {
+                        console.log("hello")
+                      // } else {
+                        // this.packagingtagsInputTarget.value = result["product"]["packaging_tags"]
+                      }
                       console.log(result["product"]["ecoscore_grade"]);
+                      if((result["product"]["ecoscore_grade"]) == undefined) {
+                        console.log("hello")
+                      }else{
+                        this.ecoscoreInputTarget.value = result["product"]["ecoscore_grade"]
+                      }
                     })
                 } else {
                   this.contentTarget.innerHTML = data.show
