@@ -116,6 +116,7 @@ GEM
       sassc (~> 2.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    hashie (5.0.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-console (0.5.11)
@@ -152,6 +153,9 @@ GEM
       racc (~> 1.4)
     nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
+    openfoodfacts (0.6.2)
+      hashie (>= 3.4, < 6.0)
+      nokogiri (~> 1.7)
     orm_adapter (0.5.0)
     pg (1.4.5)
     pg_search (2.3.6)
@@ -270,6 +274,7 @@ DEPENDENCIES
   font-awesome-sass (~> 6.1)
   jbuilder
   jsbundling-rails
+  openfoodfacts
   pg (~> 1.1)
   pg_search
   puma (~> 5.0)
