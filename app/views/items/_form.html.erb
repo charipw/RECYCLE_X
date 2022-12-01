@@ -1,7 +1,9 @@
-<%= simple_form_for item, data: {controller: "item-form"} do |f| %>
-  <%= f.input :name %><br><br>
-  <%= f.input :barcode %><br><br>
-  <%= f.input :eco_score %><br><br>
+<<<<<<< HEAD
+=======
+<%= simple_form_for item do |f| %>
+  <%= f.input :name, input_html: {data: {barcode_target: "nameInput"}}%>
+ <%= f.input :barcode, input_html: {data: {barcode_target: "barcodeInput"}}%>
+  <%= f.input :eco_score, input_html: {data: {barcode_target: "ecoscoreInput"}}%>
   <%= f.input :photo, as: :file %>
   <div data-item-form-target="packagingWrapper">
     <%= f.simple_fields_for :item_packagings, ItemPackaging.new do |item_packagings_form| %>
