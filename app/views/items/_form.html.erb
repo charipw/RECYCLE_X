@@ -1,8 +1,7 @@
 <%= simple_form_for item do |f| %>
-  <%= f.input :name %><br><br>
-  <%= f.input :barcode %><br><br>
-  <%= f.input :eco_score %><br><br>
-  <%= f.input :carbon_footprint %><br><br>
+  <%= f.input :name, input_html: {data: {barcode_target: "nameInput"}}%>
+ <%= f.input :barcode, input_html: {data: {barcode_target: "barcodeInput"}}%>
+  <%= f.input :eco_score, input_html: {data: {barcode_target: "ecoscoreInput"}}%>
   <%= f.input :photo, as: :file %>
 
     <%= f.simple_fields_for :item_packagings, ItemPackaging.new do |item_packagings_form| %>
