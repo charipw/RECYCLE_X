@@ -1,12 +1,14 @@
+
 <%= simple_form_for item do |f| %>
+<div data-controller="item-form">
   <%= f.input :name, input_html: {data: {barcode_target: "nameInput"}}%>
  <%= f.input :barcode, input_html: {data: {barcode_target: "barcodeInput"}}%>
   <%= f.input :eco_score, input_html: {data: {barcode_target: "ecoscoreInput"}}%>
   <%= f.input :photo, as: :file %>
-
-    <%= f.simple_fields_for :item_packagings, ItemPackaging.new do |item_packagings_form| %>
-      <%= item_packagings_form.association :packaging, collection: Packaging.all, label_method: :category   %>
-      <%= item_packagings_form.association :packaging, collection: Packaging.all, label_method: :type   %>
-    <% end %>
+  <div data-item-form-target="packagingWrapper">
+    <%= f.association :packagings, label_method: :name_of_method, wrapper_html: {data: {item_form_target: "packagingForm"}} %>
+  </div>
+  <button data-item-form-target="packagingButton" data-action="click->item-form#addForm">Add Packaging</button>
   <%= f.submit %>
+</div>
 <% end %>
