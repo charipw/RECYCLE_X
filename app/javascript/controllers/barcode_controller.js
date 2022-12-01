@@ -19,7 +19,7 @@ export default class extends Controller {
               method: 'GET',
               redirect: 'follow'
             };
-
+            console.log(decodedText);
             fetch(`https://world.openfoodfacts.org/api/v0/product/${decodedText}.json`, requestOptions)
               .then(response => response.json())
               .then(result => {
@@ -29,6 +29,7 @@ export default class extends Controller {
                 console.log(result["product"]["packaging"]);
                 console.log(result["product"]["packaging_tags"]);
                 console.log(result["product"]["ecoscore_grade"]);
+
                 fetch(`/items/find/${result["product"]["code"]}`, {headers: {"Accept": "application/json"}})
                   .then(response => response.json())
                   .then((data) => {
