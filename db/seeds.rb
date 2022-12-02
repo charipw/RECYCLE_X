@@ -17,6 +17,11 @@ Borough.destroy_all
 puts "Destroying Boroughs"
 Packaging.destroy_all
 puts "Destroying Packagings"
+ItemUser.destroy_all
+puts "Destroying Item User"
+ItemPackaging.destroy_all
+puts "Destroying Item Packagings"
+
 
 
 
