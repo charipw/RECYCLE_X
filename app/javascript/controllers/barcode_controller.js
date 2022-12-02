@@ -149,6 +149,7 @@ export default class extends Controller {
     }
 
 
+
     findPackagings(apiArray, arrayTypes) {
       let foundTypes = []
       apiArray.forEach((apiString) => {
