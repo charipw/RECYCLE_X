@@ -30,18 +30,18 @@ class ItemsController < ApplicationController
     end
   end
 
-  def create
-    @item = Item.new
-    @item.name = item_params[:name]
-    @item.name = item_params[:bar_code]
-    @item.name = item_params[:eco_score]
-    @item.save
-    item_params[:type].each do |type|
-      @packaging = Packaging.find_by(type)
-      @packaging = Packaging.find_by(type: 'Unknown') if @packaging.empty
-      ItemPackaging.create(item: @item, packaging: @packaging)
-    end
-  end
+  # def create
+  #   @item = Item.new
+  #   @item.name = item_params[:name]
+  #   @item.name = item_params[:bar_code]
+  #   @item.name = item_params[:eco_score]
+  #   @item.save
+  #   item_params[:type].each do |type|
+  #     @packaging = Packaging.find_by(type)
+  #     @packaging = Packaging.find_by(type: 'Unknown') if @packaging.empty
+  #     ItemPackaging.create(item: @item, packaging: @packaging)
+  #   end
+  # end
   # end
 
   # private
