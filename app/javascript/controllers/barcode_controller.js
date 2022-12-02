@@ -5,6 +5,7 @@ import { Html5QrcodeScanner} from "html5-qrcode";
 export default class extends Controller {
   static targets = ["content"]
   connect() {
+
     let lastResult, countResults = 0;
 
     const onScanSuccess = (decodedText, decodedResult) => {
@@ -61,6 +62,18 @@ export default class extends Controller {
     const html5QrcodeScanner = new Html5QrcodeScanner(
       "qr-reader", { fps: 10, qrbox: 250 });
       html5QrcodeScanner.render(onScanSuccess);
+
+      setInterval(() => {
+        const startBtn = document.getElementById("html5-qrcode-button-camera-start");
+        const stopBtn = document.getElementById("html5-qrcode-button-camera-stop");
+        startBtn.style.color = 'red'
+        stopBtn.style.color = 'red'
+        startBtn.style.backgroundColor = '#ABD699'
+        stopBtn.style.backgroundColor = '#ABD699'
+      }, 1000);
+
+
+
     }
 
   }
