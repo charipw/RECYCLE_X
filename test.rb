@@ -1,6 +1,6 @@
 require 'openfoodfacts'
 
-products = Openfoodfacts::Product.search("Chips", locale: 'world', page_size: 10)
+#products = Openfoodfacts::Product.search("Chips", locale: 'world', page_size: 10)
 
 #test_ids = []
 #products.each do |product|
@@ -15,7 +15,7 @@ products = Openfoodfacts::Product.search("Chips", locale: 'world', page_size: 10
 #p product.packaging_old
 #p product.packagings
 
-
+#Nutella
 #code = "3017620422003"
 #product = Openfoodfacts::Product.get(code, locale: 'world')
 #p product.packaging_hierarchy
@@ -64,19 +64,25 @@ packaging.each do |pa|
   end
 end
 intermediate.each do |element|
-  unless element.match(/[aeiou]/)
+  if  element.to_s.length == 2
     rest << element
-  else
+  elsif element.match(/[aeiou]/)
     results << element
+  else
+    rest << element
   end
 end
+
+results.each do |res|
+  p res
+end
+
+
+
+
 p "intermediate: #{intermediate.count}"
 p "rest: #{rest.count}"
 p "results: #{results.count}"
-
-intermediate.each do |i|
-  p i
-end
 
 #packaging.each do |pa|
   #if pa.name.match(/"\[a-zA-Z]+(-)*[a-zA-Z]+(-)*[a-zA-Z]*(-)*[a-zA-Z]*(-)*[a-zA-Z]*"/)
