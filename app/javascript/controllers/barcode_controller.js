@@ -88,14 +88,14 @@ export default class extends Controller {
       "qr-reader", { fps: 10, qrbox: 250 });
       html5QrcodeScanner.render(onScanSuccess);
 
-      setInterval(() => {
+      setTimeout(() => {
         const startBtn = document.getElementById("html5-qrcode-button-camera-start");
         const stopBtn = document.getElementById("html5-qrcode-button-camera-stop");
         startBtn.style.color = 'red'
         stopBtn.style.color = 'red'
         startBtn.style.backgroundColor = '#ABD699'
         stopBtn.style.backgroundColor = '#ABD699'
-      }, 1000);
+      }, 2000);
 
 
 
