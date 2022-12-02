@@ -1,1 +1,14 @@
 <h1>u did it</h1>
+
+<%= @user.email %>
+<%= @user.borough_id %>
+
+<%=@item%>
+<%=@item.name%>
+<%= @item.item_packagings%>
+<% @item.packagings.each do |packaging|%>
+<p><%= packaging.category %></p>
+<% packaging.rules.each do |rule| %>
+  <p><%= rule.is_recycled %></p>
+  <% end %>
+<% end %>
