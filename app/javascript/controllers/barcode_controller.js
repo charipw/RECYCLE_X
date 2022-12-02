@@ -5,6 +5,7 @@ import { Html5QrcodeScanner} from "html5-qrcode";
 export default class extends Controller {
   static targets = ["content", "barcodeInput", "nameInput", "ecoscoreInput", "packagingTagsInput", "newPackagingButton"]
   connect() {
+
     let lastResult, countResults = 0;
     const arrayCategories = [
         "Rigid plastic", "Plastic film", "metal" , "glass", "Biodegradable", "Paper"
@@ -137,14 +138,14 @@ export default class extends Controller {
 
       html5QrcodeScanner.render(onScanSuccess);
 
-      setInterval(() => {
+      setTimeout(() => {
         const startBtn = document.getElementById("html5-qrcode-button-camera-start");
         const stopBtn = document.getElementById("html5-qrcode-button-camera-stop");
         startBtn.style.color = 'red'
         stopBtn.style.color = 'red'
         startBtn.style.backgroundColor = '#ABD699'
         stopBtn.style.backgroundColor = '#ABD699'
-      }, 1000);
+      }, 2000);
     }
 
 

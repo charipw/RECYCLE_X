@@ -1,9 +1,9 @@
 <div class="footer">
   <%# <div class="footer-links"> %>
-    <a href="/"><i class='fas fa-home' style='font-size:36px;color:#ABD699'></i></a>
-    <a href="/barcode"><i class='fas fa-barcode' style='font-size:36px;color:#ABD699'></i></a>
-    <a href="/my_products"><i class='fas fa-history' style='font-size:36px;color:#ABD699'></i></a>
-    <a href="/profile"><i class='fas fa-user-circle' style='font-size:36px;color:#ABD699'></i></a>
+    <b id="myHome"><a href="/"><i class='fas fa-home'></i></a></b>
+    <b id="myBarcode"><a href="/barcode"><i class='fas fa-barcode'></i></a></b>
+    <b id="myProducts"><a href="/my_products"><i class='fas fa-history'></i></a></b>
+    <b id="myProfile"><a href="/profile"><i class='fas fa-user-circle'></i></a></b>
     <%# <i class='fas fa-user-circle' style='font-size:36px'></i> %>
     <%# <i class='fas fa-search' style='font-size:36px'></i> %>
   <%# </div> %>
@@ -12,3 +12,16 @@
   <%# </div> %>
 </div>
 <%# link_to "My Account", profile_path(current_user), %>
+<!--  -->
+<%# <script>
+edocument.getElementById("myHome").addEventListener("click", bold);
+edocument.getElementById("myBarcode").addEventListener("click", bold);
+edocument.getElementById("myProducts").addEventListener("click", bold);
+edocument.getElementById("myProfile").addEventListener("click", bold); %>
+
+<%# function bold() {
+  console.log("hi");
+  onclick = focus
+  document.getElementById("myHome").innerHtml
+}
+</script> %>

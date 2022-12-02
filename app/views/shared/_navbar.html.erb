@@ -4,12 +4,14 @@
       <%= image_tag asset_path('logo_Recycle-X.png') %>
     <% end %>
     <div class="title">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <%# <div class="collapse navbar-collapse" id="navbarSupportedContent"> %>
     <ul class="navbar-nav me-auto">
-    <% if user_signed_in? %>
+    <% if user_signed_in? && @url != "http://localhost:3000/" %>
       <li class="nav-item">
         <h2><%= link_to "Recycle-X", root_path, style:"color: #abd699;", class: "nav-link" %></h2>
       </li>
+    <% elsif user_signed_in? %>
+      <h1>hello</h1>
     <% else %>
       <li class="nav-item">
         <h2><%= link_to "Login", new_user_session_path, style:"color: #abd699;", class: "nav-link" %></h2>
