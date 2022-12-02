@@ -6,28 +6,22 @@
   justify-content: space-between;
   height: 100px;
   padding: 0px 15px;
-  color: #ABD699;
   width: 100%;
   margin-top: auto;
   position: sticky;
   bottom: 0;
-}
-.footer-links {
-  // display: flex;
-  align-items: center;
-}
-.footer-links a {
-  color: #ABD699;
-  opacity: 0.15;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 10px 10px;
-  // align-items: center;
-}
+
+    a {
+    text-decoration: none;
+    padding: 10px 10px;
+    font-size:36px;
+
+    i {
+      color: #ABD699;
+    }
+    }
+  }
+
 .footer-links a:hover {
-  opacity: 1;
-}
-.footer .fa-home .fa-user-circle .fa-search {
-  color: #D23333;
-  opacity: 1;
+  color: pink;
 }
