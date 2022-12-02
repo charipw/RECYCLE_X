@@ -1,9 +1,12 @@
-<h1>u did it</h1>
+<h1><%=@item.name%></h2>
 
-<%=@item.name%>
+<div>
+<h2>Eco score: <%= @item.eco_score %></h2>
+</div>
 
 <% @item.packagings.each do |packaging|%>
-<p><%= packaging.category %></p>
+<p>Category: <%= packaging.category %></p>
+<p>Type: <%= packaging.type %></p>
 <% packaging.rules.each do |rule| %>
 
   <% if rule.borough_id == @user.borough_id %>
