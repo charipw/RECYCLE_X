@@ -79,9 +79,9 @@ end
 puts "Rules created"
 
 
-user_1 = User.create(email: "ben@test.com", password: "123456", borough_id: "1")
-user_2 = User.create(email: "pia@test.com", password: "123456", borough_id: "2")
-user_3 = User.create(email:"charleen@test.com", password:"123456", borough_id:"3")
+user_1 = User.create(email: "ben@test.com", password: "123456", borough: Borough.all.sample)
+user_2 = User.create(email: "pia@test.com", password: "123456", borough: Borough.all.sample)
+user_3 = User.create(email:"charleen@test.com", password:"123456", borough: Borough.all.sample)
 
 
 puts "Users created"
@@ -109,5 +109,5 @@ ItemUser.create(user_id: user_3.id, item_id: item_6.id)
 
 puts "Items Users created"
 
-ItemPackaging.create(packaging_id: 23, item_id: item_6.id)
+ItemPackaging.create(Packaging.second, item_id: item_6.id)
 puts "Item Packaging created"
