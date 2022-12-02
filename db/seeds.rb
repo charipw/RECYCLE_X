@@ -109,5 +109,5 @@ ItemUser.create(user_id: user_3.id, item_id: item_6.id)
 
 puts "Items Users created"
 
-ItemPackaging.create(packaging_id: 2, item_id: item_6.id)
+ItemPackaging.create(packaging_id: 23, item_id: item_6.id)
 puts "Item Packaging created"
