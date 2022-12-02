@@ -6,8 +6,39 @@ export default class extends Controller {
   static targets = ["content", "barcodeInput", "nameInput", "ecoscoreInput", "packagingtagsInput"]
   connect() {
     let lastResult, countResults = 0;
+    const arrayCategories = [
+        "Rigid plastic", "Plastic film", "metal" , "glass", "Biodegradable", "Paper"
+      ]
+
+
+    const arrayTypes = [
+
+      "HDPE",
+      "PP",
+      "PVC",
+      "Polystyrene",
+      "Mixed Plastic",
+      "Other Plastic",
+      "Mixed Plastic",
+      "HDPE",
+      "LDPE",
+      "PP",
+      "Glass",
+      "Aluminium",
+      "Foil",
+      "Steel",
+      "Paper",
+      "Card",
+      "Compostable",
+      "Biodegradable",
+      "Composite",
+      "Unknown",
+      "PET"]
+
 
     const onScanSuccess = (decodedText, decodedResult) => {
+
+      // or we do type and category array
 
         if (countResults === 0) {
             ++countResults;
@@ -52,8 +83,10 @@ export default class extends Controller {
                       console.log(result["product"]["packaging_tags"]);
                       if((result["product"]["packaging_tags"]) == undefined) {
                         console.log("hello")
-                      // } else {
-                        // this.packagingtagsInputTarget.value = result["product"]["packaging_tags"]
+                      } else {
+                      //   this.packagingtagsInputTarget.value =
+                        this.findPackagings(result["product"]["packaging_tags"], arrayTypes);
+                        // console.log(array_categories.categories_type.find(el => el === result["product"]["packaging_tags"]))
                       }
                       console.log(result["product"]["ecoscore_grade"]);
                       if((result["product"]["ecoscore_grade"]) == undefined) {
@@ -85,7 +118,41 @@ export default class extends Controller {
     }
     const html5QrcodeScanner = new Html5QrcodeScanner(
       "qr-reader", { fps: 10, qrbox: 250 });
-      html5QrcodeScanner.render(onScanSuccess);
+    html5QrcodeScanner.render(onScanSuccess);
+    }
+
+    findPackagings(apiArray, arrayTypes) {
+      let foundTypes = []
+      apiArray.forEach((apiString) => {
+        console.log(apiString)
+        const cleanedString = apiString.split(":")[apiString.split(":").length - 1]
+        console.log(cleanedString)
+        let cleanedStringFound = false
+        arrayTypes.forEach((type) => {
+          console.log(`${type} and ${cleanedString}`)
+          if (cleanedStringFound == false && type.toLowerCase() === cleanedString.toLowerCase()) {
+            console.log(`found it`)
+            foundTypes.push(type);
+            cleanedStringFound = true;
+          }
+
+        });
+        if (cleanedStringFound == false) {
+          const cleanedStringArray = cleanedString.split("-");
+          cleanedStringArray.forEach((chunk) => {
+            let foundChunk = false
+            arrayTypes.forEach((type) => {
+              if (foundChunk == false && type.toLowerCase() === chunk.toLowerCase()) {
+                foundTypes.push(type);
+                foundChunk = true;
+              }
+            })
+
+          })
+        }
+      })
+      console.log(foundTypes)
+      return foundTypes
     }
 
   }
