@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
   end
 
   def find
+    @user = current_user
     @item = Item.find_by(barcode: params[:barcode])
     respond_to do |format|
       if @item.nil?

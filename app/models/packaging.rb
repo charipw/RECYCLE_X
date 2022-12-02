@@ -1,4 +1,5 @@
 class Packaging < ApplicationRecord
+  has_many :rules
   self.inheritance_column = :_type_disabled
 
   def name_of_method
