@@ -1,1 +1,8 @@
-<h1>u did it</h1>
+<div class="container mt-5">
+<% @items.each do |rule| %>
+<p> Borough: <%= rule.borough.name %></p>
+<p> Packaging: <%= rule.packaging.category %></p>
+<p> Type: <%= rule.packaging.type %></p>
+<p> Recycled ? <%= rule.is_recycled %></p>
+<% end %>
+</div>
