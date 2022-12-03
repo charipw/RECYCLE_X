@@ -76,8 +76,8 @@
                         <% if rule.is_recycled == false %>
                           <p>Category: <%= packaging.category %></p>
                           <p>Type: <%= packaging.type %></p>
-                          <% else %>
-                            <%= "In #{@user.borough.name}, #{@item.name} can be 100% recycled! " %>
+                          <%# <% else %>
+                            <%# <%= "In #{@user.borough.name}, #{@item.name} can be 100% recycled! " %>
                         <% end %>
                       <% end %>
                     <% end %><br>
