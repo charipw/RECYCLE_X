@@ -3,7 +3,7 @@ import { Html5QrcodeScanner} from "html5-qrcode";
 
 // Connects to data-controller="barcode"
 export default class extends Controller {
-  static targets = ["content", "barcodeInput", "nameInput", "ecoscoreInput", "packagingTagsInput", "newPackagingButton"]
+  static targets = ["content", "barcodeInput", "nameInput", "ecoscoreInput", "packagingTagsInput"]
   connect() {
 
     let lastResult, countResults = 0;
@@ -98,11 +98,7 @@ export default class extends Controller {
                               this.packagingTagsInputTargets[this.packagingTagsInputTargets.length - 1].selectedIndex = index
                             }
                           })
-
-
-
-
-                          this.newPackagingButtonTarget.click();
+;
                         })
                       }
                       console.log(result["product"]["ecoscore_grade"]);
