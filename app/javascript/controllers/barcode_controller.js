@@ -113,7 +113,10 @@ export default class extends Controller {
                       }
                     })
                 } else {
-                  this.contentTarget.innerHTML = data.show
+                  // this.contentTarget.innerHTML = data.show
+                  console.log(data)
+                  window.location.replace(`/my_products/${data.id}`);
+
                 }
 
               })

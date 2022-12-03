@@ -25,8 +25,14 @@ class ItemsController < ApplicationController
         format.html {render :show }
       else
         # Item here is from the database
-        format.json  # Follow the classic Rails flow and look for a create.json view
-        format.html {render :show }
+        # format.json  # Follow the classic Rails flow and look for a create.json view
+        # format.html {render :show }
+        @item_user = ItemUser.new
+        @item_user.user = current_user
+        @item_user.item = @item
+        @item_user.save
+        format.json
+        render json: @item_user
       end
     end
   end
@@ -37,6 +43,11 @@ class ItemsController < ApplicationController
     @item.barcode = item_params[:barcode]
     @item.eco_score = item_params[:eco_score]
     @item.save
+    @item_user = ItemUser.new
+    @item_user.user = current_user
+    @item_user.item = @item
+    @item_user.save
+    redirect_to product_path(@item_user.id)
     # item_params[:type].each do |type|
     #   @packaging = Packaging.find_by(type)
     #   @packaging = Packaging.find_by(type: 'Unknown') if @packaging.empty
@@ -49,4 +60,6 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :barcode, :eco_score, :photo, :type)
   end
+
+
 end
