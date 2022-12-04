@@ -19,19 +19,23 @@
           <div class="card-body pb-0">
             <h4 class="text-center">Ecoscore: <%=@item.eco_score %></h4>
                 <div class="text-center">
-                  <% if @item.eco_score == "A" %>
-                    <% 4.times do %>
+                  <% if @item.eco_score == "A" || "a" %>
+                    <% 5.times do %>
                       <i class="fa-solid fa-leaf" style="color:green"></i>
                     <% end %>
-                  <% elsif @item.eco_score == "B" %>
+                  <% elsif @item.eco_score == "B" || "b" %>
+                    <% 4.times do %>
+                      <i class="fa-solid fa-leaf" style="color:green"></i>
+                    <% end  %>
+                  <% elsif @item.eco_score == "C" ||"c" %>
                     <% 3.times do %>
                       <i class="fa-solid fa-leaf" style="color:green"></i>
                     <% end  %>
-                  <% elsif @item.eco_score == "C" %>
+                  <% elsif @item.eco_score == "D" || "d" %>
                     <% 2.times do %>
                       <i class="fa-solid fa-leaf" style="color:green"></i>
                     <% end  %>
-                  <% elsif @item.eco_score == "D" %>
+                  <% elsif @item.eco_score == "E" || "e" %>
                       <i class="fa-solid fa-leaf" style="color:green"></i>
                   <% end  %></p>
                 </div>
