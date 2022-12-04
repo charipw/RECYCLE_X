@@ -33,11 +33,10 @@ Packaging.create(
     {category: "Rigid plastic", type: "PVC"},
     {category: "Rigid plastic", type: "Polystyrene"},
     {category: "Rigid plastic", type: "Mixed Plastic"},
-    {category: "Rigid plastic", type: "Other Plastic"},
-    {category: "Plastic film", type: "Mixed Plastic"},
-    {category: "Plastic film", type: "HDPE"},
+    {category: "Plastic film", type: "Mixed Plastic Film"},
+    {category: "Plastic film", type: "HDPE Film"},
     {category: "Plastic film", type: "LDPE"},
-    {category: "Plastic film", type: "PP"},
+    {category: "Plastic film", type: "PP Film"},
     {category: "Glass", type: "Glass"},
     {category: "Metals", type: "Aluminium"},
     {category: "Metals", type: "Foil"},
@@ -47,7 +46,6 @@ Packaging.create(
     {category: "Biodegradable", type: "Compostable"},
     {category: "Biodegradable", type: "Biodegradable"},
     {category: "Other", type: "Composite"},
-    {category: "Other", type: "Unknown"},
   ]
 )
 puts "Packagings created"
@@ -70,11 +68,6 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   Rule.create!( borough: b, packaging: packaging, is_recycled: row["Recycled"] == "N" ? false : true)
 end
 
-# Borough.all.each do |borough|
-#   Packaging.all.each do |package|
-#     Rule.create!( borough: borough, packaging: package )
-#   end
-# end
 
 puts "Rules created"
 

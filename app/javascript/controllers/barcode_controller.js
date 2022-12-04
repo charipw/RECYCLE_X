@@ -19,10 +19,10 @@ export default class extends Controller {
       "PVC",
       "Polystyrene",
       "Mixed Plastic",
-      "Other Plastic",
-      "HDPE",
+      "Mixed Plastic Film",
+      "HDPE Film",
       "LDPE",
-      "PP",
+      "PP Film",
       "Glass",
       "Aluminium",
       "Foil",
@@ -32,7 +32,6 @@ export default class extends Controller {
       "Compostable",
       "Biodegradable",
       "Composite",
-      "Unknown",
       "PET"]
 
 

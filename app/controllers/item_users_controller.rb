@@ -5,6 +5,11 @@ class ItemUsersController < ApplicationController
 
   def index
     @useritems = ItemUser.all
+    # items = @useritems.pluck(:item).uniq
+    # @useritems = []
+    # items.each do |item|
+    #   @useritems << ItemUser.find_by(item:)
+    # end
     @items = Item.all
     @user = current_user
   end

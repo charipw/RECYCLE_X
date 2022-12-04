@@ -4,7 +4,7 @@
 <h1>Your Product History</h1>
 <br>
   <% @useritems.each do |item|%>
-    <%i = Item.find_by id: item.item_id  %>
+    <%i = Item.find_by id: item.item_id %>
       <% if item.user_id == @user.id %>
        <%=link_to product_path(item.id), class: "text-decoration-none" do %>
         <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
