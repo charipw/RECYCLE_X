@@ -52,14 +52,15 @@ export default class extends Controller {
             };
             console.log(decodedText);
             fetch(`/items/find/${decodedText}`, {headers: {"Accept": "application/json"}})
-              .then(response => response.json())
-              .then((data) => {
-                console.log(data)
-                if (data.form) {
-                  this.contentTarget.innerHTML = data.form
-                  fetch(`https://world.openfoodfacts.org/api/v0/product/${decodedText}.json`, requestOptions)
-                  .then(response => response.json())
-                  .then(result => {
+            .then(response => response.json())
+            .then((data) => {
+              console.log(data)
+              if (data.form) {
+                this.contentTarget.innerHTML = data.form
+                fetch(`https://world.openfoodfacts.org/api/v0/product/${decodedText}.json`, requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    // document.querySelector("#barcode-title").classList.add("d-none")
                     console.log(this.barcodeInputTarget)
                     console.log(result["product"]);
                     console.log(result["product"]["code"]);

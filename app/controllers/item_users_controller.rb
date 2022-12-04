@@ -4,13 +4,14 @@ class ItemUsersController < ApplicationController
   end
 
   def index
-    @useritems = ItemUser.all
+    # @useritems = ItemUser.where(user: current_user)
+    @useritems = ItemUser.select("DISTINCT ON(item_id) item_users.*").where(user: current_user)
     # items = @useritems.pluck(:item).uniq
     # @useritems = []
     # items.each do |item|
     #   @useritems << ItemUser.find_by(item:)
     # end
-    @items = Item.all
+    # @items = Item.all
     @user = current_user
   end
 
