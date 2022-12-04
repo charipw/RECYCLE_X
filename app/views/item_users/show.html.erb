@@ -54,8 +54,7 @@
                     <% packaging.rules.each do |rule| %>
                       <% if rule.borough_id == @user.borough_id %>
                         <% if rule.is_recycled == true%>
-                          <p>Category: <%= packaging.category %></p>
-                          <p>Type: <%= packaging.type %></p>
+                          <p> <%= "#{packaging.category} - #{packaging.type}" %></p>
                         <% end %>
                       <% end %>
                     <% end %>
