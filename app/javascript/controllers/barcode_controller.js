@@ -20,7 +20,6 @@ export default class extends Controller {
       "Polystyrene",
       "Mixed Plastic",
       "Other Plastic",
-      "Mixed Plastic",
       "HDPE",
       "LDPE",
       "PP",
