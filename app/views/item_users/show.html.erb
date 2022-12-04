@@ -9,11 +9,11 @@
               <h2><strong><%=@item.name%></strong></h2>
               <p class="small text-muted"><i class='fas fa-barcode text-center'></i> <%= @item.barcode %> </p>
               <div>
-                <%# <% if @item.photo.attached?%>
-                <%# <%= image_tag  cl_image_path @item.photo.key%>
-                <%# <% else %>
+                <% if @item.photo.attached?%>
+                <% image_tag  cl_image_path @item.photo.key %>
+                <% else %>
                 <%= image_tag asset_path('productdefault.png') %>
-                <%# <% end %>
+                <% end %>
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@
                     <% packaging.rules.each do |rule| %>
                       <% if rule.borough_id == @user.borough_id %>
                         <% if rule.is_recycled == true%>
-                          <p> <%= "#{packaging.category} - #{packaging.type}" %></p>
+                          <p> <%= "#{packaging.category} - #{packaging.type} (e.g: #{packaging.examples})" %></p>
                         <% end %>
                       <% end %>
                     <% end %>
