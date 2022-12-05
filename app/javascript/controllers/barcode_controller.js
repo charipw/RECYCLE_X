@@ -75,8 +75,10 @@ export default class extends Controller {
                       if((result["product"]["image_packaging_url"]) == undefined) {
                         // console.log("hello")
                       } else {
+                        // console.log("inside else")
                         this.imageUrlInputTarget.value = result["product"]["image_packaging_url"]
                       }
+
 
                       console.log(result["product"]["product_name"]);
                       if((result["product"]["product_name"]) == undefined) {

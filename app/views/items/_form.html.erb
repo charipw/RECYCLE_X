@@ -1,26 +1,26 @@
+<div class="container py-3">
 
 <%= simple_form_for item do |f| %>
+    <div class="container text-center">
+      <h4>This product does not exit on Recycle X yet!</h4>
+      <h4>We found some information about the product</h4>
+      <h4>Reviewing and/or filling the information is very valuable for us and the following users</h4>
+      <h4>Thank you for contributing to making recycling easier, and the planet better!</h4>
+    </div>
 
-<div>
+    <%= f.input :name, input_html: {data: {barcode_target: "nameInput"}}%>
+    <%= f.input :barcode, input_html: {data: {barcode_target: "barcodeInput"}}%>
+    <%= f.input :eco_score, input_html: {data: {barcode_target: "ecoscoreInput"}}%>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :image_url, input_html: {data: {barcode_target: "imageUrlInput"}} %>
 
-  <h2>This product does not exit on Recycle X yet!</h2>
-  <h2>We found some information about the product</h2>
-  <h2>Reviewing and/or filling the information is very valuable for us and the following users</h2>
-  <h2>Thank you for contributing to making recycling easier, and the planet better!</h2>
+    <div data-item-form-target="packagingWrapper">
+      <%= f.association :packagings, label_method: :name_of_method, input_html: {data: {barcode_target:"packagingTagsInput"}} %>
+    </div>
 
-  <%= f.input :name, input_html: {data: {barcode_target: "nameInput"}}%>
-  <%= f.input :barcode, input_html: {data: {barcode_target: "barcodeInput"}}%>
-  <%= f.input :eco_score, input_html: {data: {barcode_target: "ecoscoreInput"}}%>
-  <%= f.input :photo, as: :file %>
-  <%= text_field_tag 'image_url', '', input_html: {data: {barcode_target: "imageUrlInput"}} %>
-
-  <div data-item-form-target="packagingWrapper">
-    <%= f.association :packagings, label_method: :name_of_method, input_html: {data: {barcode_target:"packagingTagsInput"}} %>
-  </div>
-
-  <%= f.submit %>
-
-</div>
-<% end %>
+    <%= f.submit %>
+    <% end %>
   <%# <% barcode = data: {barcode_target: "packagingtagsInput"}%>
   <%#= barcode %>
+
+</div>
