@@ -30,18 +30,15 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new
-    @item.name = item_params[:name]
-    @item.barcode = item_params[:barcode]
-    @item.eco_score = item_params[:eco_score]
-    @item.save
-    puts item_params
-    item_params[:packaging_ids].each do |packaging_id|
-      # @packaging = Packaging.find_by(type)
-      # @packaging = Packaging.find_by(type: 'Unknown') if @packaging.empty
-      ItemPackaging.create(item: @item, packaging_id: packaging_id)
+    @item = Item.new(item_params)
+
+    if params[:image_url].present?
+      file = URI.open(params[:image_url])
+      @item.photo.attach(io: file, filename: "#{@item.name}.jpg", content_type: "image/jpg")
     end
-    puts item_params[:packagings]
+
+
+    @item.save
     @item_user = ItemUser.new
     @item_user.user = current_user
     @item_user.item = @item
@@ -52,7 +49,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :barcode, :eco_score, :photo, :packaging_ids => [])
+    params.require(:item).permit(:name, :barcode, :eco_score, :photo, packaging_ids: [])
   end
 
 end
