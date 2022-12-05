@@ -3,7 +3,7 @@ import { Html5QrcodeScanner} from "html5-qrcode";
 
 // Connects to data-controller="barcode"
 export default class extends Controller {
-  static targets = ["content", "barcodeInput", "nameInput", "ecoscoreInput", "packagingTagsInput", "newPackagingButton"]
+  static targets = ["content", "barcodeInput", "nameInput", "ecoscoreInput", "packagingTagsInput"]
   connect() {
 
     let lastResult, countResults = 0;
@@ -19,11 +19,10 @@ export default class extends Controller {
       "PVC",
       "Polystyrene",
       "Mixed Plastic",
-      "Other Plastic",
-      "Mixed Plastic",
-      "HDPE",
+      "Mixed Plastic Film",
+      "HDPE Film",
       "LDPE",
-      "PP",
+      "PP Film",
       "Glass",
       "Aluminium",
       "Foil",
@@ -33,7 +32,6 @@ export default class extends Controller {
       "Compostable",
       "Biodegradable",
       "Composite",
-      "Unknown",
       "PET"]
 
 
@@ -54,14 +52,15 @@ export default class extends Controller {
             };
             console.log(decodedText);
             fetch(`/items/find/${decodedText}`, {headers: {"Accept": "application/json"}})
-              .then(response => response.json())
-              .then((data) => {
-                console.log(data)
-                if (data.form) {
-                  this.contentTarget.innerHTML = data.form
-                  fetch(`https://world.openfoodfacts.org/api/v0/product/${decodedText}.json`, requestOptions)
-                  .then(response => response.json())
-                  .then(result => {
+            .then(response => response.json())
+            .then((data) => {
+              console.log(data)
+              if (data.form) {
+                this.contentTarget.innerHTML = data.form
+                fetch(`https://world.openfoodfacts.org/api/v0/product/${decodedText}.json`, requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    // document.querySelector("#barcode-title").classList.add("d-none")
                     console.log(this.barcodeInputTarget)
                     console.log(result["product"]);
                     console.log(result["product"]["code"]);
@@ -98,11 +97,7 @@ export default class extends Controller {
                               this.packagingTagsInputTargets[this.packagingTagsInputTargets.length - 1].selectedIndex = index
                             }
                           })
-
-
-
-
-                          this.newPackagingButtonTarget.click();
+;
                         })
                       }
                       console.log(result["product"]["ecoscore_grade"]);
@@ -113,7 +108,10 @@ export default class extends Controller {
                       }
                     })
                 } else {
-                  this.contentTarget.innerHTML = data.show
+                  // this.contentTarget.innerHTML = data.show
+                  console.log(data)
+                  window.location.replace(`/my_products/${data.id}`);
+
                 }
 
               })

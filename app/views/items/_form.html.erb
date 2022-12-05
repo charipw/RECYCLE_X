@@ -1,15 +1,25 @@
 
 <%= simple_form_for item do |f| %>
+
 <div data-controller="item-form">
+
+  <h2>This product does not exit on Recycle X yet!</h2>
+  <h2>We found some information about the product</h2>
+  <h2>Reviewing and/or filling the information is very valuable for us and the following users</h2>
+  <h2>Thank you for contributing to making recycling easier, and the planet better!</h2>
+
   <%= f.input :name, input_html: {data: {barcode_target: "nameInput"}}%>
- <%= f.input :barcode, input_html: {data: {barcode_target: "barcodeInput"}}%>
+  <%= f.input :barcode, input_html: {data: {barcode_target: "barcodeInput"}}%>
   <%= f.input :eco_score, input_html: {data: {barcode_target: "ecoscoreInput"}}%>
   <%= f.input :photo, as: :file %>
+
   <div data-item-form-target="packagingWrapper">
     <%= f.association :packagings, label_method: :name_of_method, wrapper_html: {data: {item_form_target: "packagingForm" }}, input_html: {data: {barcode_target:"packagingTagsInput"}} %>
   </div>
-  <button data-item-form-target="packagingButton" data-barcode-target="newPackagingButton" data-action="click->item-form#addForm">Add Packaging</button>
+
+  <%# <button data-item-form-target="packagingButton" data-barcode-target="newPackagingButton" data-action="click->item-form#addForm">Add Packaging</button> %>
   <%= f.submit %>
+
 </div>
 <% end %>
   <%# <% barcode = data: {barcode_target: "packagingtagsInput"}%>

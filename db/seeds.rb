@@ -27,27 +27,25 @@ puts "Destroying Item Packagings"
 
 Packaging.create(
   [
-    {category: "Rigid plastic", type: "PET"},
-    {category: "Rigid plastic", type: "HDPE"},
-    {category: "Rigid plastic", type: "PP"},
-    {category: "Rigid plastic", type: "PVC"},
-    {category: "Rigid plastic", type: "Polystyrene"},
-    {category: "Rigid plastic", type: "Mixed Plastic"},
-    {category: "Rigid plastic", type: "Other Plastic"},
-    {category: "Plastic film", type: "Mixed Plastic"},
-    {category: "Plastic film", type: "HDPE"},
-    {category: "Plastic film", type: "LDPE"},
-    {category: "Plastic film", type: "PP"},
-    {category: "Glass", type: "Glass"},
-    {category: "Metals", type: "Aluminium"},
-    {category: "Metals", type: "Foil"},
-    {category: "Metals", type: "Steel"},
-    {category: "Paper", type: "Paper"},
-    {category: "Paper", type: "Card"},
-    {category: "Biodegradable", type: "Compostable"},
-    {category: "Biodegradable", type: "Biodegradable"},
-    {category: "Other", type: "Composite"},
-    {category: "Other", type: "Unknown"},
+    {category: "Rigid plastic", type: "PET", examples: "Drinks bottles. Clear trays. Sauce bottles"},
+    {category: "Rigid plastic", type: "HDPE", examples: "Milk bottles, bleach, cleaners, shampoo bottles"},
+    {category: "Rigid plastic", type: "PP", examples: "Plastic lids, margarine tubs, microwable meal trays"},
+    {category: "Rigid plastic", type: "PVC", examples: "Pipes, fittings, window and door frames"},
+    {category: "Rigid plastic", type: "Polystyrene", examples: "Foam packaging, meat trays, takeaway food containers"},
+    {category: "Rigid plastic", type: "Mixed Plastic", examples: "Pouches for baby food, pet food, detergent or cleaning. Cheese packaging"},
+    {category: "Plastic film", type: "Mixed Plastic Film", examples: "Crisp and sweet packets, pouches and plastic foils. Cheese wrappers"},
+    {category: "Plastic film", type: "HDPE Film", examples: "Cereal box boags and reusable carrier bags"},
+    {category: "Plastic film", type: "LDPE", examples: "Carrier bags, salad bags, bread bags, food bags, packaging films"},
+    {category: "Plastic film", type: "PP Film", examples: "Film lids from trays, salad bags, film seals on tubs"},
+    {category: "Glass", type: "Glass", examples: "Beer and wine bottles, jars, oil bottles"},
+    {category: "Metals", type: "Aluminium", examples: "Fizzy drinks cans, tin foil"},
+    {category: "Metals", type: "Foil", examples: "Kitchen foil, foil trays and bottle toppers"},
+    {category: "Metals", type: "Steel", examples: "Tins of sardines, soups, tuna"},
+    {category: "Paper", type: "Paper", examples: "Letters, envelopes, documents, pulped paper egg cartons"},
+    {category: "Paper", type: "Card", examples: "Careal boxes, loo roll tubes, delivery boxes"},
+    {category: "Biodegradable", type: "Compostable", examples: "Plant based compostable packaging"},
+    {category: "Biodegradable", type: "Biodegradable", examples: "Material that will break down naturally"},
+    {category: "Other", type: "Composite", examples: "Juice and milk cartons"},
   ]
 )
 puts "Packagings created"
@@ -70,11 +68,6 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   Rule.create!( borough: b, packaging: packaging, is_recycled: row["Recycled"] == "N" ? false : true)
 end
 
-# Borough.all.each do |borough|
-#   Packaging.all.each do |package|
-#     Rule.create!( borough: borough, packaging: package )
-#   end
-# end
 
 puts "Rules created"
 

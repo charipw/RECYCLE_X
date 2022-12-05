@@ -4,9 +4,8 @@
 <h1>Your Product History</h1>
 <br>
   <% @useritems.each do |item|%>
-    <%i = Item.find_by id: item.item_id  %>
-      <% if item.user_id == @user.id %>
-       <%=link_to product_path(i), class: "text-decoration-none" do %>
+    <%i = Item.find_by id: item.item_id %>
+       <%=link_to product_path(item.id), class: "text-decoration-none" do %>
         <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
           <div class="bg-white rounded shadow h-100">
             <div class="p-3 rounded-bottom d-flex flex-column">
@@ -16,7 +15,6 @@
             </div>
           </div>
         </div>
-        <% end %>
       <% end %>
      <% end %>
   </div>
