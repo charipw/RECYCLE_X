@@ -10,9 +10,9 @@
               <p class="small text-muted"><i class='fas fa-barcode text-center'></i> <%= @item.barcode %> </p>
               <div>
                 <% if @item.photo.attached?%>
-                <% image_tag  cl_image_path @item.photo.key %>
+                  <%= cl_image_tag @item.photo.key %>
                 <% else %>
-                <%= image_tag asset_path('productdefault.png') %>
+                  <%= image_tag asset_path('productdefault.png') %>
                 <% end %>
               </div>
             </div>

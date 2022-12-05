@@ -43,56 +43,57 @@ export default class extends Controller {
             ++countResults;
             lastResult = decodedText;
             // Handle on success condition with the decoded message.
-            console.log(`Scan result ${decodedText}`, decodedResult);
+            // console.log(`Scan result ${decodedText}`, decodedResult);
             html5QrcodeScanner.clear();
 
             const requestOptions = {
               method: 'GET',
               redirect: 'follow'
             };
-            console.log(decodedText);
+            // console.log(decodedText);
             fetch(`/items/find/${decodedText}`, {headers: {"Accept": "application/json"}})
             .then(response => response.json())
             .then((data) => {
-              console.log(data)
+              // console.log(data)
               if (data.form) {
                 this.contentTarget.innerHTML = data.form
                 fetch(`https://world.openfoodfacts.org/api/v0/product/${decodedText}.json`, requestOptions)
                 .then(response => response.json())
                 .then(result => {
+                    console.log(`result["product"]`, result["product"])
                     // document.querySelector("#barcode-title").classList.add("d-none")
-                    console.log(this.barcodeInputTarget)
-                    console.log(result["product"]);
-                    console.log(result["product"]["code"]);
+                    // console.log(this.barcodeInputTarget)
+                    // console.log(result["product"]);
+                    // console.log(result["product"]["code"]);
                       if((result["product"]["code"]) == undefined) {
-                        console.log("hello")
+                        // console.log("hello")
                       } else {
                         this.barcodeInputTarget.value = result["product"]["code"]
                       }
 
                       console.log(result["product"]["product_name"]);
                       if((result["product"]["product_name"]) == undefined) {
-                        console.log("hello")
+                        // console.log("hello")
                       } else {
                         this.nameInputTarget.value = result["product"]["product_name"]
                       }
                       console.log(result["product"]["packaging"]);
                       if((result["product"]["packaging"]) == undefined) {
-                        console.log("hello")
+                        // console.log("hello")
                       }
                       console.log(result["product"]["packaging_tags"]);
                       if((result["product"]["packaging_tags"]) == undefined) {
-                        console.log("hello")
+                        // console.log("hello")
                       } else {
                       //   this.packagingtagsInputTarget.value =
                         const packagingTypesFound = this.findPackagings(result["product"]["packaging_tags"], arrayTypes);
                         // console.log(array_categories.categories_type.find(el => el === result["product"]["packaging_tags"]))
                         packagingTypesFound.forEach((type) => {
-                          console.log(this.packagingTagsInputTargets)
-                          console.log(this.packagingTagsInputTargets[this.packagingTagsInputTargets.length - 1].options)
+                          // console.log(this.packagingTagsInputTargets)
+                          // console.log(this.packagingTagsInputTargets[this.packagingTagsInputTargets.length - 1].options)
                           Array.from(this.packagingTagsInputTargets[this.packagingTagsInputTargets.length - 1].options).forEach((option,index)=> {
-                            console.log(option.innerText)
-                            console.log(type)
+                            // console.log(option.innerText)
+                            // console.log(type)
                             if (option.innerText.endsWith(type)) {
                               this.packagingTagsInputTargets[this.packagingTagsInputTargets.length - 1].selectedIndex = index
                             }
@@ -100,16 +101,16 @@ export default class extends Controller {
 ;
                         })
                       }
-                      console.log(result["product"]["ecoscore_grade"]);
+                      // console.log(result["product"]["ecoscore_grade"]);
                       if((result["product"]["ecoscore_grade"]) == undefined) {
-                        console.log("hello")
+                        // console.log("hello")
                       }else{
                         this.ecoscoreInputTarget.value = result["product"]["ecoscore_grade"]
                       }
                     })
                 } else {
                   // this.contentTarget.innerHTML = data.show
-                  console.log(data)
+                  // console.log(data)
                   window.location.replace(`/my_products/${data.id}`);
 
                 }
@@ -131,9 +132,11 @@ export default class extends Controller {
           });
         }
     }
+
     const html5QrcodeScanner = new Html5QrcodeScanner(
       "qr-reader", { fps: 10, qrbox: 250 });
 
+      console.log("rendering scanner")
       html5QrcodeScanner.render(onScanSuccess);
 
       setTimeout(() => {
@@ -151,14 +154,14 @@ export default class extends Controller {
     findPackagings(apiArray, arrayTypes) {
       let foundTypes = []
       apiArray.forEach((apiString) => {
-        console.log(apiString)
+        // console.log(apiString)
         const cleanedString = apiString.split(":")[apiString.split(":").length - 1]
-        console.log(cleanedString)
+        // console.log(cleanedString)
         let cleanedStringFound = false
         arrayTypes.forEach((type) => {
-          console.log(`${type} and ${cleanedString}`)
+          // console.log(`${type} and ${cleanedString}`)
           if (cleanedStringFound == false && type.toLowerCase() === cleanedString.toLowerCase() && foundTypes.indexOf(type) === -1 ) {
-            console.log(`found it`)
+            // console.log(`found it`)
             foundTypes.push(type);
             cleanedStringFound = true;
           }
@@ -178,7 +181,7 @@ export default class extends Controller {
           })
         }
       })
-      console.log(foundTypes)
+      // console.log(foundTypes)
       return foundTypes
     }
 
