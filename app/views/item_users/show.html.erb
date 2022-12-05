@@ -5,14 +5,14 @@
       <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
         <div class="card shadow h-100" style="border-radius: 15px;">
           <div class="card-body pb-3">
-            <div class="text-center">
+            <div class="text-center  ">
               <h2><strong><%=@item.name%></strong></h2>
               <p class="small text-muted"><i class='fas fa-barcode text-center'></i> <%= @item.barcode %> </p>
               <div>
                 <% if @item.photo.attached?%>
-                <% image_tag  cl_image_path @item.photo.key %>
+                  <%= cl_image_tag @item.photo.key, class:"img-fluid" %>
                 <% else %>
-                <%= image_tag asset_path('productdefault.png') %>
+                  <%= image_tag asset_path('productdefault.png'), class:"img-fluid"  %>
                 <% end %>
               </div>
             </div>
@@ -20,31 +20,36 @@
         </div>
       </div>
     </div>
+
     <div class="row justify-content-center">
       <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
         <div class="card shadow h-100" style="border-radius: 15px;">
-          <div class="card-body pb-0">
+          <div class="card-body pb-2">
             <h4 class="text-center">Ecoscore: <%=@item.eco_score %></h4>
                 <div class="text-center">
-                  <% if @item.eco_score == "A" || "a" %>
+                  <% if @item.eco_score == "A" || @item.eco_score == "a" %>
                     <% 5.times do %>
                       <i class="fa-solid fa-leaf" style="color:green"></i>
                     <% end %>
-                  <% elsif @item.eco_score == "B" || "b" %>
+                  <% elsif @item.eco_score == "B" || @item.eco_score == "b" %>
                     <% 4.times do %>
                       <i class="fa-solid fa-leaf" style="color:green"></i>
                     <% end  %>
-                  <% elsif @item.eco_score == "C" ||"c" %>
+                  <% elsif @item.eco_score == "C" ||@item.eco_score == "c" %>
                     <% 3.times do %>
                       <i class="fa-solid fa-leaf" style="color:green"></i>
                     <% end  %>
-                  <% elsif @item.eco_score == "D" || "d" %>
+                  <% elsif @item.eco_score == "D" || @item.eco_score == "d" %>
                     <% 2.times do %>
                       <i class="fa-solid fa-leaf" style="color:green"></i>
                     <% end  %>
-                  <% elsif @item.eco_score == "E" || "e" %>
+                  <% elsif @item.eco_score == "E" || @item.eco_score == "e" %>
+                    <% 1.time do %>
                       <i class="fa-solid fa-leaf" style="color:green"></i>
-                  <% end  %></p>
+                    <% end  %>
+                  <% else %>
+                      <i>Not available</i>
+                  <% end  %>
                 </div>
           </div>
         </div>
@@ -76,24 +81,21 @@
       <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
         <div class="card shadow h-100" style="border-radius: 15px;">
           <div class="card-body pb-0">
-            <div class="d-flex justify-content-between">
               <div>
                 <h3 class="text-dark"><strong> <i class="fa-solid fa-trash"> </i> General Waste </strong></h3>
-
                   <% @item.packagings.each do |packaging|%>
                     <% packaging.rules.each do |rule| %>
                       <% if rule.borough_id == @user.borough_id %>
                         <% if rule.is_recycled == false %>
                           <p>Category: <%= packaging.category %></p>
                           <p>Type: <%= packaging.type %></p>
-                          <%# <% else %>
-                            <%# <%= "In #{@user.borough.name}, #{@item.name} can be 100% recycled! " %>
+                          <% else %>
+                            <%= "Great news, no general waste! In #{@user.borough.name}, #{@item.name} can be 100% recycled! " %>
                         <% end %>
                       <% end %>
                     <% end %><br>
                   <% end %>
               </div><br>
-            </div>
           </div>
         </div>
       </div>

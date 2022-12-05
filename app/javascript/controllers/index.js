@@ -9,3 +9,4 @@ application.register("barcode", BarcodeController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
