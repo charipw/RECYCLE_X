@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
         ## Show the form for a new item
         @item = Item.new
         format.json # Follow the classic Rails flow and look for a create.json view
-        format.html {render :show }
+        format.html { render :show }
       else
         # Item here is from the database
         # format.json  # Follow the classic Rails flow and look for a create.json view
@@ -31,14 +31,12 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-
-    if params[:image_url].present?
-      file = URI.open(params[:image_url])
+    if @item.image_url.present?
+      file = URI.open(@item.image_url)
       @item.photo.attach(io: file, filename: "#{@item.name}.jpg", content_type: "image/jpg")
     end
-
-
     @item.save
+
     @item_user = ItemUser.new
     @item_user.user = current_user
     @item_user.item = @item
@@ -49,7 +47,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :barcode, :eco_score, :photo, packaging_ids: [])
+    params.require(:item).permit(:name, :barcode, :eco_score, :photo, :image_url, packaging_ids: [])
   end
 
 end
