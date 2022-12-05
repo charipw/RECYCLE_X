@@ -1,12 +1,8 @@
-<body>
-    <div data-controller="barcode">
-  <h1 style="margin-top: 50px;" id="barcode-title"><b style="margin-left: 80px;">Scan Your Product</b></h1>
-      <div id="qr-reader" style="width:390px;margin-top: 90px;"></div>
-      <div id="qr-reader-results"></div>
-
-      <div data-barcode-target="content"></div>
-
-    <script type="json/javascript" src="barcode_controller.js"></script>
+<div data-controller="barcode">
+  <div data-barcode-target="scanner">
+    <h1 style="margin-top: 15%;" id="barcode-title"><b style="margin-left: 20%;">Scan Your Product</b></h1>
+    <div id="qr-reader" style="width:100%;margin-top:20%;"></div>
+    <div id="qr-reader-results"></div>
   </div>
+  <div data-barcode-target="content"></div>
 </div>
-</body>

@@ -3,9 +3,9 @@ import { Html5QrcodeScanner} from "html5-qrcode";
 
 // Connects to data-controller="barcode"
 export default class extends Controller {
-  static targets = ["content", "barcodeInput", "nameInput", "ecoscoreInput", "packagingTagsInput"]
+  static targets = ["content", "barcodeInput", "nameInput", "ecoscoreInput", "packagingTagsInput", "scanner"]
   connect() {
-
+    console.log('connecting barcode cont')
     let lastResult, countResults = 0;
     const arrayCategories = [
         "Rigid plastic", "Plastic film", "metal" , "glass", "Biodegradable", "Paper"
@@ -55,6 +55,7 @@ export default class extends Controller {
             .then(response => response.json())
             .then((data) => {
               console.log(data)
+              this.scannerTarget.classList.add("d-none")
               if (data.form) {
                 this.contentTarget.innerHTML = data.form
                 fetch(`https://world.openfoodfacts.org/api/v0/product/${decodedText}.json`, requestOptions)
@@ -132,23 +133,24 @@ export default class extends Controller {
         }
     }
     const html5QrcodeScanner = new Html5QrcodeScanner(
-      "qr-reader", { fps: 10, qrbox: 250 });
+      "qr-reader", { fps: 10, qrbox: { width: 250, height: 250} });
 
+      console.log('renderingscanner')
       html5QrcodeScanner.render(onScanSuccess);
 
-      setTimeout(() => {
-        const startBtn = document.getElementById("html5-qrcode-button-camera-start");
-        const stopBtn = document.getElementById("html5-qrcode-button-camera-stop");
-        startBtn.style.color = 'red'
-        stopBtn.style.color = 'red'
-        startBtn.style.backgroundColor = '#ABD699'
-        stopBtn.style.backgroundColor = '#ABD699'
-      }, 2000);
-    }
+      // setTimeout(() => {
+      //   const startBtn = document.getElementById("html5-qrcode-button-camera-start");
+      //   const stopBtn = document.getElementById("html5-qrcode-button-camera-stop");
+      //   startBtn.style.color = 'red'
+      //   stopBtn.style.color = 'red'
+      //   startBtn.style.backgroundColor = '#ABD699'
+      //   stopBtn.style.backgroundColor = '#ABD699'
+      // }, 2000);
+  }
 
 
 
-    findPackagings(apiArray, arrayTypes) {
+  findPackagings(apiArray, arrayTypes) {
       let foundTypes = []
       apiArray.forEach((apiString) => {
         console.log(apiString)
@@ -180,6 +182,15 @@ export default class extends Controller {
       })
       console.log(foundTypes)
       return foundTypes
-    }
-
   }
+
+  disconnect() {
+    Html5QrcodeScanner.stop().then((ignore) => {
+      // QR Code scanning is stopped.
+      console.log('stopping scanner')
+    }).catch((err) => {
+      // Stop failed, handle it.
+      console.log(err)
+    });
+  }
+}
