@@ -31,12 +31,12 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if params[:image_url].present?
-      file = URI.open(params[:image_url])
+    if @item.image_url.present?
+      file = URI.open(@item.image_url)
       @item.photo.attach(io: file, filename: "#{@item.name}.jpg", content_type: "image/jpg")
     end
-
     @item.save
+
     @item_user = ItemUser.new
     @item_user.user = current_user
     @item_user.item = @item

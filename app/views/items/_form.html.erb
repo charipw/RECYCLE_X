@@ -10,7 +10,7 @@
 
     <%= f.input :name, input_html: {data: {barcode_target: "nameInput"}}%>
     <%= f.input :barcode, input_html: {data: {barcode_target: "barcodeInput"}}%>
-    <%= f.input :eco_score, input_html: {data: {barcode_target: "ecoscoreInput"}}%>
+    <%= f.input :eco_score, input_html: {data: {barcode_target: "ecoscoreInput"}}, disabled: true %>
     <%= f.input :photo, as: :file %>
     <%= f.input :image_url, input_html: {data: {barcode_target: "imageUrlInput"}} %>
 
@@ -20,7 +20,5 @@
 
     <%= f.submit %>
     <% end %>
-  <%# <% barcode = data: {barcode_target: "packagingtagsInput"}%>
-  <%#= barcode %>
 
 </div>
