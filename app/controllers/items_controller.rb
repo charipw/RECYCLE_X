@@ -34,10 +34,9 @@ class ItemsController < ApplicationController
 
     if params[:image_url].present?
       file = URI.open(params[:image_url])
-      item.photo.attach(io: file, filename: "#{@item.name}.jpg", content_type: "image/jpg")
+      @item.photo.attach(io: file, filename: "#{@item.name}.jpg", content_type: "image/jpg")
     end
-    # if there is a url in the image_url param
-    #
+
 
     @item.save
     @item_user = ItemUser.new

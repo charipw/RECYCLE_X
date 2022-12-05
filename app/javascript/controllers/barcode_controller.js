@@ -3,12 +3,12 @@ import { Html5QrcodeScanner} from "html5-qrcode";
 
 // Connects to data-controller="barcode"
 export default class extends Controller {
-  static targets = ["content", "barcodeInput", "nameInput", "ecoscoreInput", "packagingTagsInput"]
+  static targets = ["content", "barcodeInput", "nameInput", "ecoscoreInput", "packagingTagsInput", "imageUrlInput"]
   connect() {
 
     let lastResult, countResults = 0;
     const arrayCategories = [
-        "Rigid plastic", "Plastic film", "metal" , "glass", "Biodegradable", "Paper"
+        "Rigid plastic", "Plastic film", "Metal" , "Glass", "Biodegradable", "Paper"
       ]
 
 
@@ -69,6 +69,13 @@ export default class extends Controller {
                         // console.log("hello")
                       } else {
                         this.barcodeInputTarget.value = result["product"]["code"]
+                      }
+
+                      console.log(result["product"]["image_packaging_url"]);
+                      if((result["product"]["image_packaging_url"]) == undefined) {
+                        // console.log("hello")
+                      } else {
+                        this.imageUrlInputTarget.value = result["product"]["image_packaging_url"]
                       }
 
                       console.log(result["product"]["product_name"]);
