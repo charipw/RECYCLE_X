@@ -8,11 +8,11 @@
             <div class="text-center  ">
               <h2><strong><%=@item.name%></strong></h2>
               <p class="small text-muted"><i class='fas fa-barcode text-center'></i> <%= @item.barcode %> </p>
-              <div class="img-fluid" >
+              <div>
                 <% if @item.photo.attached?%>
-                  <%= cl_image_tag @item.photo.key %>
+                  <%= cl_image_tag @item.photo.key, class:"img-fluid" %>
                 <% else %>
-                  <%= image_tag asset_path('productdefault.png') %>
+                  <%= image_tag asset_path('productdefault.png'), class:"img-fluid"  %>
                 <% end %>
               </div>
             </div>
@@ -48,7 +48,7 @@
                       <i class="fa-solid fa-leaf" style="color:green"></i>
                     <% end  %>
                   <% else %>
-                      <i>No ecoscore available</i>
+                      <i>Not available</i>
                   <% end  %>
                 </div>
           </div>
