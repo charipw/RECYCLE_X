@@ -104,4 +104,7 @@ ItemUser.create(user_id: user_3.id, item_id: item_6.id)
 puts "Items Users created"
 
 ItemPackaging.create(packaging: Packaging.second, item_id: item_6.id)
+ItemPackaging.create(packaging: Packaging.third, item_id: item_1.id)
+ItemPackaging.create(packaging: Packaging.second, item_id: item_2.id)
+ItemPackaging.create(packaging: Packaging.last, item_id: item_3.id)
 puts "Item Packaging created"

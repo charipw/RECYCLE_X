@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :packagings
   # resources :users, only: %i[show]
   get '/profile', to: 'users#show'
+  get '/stats', to: 'users#stats'
   get 'scan', to: 'item_users#new'
   get 'barcode', to: 'item_users#barcode', as: :barcode
 

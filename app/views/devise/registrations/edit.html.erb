@@ -53,9 +53,7 @@
             </div>
                <% end %>
             <hr>
-
             <div>
-
               <%= link_to "Back ", :back, class:"btn btn-outline-dark btn-rounded btn-sm"%>
               <% if user_signed_in? %>
                 <%= link_to "Cancel account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete,  class:"btn btn-outline-dark btn-rounded btn-sm"%>
