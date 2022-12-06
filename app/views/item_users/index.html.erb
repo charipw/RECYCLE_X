@@ -1,6 +1,8 @@
 <h1 class="fw-bold pl-3 pt-3 pb-3 m-3 ">Product history</h1>
 
 
+
+
   <% @useritems.each do |item|%>
     <%i = Item.find_by id: item.item_id %>
        <%=link_to product_path(item.id), class: "text-decoration-none" do %>
