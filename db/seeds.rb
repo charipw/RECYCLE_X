@@ -15,12 +15,13 @@ Rule.destroy_all
 puts "Destroying Rules"
 Borough.destroy_all
 puts "Destroying Boroughs"
+ItemPackaging.destroy_all
+puts "Destroying Item Packagings"
 Packaging.destroy_all
 puts "Destroying Packagings"
 ItemUser.destroy_all
 puts "Destroying Item User"
-ItemPackaging.destroy_all
-puts "Destroying Item Packagings"
+
 
 
 
