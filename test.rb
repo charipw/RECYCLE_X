@@ -114,8 +114,6 @@ p "results: #{results.count}"
 # unless pa.name.match(/\w{2}:/) || pa.name.match(/.*\d\.*/) . 672 results
 # unless pa.name.match(/^"\w{1}"/)  681 results
 
-#if pa.name.length = 1
-  #rest << pa.name
-#end
+
 
 #/"[a-zA-Z]+(-)*[a-zA-Z]+(-)*[a-zA-Z]*(-)*[a-zA-Z]*(-)*[a-zA-Z]*"/
