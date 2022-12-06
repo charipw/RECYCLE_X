@@ -146,9 +146,9 @@ export default class extends Controller {
     }
 
     const html5QrcodeScanner = new Html5QrcodeScanner(
-      "qr-reader", { fps: 10, qrbox: { width: 250, height: 250} });
+      "qr-reader", { fps: 10, qrbox: { width: 250, height: 250, border: 'none'} });
 
-      console.log("rendering scanner")
+      console.log("styling div")
 
       html5QrcodeScanner.render(onScanSuccess);
 
@@ -156,9 +156,11 @@ export default class extends Controller {
         const startBtn = document.getElementById("html5-qrcode-button-camera-start");
         const stopBtn = document.getElementById("html5-qrcode-button-camera-stop");
         const qrRegion = document.getElementById("qr-shaded-region")
+        const qrDiv = document.getElementById("qr-reader")
         startBtn.style.color = 'red'
         stopBtn.style.color = 'red'
         qrRegion.style.color = 'red'
+        qrDiv.style.border = 'none'
         startBtn.style.backgroundColor = '#ABD699'
         stopBtn.style.backgroundColor = '#ABD699'
       }, 2000);
