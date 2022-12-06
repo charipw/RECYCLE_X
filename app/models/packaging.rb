@@ -3,7 +3,7 @@ class Packaging < ApplicationRecord
   self.inheritance_column = :_type_disabled
 
   def packaging_label
-    "#{category} - #{type}  <hint class=\"custom-tooltip\" data-content=\"#{examples}\"><i class=\"fa-solid fa-circle-info\"></i></hint>".html_safe
+    "#{category} - #{type}<hint  style=\"margin-left: 1vh\"class=\"custom-tooltip\" data-content=\"#{examples}\"><i class=\"fa-solid fa-circle-info\"></i></hint>".html_safe
   end
 
   # include PgSearch::Model
