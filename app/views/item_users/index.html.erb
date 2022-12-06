@@ -1,7 +1,5 @@
+<h1 class="fw-bold pl-3 pt-3 pb-3 ">Product history</h1>
 
-<div class="container pt-2">
-
-<h1 class="fw-bold pt-3 pb-3">Product history</h1>
 
   <% @useritems.each do |item|%>
     <%i = Item.find_by id: item.item_id %>
@@ -13,14 +11,15 @@
                 <% else %>
                   <%= image_tag asset_path('productdefault.png'), class:"img-fluid"  %>
                 <% end %>
-              <h2><%= i.name %></h2>
+              <div class="card-product-infos">
+                <h2><%= i.name %></h2>
+                <p><%= i.created_at.strftime("%B %d, %Y") %></p>
+              </div>
             </div>
-            <i class="fa-duotone fa-arrow-right"></i>
-              <div class="d-flex align-items-end justify-content-between pt-4">
+              <%# <div class="d-flex align-items-end justify-content-between pt-4"> %>
             </div>
           </div>
         </div>
       <% end %>
      <% end %>
   </div>
-<hr class="my-5">
