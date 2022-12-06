@@ -152,14 +152,16 @@ export default class extends Controller {
 
       html5QrcodeScanner.render(onScanSuccess);
 
-      // setTimeout(() => {
-      //   const startBtn = document.getElementById("html5-qrcode-button-camera-start");
-      //   const stopBtn = document.getElementById("html5-qrcode-button-camera-stop");
-      //   startBtn.style.color = 'red'
-      //   stopBtn.style.color = 'red'
-      //   startBtn.style.backgroundColor = '#ABD699'
-      //   stopBtn.style.backgroundColor = '#ABD699'
-      // }, 2000);
+      setTimeout(() => {
+        const startBtn = document.getElementById("html5-qrcode-button-camera-start");
+        const stopBtn = document.getElementById("html5-qrcode-button-camera-stop");
+        const qrRegion = document.getElementById("qr-shaded-region")
+        startBtn.style.color = 'red'
+        stopBtn.style.color = 'red'
+        qrRegion.style.color = 'red'
+        startBtn.style.backgroundColor = '#ABD699'
+        stopBtn.style.backgroundColor = '#ABD699'
+      }, 2000);
   }
 
 
