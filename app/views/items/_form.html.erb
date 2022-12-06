@@ -14,9 +14,15 @@
     <%= f.input :photo, as: :file %>
     <%= f.input :image_url, input_html: {data: {barcode_target: "imageUrlInput"}}, disabled: true %>
 
-    <div data-item-form-target="packagingWrapper" >
-        <%= f.association :packagings, label_method: :name_of_method, input_html: {data: {barcode_target:"packagingTagsInput"}} %>
+    <div data-item-form-target="packagingWrapper">
+      <%= f.association :packagings, as: :check_boxes, label_method: :name_of_method, input_html: {data: {barcode_target:"packagingTagsInput"}} %>
     </div>
+
+    <%# <%= f.collection_check_boxes(
+    :options, [[true, 'Yes'] ,[false, 'No']], :first, :last
+    ) do |b|
+    b.label { b.check_box + b.text } %>
+    <%# <% end %>
 
     <%= f.submit %>
     <% end %>

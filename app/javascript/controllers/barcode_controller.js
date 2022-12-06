@@ -56,7 +56,7 @@ export default class extends Controller {
             .then(response => response.json())
             .then((data) => {
 
-              console.log(data)
+              // console.log(data)
               this.scannerTarget.classList.add("d-none")
 
               if (data.form) {
@@ -64,7 +64,7 @@ export default class extends Controller {
                 fetch(`https://world.openfoodfacts.org/api/v0/product/${decodedText}.json`, requestOptions)
                 .then(response => response.json())
                 .then(result => {
-                    console.log(`result["product"]`, result["product"])
+                    // console.log(`result["product"]`, result["product"])
                     // document.querySelector("#barcode-title").classList.add("d-none")
                     // console.log(this.barcodeInputTarget)
                     // console.log(result["product"]);
@@ -75,7 +75,7 @@ export default class extends Controller {
                         this.barcodeInputTarget.value = result["product"]["code"]
                       }
 
-                      console.log(result["product"]["image_packaging_url"]);
+                      // console.log(result["product"]["image_packaging_url"]);
                       if((result["product"]["image_packaging_url"]) == undefined) {
                         // console.log("hello")
                       } else {
@@ -84,34 +84,33 @@ export default class extends Controller {
                       }
 
 
-                      console.log(result["product"]["product_name"]);
+                      // console.log(result["product"]["product_name"]);
                       if((result["product"]["product_name"]) == undefined) {
                         // console.log("hello")
                       } else {
                         this.nameInputTarget.value = result["product"]["product_name"]
                       }
-                      console.log(result["product"]["packaging"]);
+                      // console.log(result["product"]["packaging"]);
                       if((result["product"]["packaging"]) == undefined) {
                         // console.log("hello")
                       }
-                      console.log(result["product"]["packaging_tags"]);
+                      // console.log(result["product"]["packaging_tags"]);
                       if((result["product"]["packaging_tags"]) == undefined) {
                         // console.log("hello")
                       } else {
                       //   this.packagingtagsInputTarget.value =
                         const packagingTypesFound = this.findPackagings(result["product"]["packaging_tags"], arrayTypes);
                         // console.log(array_categories.categories_type.find(el => el === result["product"]["packaging_tags"]))
+                        console.log("input", this.packagingTagsInputTargets)
                         packagingTypesFound.forEach((type) => {
-                          // console.log(this.packagingTagsInputTargets)
+                          console.log(type)
                           // console.log(this.packagingTagsInputTargets[this.packagingTagsInputTargets.length - 1].options)
-                          Array.from(this.packagingTagsInputTargets[this.packagingTagsInputTargets.length - 1].options).forEach((option,index)=> {
-                            // console.log(option.innerText)
-                            // console.log(type)
-                            if (option.innerText.endsWith(type)) {
-                              this.packagingTagsInputTargets[this.packagingTagsInputTargets.length - 1].selectedIndex = index
+                          this.packagingTagsInputTargets.forEach((packagingInput, index) => {
+                            console.log(packagingInput.parentElement);
+                            if (packagingInput.parentElement.querySelector("label").innerText.toLowerCase().endsWith(type.toLowerCase())) {
+                              packagingInput.checked = true;
                             }
                           })
-;
                         })
                       }
                       // console.log(result["product"]["ecoscore_grade"]);
