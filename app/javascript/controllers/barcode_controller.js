@@ -106,8 +106,9 @@ export default class extends Controller {
                           console.log(type)
                           // console.log(this.packagingTagsInputTargets[this.packagingTagsInputTargets.length - 1].options)
                           this.packagingTagsInputTargets.forEach((packagingInput, index) => {
-                            console.log(packagingInput.parentElement);
-                            if (packagingInput.parentElement.querySelector("label").innerText.toLowerCase().endsWith(type.toLowerCase())) {
+                            console.log(packagingInput.parentElement.querySelector("label").innerText);
+                            console.log(packagingInput.parentElement.querySelector("label").innerText.replace(packagingInput.parentElement.querySelector("label").querySelector("hint").innerText, ""))
+                            if (packagingInput.parentElement.querySelector("label").innerText.replace(packagingInput.parentElement.querySelector("label").querySelector("hint").innerText, "").toLowerCase().endsWith(type.toLowerCase())) {
                               packagingInput.checked = true;
                             }
                           })
