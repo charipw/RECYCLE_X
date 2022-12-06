@@ -1,0 +1,67 @@
+
+<section style="background-color: #eee;">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+        <div class="card shadow h-100" style="border-radius: 15px;">
+          <div class="card-body pb-0">
+            <div class="text-center">
+            <p class="small "><i class="fa-solid fa-award"></i> Congrats, you have properly disposed of </p>
+            <h4><strong><%= @user.item_users.count%> Items</strong></h4>
+             <hr>
+             <%recycled = []%>
+             <%waste = []%>
+            <% @user.item_users.each do |item|
+                item.item.packagings.each do |packaging|%>
+                    <% packaging.rules.each do |rule| %>
+                      <% if rule.borough_id == @user.borough_id %>
+                        <% if rule.is_recycled == true %>
+                          <% recycled << item.item.name %>
+                        <% else %>
+                          <% waste << item %>
+                        <% end %>
+                      <% end %>
+                    <% end %><br>
+                  <% end %>
+                <% end %>
+                <% percentage = (recycled.size.to_f / @user.item_users.size.to_f) * 100 %>
+                <%= percentage.to_i %>% of the items you have scanned can be recycled in your area <%= @user.borough.name%>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+        <div class="card shadow h-100" style="border-radius: 15px;">
+          <div class="card-body pb-0">
+            <div class="text-center">
+            <%recycled = []%>
+            <%waste = []%>
+            <%items = ItemUser.all%>
+            <% items.each do |item|%>
+              <%item.item.packagings.each do |packaging|%>
+                <% packaging.rules.each do |rule| %>
+                  <% if rule.borough_id == @user.borough_id %>
+                    <% if rule.is_recycled == true %>
+                      <% recycled << item.item.name %>
+                    <% else %>
+                      <% waste << item %>
+                    <% end %>
+                  <% end %>
+                <% end %><br>
+              <% end %>
+            <% end %>
+            <p class="small "><i class="fa-solid fa-award"></i> Together, we have properly disposed of</p>
+            <h4><strong><%= items.size%> Items</strong></h4>
+            <p class="small "><i class="fa-solid fa-award"></i> and we have recycled</p>
+            <h4><strong><%= recycled.size%> Items</strong></h4>
+            <% percentage = (recycled.size.to_f / items.size.to_f) * 100 %>
+            <%= percentage.to_i %>% of the items our users have scanned can be recycled in their respective areas
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
