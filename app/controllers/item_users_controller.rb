@@ -1,5 +1,4 @@
 class ItemUsersController < ApplicationController
-  before_action :set_item_user, only: [:show]
   def barcode
   end
 
@@ -10,12 +9,23 @@ class ItemUsersController < ApplicationController
 
   def show
     @user = current_user
-  end
-
-  private
-
-  def set_item_user
     @item_user = ItemUser.find(params[:id])
     @item = Item.find(@item_user.item_id)
+    @recycled_packagings = []
+    @non_recycled_packagings = []
+    @item.packagings.each do |packaging|
+      packaging.rules.each do |rule|
+        if rule.borough_id == @user.borough_id
+          if rule.is_recycled == true
+            @recycled_packagings << packaging
+          else
+            @non_recycled_packagings << packaging
+          end
+        end
+      end
+    end
   end
+
+
+
 end
