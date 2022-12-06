@@ -12,7 +12,7 @@
     <%= f.input :barcode, input_html: {data: {barcode_target: "barcodeInput"}}%>
     <%= f.input :eco_score, input_html: {data: {barcode_target: "ecoscoreInput"}}, disabled: true %>
     <%= f.input :photo, as: :file %>
-    <%= f.input :image_url, input_html: {data: {barcode_target: "imageUrlInput"}} %>
+    <%= f.input :image_url, input_html: {data: {barcode_target: "imageUrlInput"}}, disabled: true %>
 
     <div data-item-form-target="packagingWrapper">
       <%= f.association :packagings, as: :check_boxes, label_method: :packaging_label, input_html: {data: {barcode_target:"packagingTagsInput", examples: "" }}, hint: ":examples" %>
