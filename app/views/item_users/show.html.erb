@@ -4,39 +4,102 @@
     <div class="row justify-content-center">
       <div class="col-12 col-lg-6 mb-4" data-aos="zoom-in">
         <div class="card shadow h-100" style="border-radius: 15px;">
-          <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light p-3 rounded-bottom d-flex flex-column"
-            data-mdb-ripple-color="light">
-            <%= image_tag asset_path('productdefault.png'), height: 100, crop: :fill, style:"border-top-left-radius: 15px; border-top-right-radius: 15px;", class:"img-fluid"%><br>
-          </div>
-          <div class="card-body pb-0">
-            <div class="d-flex justify-content-between">
+          <div class="card-body pb-3">
+            <div class="text-center  ">
+              <h2><strong><%=@item.name%></strong></h2>
+              <p class="small text-muted"><i class='fas fa-barcode text-center'></i> <%= @item.barcode %> </p>
               <div>
-              <% i = Item.find_by id: @item.item_id%>
-                <h3 class="text-dark"><%= i.name %></h3>
-                <p class="small text-muted"><i class='fas fa-barcode'></i> <%= i.barcode %></p>
-                <p>Eco-score: <%= i.eco_score %>
-                <% if i.eco_score == "A" %>
-                  <% 4.times do %>
-                    <i class="fa-solid fa-leaf" style="color:green"></i>
-                  <% end  %>
-                <% elsif i.eco_score == "B" %>
-                  <% 3.times do %>
-                    <i class="fa-solid fa-leaf" style="color:green"></i>
-                  <% end  %>
-                <% elsif i.eco_score == "C" %>
-                  <% 2.times do %>
-                    <i class="fa-solid fa-leaf" style="color:green"></i>
-                  <% end  %>
-                <% elsif i.eco_score == "D" %>
-                  <i class="fa-solid fa-leaf" style="color:green"></i>
-                <% end  %></p>
-                <p>Carbon-footprint: <%= i.carbon_footprint %> <i class="fa-solid fa-shoe-prints" style="color:red"></i></p>
+                <% if @item.photo.attached?%>
+                  <%= cl_image_tag @item.photo.key, class:"img-fluid" %>
+                <% else %>
+                  <%= image_tag asset_path('productdefault.png'), class:"img-fluid"  %>
+                <% end %>
               </div>
-              <div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+        <div class="card shadow h-100" style="border-radius: 15px;">
+          <div class="card-body pb-2">
+            <h4 class="text-center">Ecoscore: <%=@item.eco_score %></h4>
+                <div class="text-center">
+                  <% if @item.eco_score == "A" || @item.eco_score == "a" %>
+                    <% 5.times do %>
+                      <i class="fa-solid fa-leaf" style="color:green"></i>
+                    <% end %>
+                  <% elsif @item.eco_score == "B" || @item.eco_score == "b" %>
+                    <% 4.times do %>
+                      <i class="fa-solid fa-leaf" style="color:green"></i>
+                    <% end  %>
+                  <% elsif @item.eco_score == "C" ||@item.eco_score == "c" %>
+                    <% 3.times do %>
+                      <i class="fa-solid fa-leaf" style="color:green"></i>
+                    <% end  %>
+                  <% elsif @item.eco_score == "D" || @item.eco_score == "d" %>
+                    <% 2.times do %>
+                      <i class="fa-solid fa-leaf" style="color:green"></i>
+                    <% end  %>
+                  <% elsif @item.eco_score == "E" || @item.eco_score == "e" %>
+                    <% 1.time do %>
+                      <i class="fa-solid fa-leaf" style="color:green"></i>
+                    <% end  %>
+                  <% else %>
+                      <i>Not available</i>
+                  <% end  %>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+        <div class="card shadow h-100" style="border-radius: 15px;">
+          <div class="card-body pb-0">
+            <div class="d-flex justify-content-between">
+              <div>
+                <h3 style="color: green" > <strong><i class="fa-solid fa-recycle"></i> Recycling</strong></h3>
+                  <% @item.packagings.each do |packaging|%>
+                    <% packaging.rules.each do |rule| %>
+                      <% if rule.borough_id == @user.borough_id %>
+                        <% if rule.is_recycled == true%>
+                          <p> <%= "#{packaging.category} - #{packaging.type} (e.g: #{packaging.examples})" %></p>
+                        <% end %>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+        <div class="card shadow h-100" style="border-radius: 15px;">
+          <div class="card-body pb-0">
+              <div>
+                <h3 class="text-dark"><strong> <i class="fa-solid fa-trash"> </i> General Waste </strong></h3>
+                  <% @item.packagings.each do |packaging|%>
+                    <% packaging.rules.each do |rule| %>
+                      <% if rule.borough_id == @user.borough_id %>
+                        <% if rule.is_recycled == false %>
+                          <p>Category: <%= packaging.category %></p>
+                          <p>Type: <%= packaging.type %></p>
+                          <% else %>
+                            <%= "Great news, no general waste! In #{@user.borough.name}, #{@item.name} can be 100% recycled! " %>
+                        <% end %>
+                      <% end %>
+                    <% end %><br>
+                  <% end %>
+              </div><br>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>

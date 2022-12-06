@@ -1,253 +1,229 @@
-Borough,Category,Type,Recycled
-Camden,Biodegradable,Biodegradable,N
-Camden,Biodegradable,Compostable,N
-Camden,Glass,Glass,Y
-Camden,Metals,Aluminium,Y
-Camden,Metals,Foil,Y
-Camden,Metals,Steel,Y
-Camden,Other,Composite,Y
-Camden,Other,Unknown,N
-Camden,Paper,Card,Y
-Camden,Paper,Paper,Y
-Camden,Plastic film,HDPE,Y
-Camden,Plastic film,LDPE,Y
-Camden,Plastic film,Mixed Plastic,Y
-Camden,Plastic film,PP,Y
-Camden,Rigid plastic,HDPE,Y
-Camden,Rigid plastic,Mixed Plastic,N
-Camden,Rigid plastic,Other Plastic,N
-Camden,Rigid plastic,PET,Y
-Camden,Rigid plastic,Polystyrene,N
-Camden,Rigid plastic,PP,Y
-Camden,Rigid plastic,PVC,N
-Greenwich,Biodegradable,Biodegradable,N
-Greenwich,Biodegradable,Compostable,N
-Greenwich,Glass,Glass,Y
-Greenwich,Metals,Aluminium,Y
-Greenwich,Metals,Foil,Y
-Greenwich,Metals,Steel,Y
-Greenwich,Other,Composite,Y
-Greenwich,Other,Unknown,N
-Greenwich,Paper,Card,Y
-Greenwich,Paper,Paper,Y
-Greenwich,Plastic film,HDPE,N
-Greenwich,Plastic film,LDPE,N
-Greenwich,Plastic film,Mixed Plastic,N
-Greenwich,Plastic film,PP,N
-Greenwich,Rigid plastic,HDPE,Y
-Greenwich,Rigid plastic,Mixed Plastic,N
-Greenwich,Rigid plastic,Other Plastic,N
-Greenwich,Rigid plastic,PET,Y
-Greenwich,Rigid plastic,Polystyrene,N
-Greenwich,Rigid plastic,PP,Y
-Greenwich,Rigid plastic,PVC,N
-Hackney,Biodegradable,Biodegradable,N
-Hackney,Biodegradable,Compostable,N
-Hackney,Glass,Glass,Y
-Hackney,Metals,Aluminium,Y
-Hackney,Metals,Foil,Y
-Hackney,Metals,Steel,Y
-Hackney,Other,Composite,Y
-Hackney,Other,Unknown,N
-Hackney,Paper,Card,Y
-Hackney,Paper,Paper,Y
-Hackney,Plastic film,HDPE,N
-Hackney,Plastic film,LDPE,N
-Hackney,Plastic film,Mixed Plastic,N
-Hackney,Plastic film,PP,N
-Hackney,Rigid plastic,HDPE,Y
-Hackney,Rigid plastic,Mixed Plastic,N
-Hackney,Rigid plastic,Other Plastic,N
-Hackney,Rigid plastic,PET,Y
-Hackney,Rigid plastic,Polystyrene,N
-Hackney,Rigid plastic,PP,Y
-Hackney,Rigid plastic,PVC,N
-Hammersmith and Fulham,Biodegradable,Biodegradable,N
-Hammersmith and Fulham,Biodegradable,Compostable,N
-Hammersmith and Fulham,Glass,Glass,Y
-Hammersmith and Fulham,Metals,Aluminium,Y
-Hammersmith and Fulham,Metals,Foil,N
-Hammersmith and Fulham,Metals,Steel,Y
-Hammersmith and Fulham,Other,Composite,Y
-Hammersmith and Fulham,Other,Unknown,N
-Hammersmith and Fulham,Paper,Card,Y
-Hammersmith and Fulham,Paper,Paper,Y
-Hammersmith and Fulham,Plastic film,HDPE,N
-Hammersmith and Fulham,Plastic film,LDPE,N
-Hammersmith and Fulham,Plastic film,Mixed Plastic,N
-Hammersmith and Fulham,Plastic film,PP,N
-Hammersmith and Fulham,Rigid plastic,HDPE,Y
-Hammersmith and Fulham,Rigid plastic,Mixed Plastic,N
-Hammersmith and Fulham,Rigid plastic,Other Plastic,N
-Hammersmith and Fulham,Rigid plastic,PET,Y
-Hammersmith and Fulham,Rigid plastic,Polystyrene,N
-Hammersmith and Fulham,Rigid plastic,PP,Y
-Hammersmith and Fulham,Rigid plastic,PVC,N
-Islington,Biodegradable,Biodegradable,N
-Islington,Biodegradable,Compostable,N
-Islington,Glass,Glass,Y
-Islington,Metals,Aluminium,Y
-Islington,Metals,Foil,Y
-Islington,Metals,Steel,Y
-Islington,Other,Composite,Y
-Islington,Other,Unknown,N
-Islington,Paper,Card,Y
-Islington,Paper,Paper,Y
-Islington,Plastic film,HDPE,N
-Islington,Plastic film,LDPE,N
-Islington,Plastic film,Mixed Plastic,N
-Islington,Plastic film,PP,N
-Islington,Rigid plastic,HDPE,Y
-Islington,Rigid plastic,Mixed Plastic,N
-Islington,Rigid plastic,Other Plastic,N
-Islington,Rigid plastic,PET,Y
-Islington,Rigid plastic,Polystyrene,N
-Islington,Rigid plastic,PP,Y
-Islington,Rigid plastic,PVC,N
-Tower Hamlets,Biodegradable,Biodegradable,N
-Tower Hamlets,Biodegradable,Compostable,N
-Tower Hamlets,Glass,Glass,Y
-Tower Hamlets,Metals,Aluminium,Y
-Tower Hamlets,Metals,Foil,Y
-Tower Hamlets,Metals,Steel,Y
-Tower Hamlets,Other,Composite,Y
-Tower Hamlets,Other,Unknown,N
-Tower Hamlets,Paper,Card,Y
-Tower Hamlets,Paper,Paper,Y
-Tower Hamlets,Plastic film,HDPE,N
-Tower Hamlets,Plastic film,LDPE,N
-Tower Hamlets,Plastic film,Mixed Plastic,N
-Tower Hamlets,Plastic film,PP,N
-Tower Hamlets,Rigid plastic,HDPE,Y
-Tower Hamlets,Rigid plastic,Mixed Plastic,N
-Tower Hamlets,Rigid plastic,Other Plastic,N
-Tower Hamlets,Rigid plastic,PET,Y
-Tower Hamlets,Rigid plastic,Polystyrene,N
-Tower Hamlets,Rigid plastic,PP,Y
-Tower Hamlets,Rigid plastic,PVC,N
-Westminster,Biodegradable,Biodegradable,N
-Westminster,Biodegradable,Compostable,N
-Westminster,Glass,Glass,Y
-Westminster,Metals,Aluminium,Y
-Westminster,Metals,Foil,Y
-Westminster,Metals,Steel,Y
-Westminster,Other,Composite,Y
-Westminster,Other,Unknown,N
-Westminster,Paper,Card,Y
-Westminster,Paper,Paper,Y
-Westminster,Plastic film,HDPE,N
-Westminster,Plastic film,LDPE,N
-Westminster,Plastic film,Mixed Plastic,N
-Westminster,Plastic film,PP,N
-Westminster,Rigid plastic,HDPE,Y
-Westminster,Rigid plastic,Mixed Plastic,N
-Westminster,Rigid plastic,Other Plastic,N
-Westminster,Rigid plastic,PET,Y
-Westminster,Rigid plastic,Polystyrene,N
-Westminster,Rigid plastic,PP,Y
-Westminster,Rigid plastic,PVC,N
-Kensington and Chelsea,Rigid plastic,PET,Y
-Kensington and Chelsea,Rigid plastic,HDPE,Y
-Kensington and Chelsea,Rigid plastic,PP,Y
-Kensington and Chelsea,Rigid plastic,PVC,N
-Kensington and Chelsea,Rigid plastic,Polystyrene,N
-Kensington and Chelsea,Rigid plastic,Mixed Plastic,N
-Kensington and Chelsea,Rigid plastic,Other Plastic,N
-Kensington and Chelsea,Plastic film,Mixed Plastic,N
-Kensington and Chelsea,Plastic film,HDPE,N
-Kensington and Chelsea,Plastic film,LDPE,N
-Kensington and Chelsea,Plastic film,PP,N
-Kensington and Chelsea,Glass,Glass,Y
-Kensington and Chelsea,Metals,Aluminium,Y
-Kensington and Chelsea,Metals,Foil,N
-Kensington and Chelsea,Metals,Steel,Y
-Kensington and Chelsea,Paper,Paper,Y
-Kensington and Chelsea,Paper,Card,Y
-Kensington and Chelsea,Biodegradable,Compostable,N
-Kensington and Chelsea,Biodegradable,Biodegradable,N
-Kensington and Chelsea,Other,Composite,Y
-Kensington and Chelsea,Other,Unknown,N
-Lambeth,Rigid plastic,PET,Y
-Lambeth,Rigid plastic,HDPE,Y
-Lambeth,Rigid plastic,PP,Y
-Lambeth,Rigid plastic,PVC,N
-Lambeth,Rigid plastic,Polystyrene,N
-Lambeth,Rigid plastic,Mixed Plastic,N
-Lambeth,Rigid plastic,Other Plastic,N
-Lambeth,Plastic film,Mixed Plastic,N
-Lambeth,Plastic film,HDPE,N
-Lambeth,Plastic film,LDPE,N
-Lambeth,Plastic film,PP,N
-Lambeth,Glass,Glass,Y
-Lambeth,Metals,Aluminium,Y
-Lambeth,Metals,Foil,N
-Lambeth,Metals,Steel,Y
-Lambeth,Paper,Paper,Y
-Lambeth,Paper,Card,Y
-Lambeth,Biodegradable,Compostable,N
-Lambeth,Biodegradable,Biodegradable,N
-Lambeth,Other,Composite,Y
-Lambeth,Other,Unknown,N
-Lewisham,Rigid plastic,PET,Y
-Lewisham,Rigid plastic,HDPE,Y
-Lewisham,Rigid plastic,PP,Y
-Lewisham,Rigid plastic,PVC,N
-Lewisham,Rigid plastic,Polystyrene,N
-Lewisham,Rigid plastic,Mixed Plastic,N
-Lewisham,Rigid plastic,Other Plastic,N
-Lewisham,Plastic film,Mixed Plastic,N
-Lewisham,Plastic film,HDPE,N
-Lewisham,Plastic film,LDPE,N
-Lewisham,Plastic film,PP,N
-Lewisham,Glass,Glass,Y
-Lewisham,Metals,Aluminium,Y
-Lewisham,Metals,Foil,Y
-Lewisham,Metals,Steel,Y
-Lewisham,Paper,Paper,N
-Lewisham,Paper,Card,N
-Lewisham,Biodegradable,Compostable,N
-Lewisham,Biodegradable,Biodegradable,N
-Lewisham,Other,Composite,Y
-Lewisham,Other,Unknown,N
-Southwark,Rigid plastic,PET,Y
-Southwark,Rigid plastic,HDPE,Y
-Southwark,Rigid plastic,PP,Y
-Southwark,Rigid plastic,PVC,N
-Southwark,Rigid plastic,Polystyrene,N
-Southwark,Rigid plastic,Mixed Plastic,N
-Southwark,Rigid plastic,Other Plastic,N
-Southwark,Plastic film,Mixed Plastic,N
-Southwark,Plastic film,HDPE,N
-Southwark,Plastic film,LDPE,N
-Southwark,Plastic film,PP,N
-Southwark,Glass,Glass,Y
-Southwark,Metals,Aluminium,Y
-Southwark,Metals,Foil,Y
-Southwark,Metals,Steel,Y
-Southwark,Paper,Paper,Y
-Southwark,Paper,Card,Y
-Southwark,Biodegradable,Compostable,N
-Southwark,Biodegradable,Biodegradable,N
-Southwark,Other,Composite,Y
-Southwark,Other,Unknown,N
-Wandsworth,Rigid plastic,PET,Y
-Wandsworth,Rigid plastic,HDPE,Y
-Wandsworth,Rigid plastic,PP,Y
-Wandsworth,Rigid plastic,PVC,N
-Wandsworth,Rigid plastic,Polystyrene,N
-Wandsworth,Rigid plastic,Mixed Plastic,N
-Wandsworth,Rigid plastic,Other Plastic,N
-Wandsworth,Plastic film,Mixed Plastic,N
-Wandsworth,Plastic film,HDPE,N
-Wandsworth,Plastic film,LDPE,N
-Wandsworth,Plastic film,PP,N
-Wandsworth,Glass,Glass,Y
-Wandsworth,Metals,Aluminium,Y
-Wandsworth,Metals,Foil,N
-Wandsworth,Metals,Steel,Y
-Wandsworth,Paper,Paper,Y
-Wandsworth,Paper,Card,Y
-Wandsworth,Biodegradable,Compostable,N
-Wandsworth,Biodegradable,Biodegradable,N
-Wandsworth,Other,Composite,Y
-Wandsworth,Other,Unknown,N
+Borough,Category,Type,Recycled,Examples
+Camden,Biodegradable,Biodegradable,N,Material that will break down naturally
+Camden,Biodegradable,Compostable,N,Plant based compostable packaging
+Camden,Glass,Glass,Y,"Beer and wine bottles, jars, oil bottles"
+Camden,Metals,Aluminium,Y,"Fizzy drinks cans, tin foil"
+Camden,Metals,Foil,Y,"Kitchen foil, foil trays and bottle toppers"
+Camden,Metals,Steel,Y,"Tins of sardines, soups, tuna"
+Camden,Other,Composite,Y,Juice and milk cartons
+Camden,Paper,Card,Y,"Careal boxes, loo roll tubes, delivery boxes"
+Camden,Paper,Paper,Y,"Letters, envelopes, documents, pulped paper egg cartons"
+Camden,Plastic film,HDPE Film,Y,Cereal box boags and reusable carrier bags
+Camden,Plastic film,LDPE,Y,"Carrier bags, salad bags, bread bags, food bags, packaging films"
+Camden,Plastic film,Mixed Plastic Film,Y,"Crisp and sweet packets, pouches and plastic foils. Cheese wrappers"
+Camden,Plastic film,PP Film,Y,"Film lids from trays, salad bags, film seals on tubs"
+Camden,Rigid plastic,HDPE,Y,"Milk bottles, bleach, cleaners, shampoo bottles"
+Camden,Rigid plastic,Mixed Plastic,N,"Pouches for baby food, pet food, detergent or cleaning. Cheese packaging"
+Camden,Rigid plastic,PET,Y,Drinks bottles. Clear trays. Sauce bottles
+Camden,Rigid plastic,Polystyrene,N,"Foam packaging, meat trays, takeaway food containers"
+Camden,Rigid plastic,PP,Y,"Plastic lids, margarine tubs, microwable meal trays"
+Camden,Rigid plastic,PVC,N,"Pipes, fittings, window and door frames"
+Greenwich,Biodegradable,Biodegradable,N,Material that will break down naturally
+Greenwich,Biodegradable,Compostable,N,Plant based compostable packaging
+Greenwich,Glass,Glass,Y,"Beer and wine bottles, jars, oil bottles"
+Greenwich,Metals,Aluminium,Y,"Fizzy drinks cans, tin foil"
+Greenwich,Metals,Foil,Y,"Kitchen foil, foil trays and bottle toppers"
+Greenwich,Metals,Steel,Y,"Tins of sardines, soups, tuna"
+Greenwich,Other,Composite,Y,Juice and milk cartons
+Greenwich,Paper,Card,Y,"Careal boxes, loo roll tubes, delivery boxes"
+Greenwich,Paper,Paper,Y,"Letters, envelopes, documents, pulped paper egg cartons"
+Greenwich,Plastic film,HDPE Film,N,Cereal box boags and reusable carrier bags
+Greenwich,Plastic film,LDPE,N,"Carrier bags, salad bags, bread bags, food bags, packaging films"
+Greenwich,Plastic film,Mixed Plastic Film,N,"Crisp and sweet packets, pouches and plastic foils. Cheese wrappers"
+Greenwich,Plastic film,PP Film,N,"Film lids from trays, salad bags, film seals on tubs"
+Greenwich,Rigid plastic,HDPE,Y,"Milk bottles, bleach, cleaners, shampoo bottles"
+Greenwich,Rigid plastic,Mixed Plastic,N,"Pouches for baby food, pet food, detergent or cleaning. Cheese packaging"
+Greenwich,Rigid plastic,PET,Y,Drinks bottles. Clear trays. Sauce bottles
+Greenwich,Rigid plastic,Polystyrene,N,"Foam packaging, meat trays, takeaway food containers"
+Greenwich,Rigid plastic,PP,Y,"Plastic lids, margarine tubs, microwable meal trays"
+Greenwich,Rigid plastic,PVC,N,"Pipes, fittings, window and door frames"
+Hackney,Biodegradable,Biodegradable,N,Material that will break down naturally
+Hackney,Biodegradable,Compostable,N,Plant based compostable packaging
+Hackney,Glass,Glass,Y,"Beer and wine bottles, jars, oil bottles"
+Hackney,Metals,Aluminium,Y,"Fizzy drinks cans, tin foil"
+Hackney,Metals,Foil,Y,"Kitchen foil, foil trays and bottle toppers"
+Hackney,Metals,Steel,Y,"Tins of sardines, soups, tuna"
+Hackney,Other,Composite,Y,Juice and milk cartons
+Hackney,Paper,Card,Y,"Careal boxes, loo roll tubes, delivery boxes"
+Hackney,Paper,Paper,Y,"Letters, envelopes, documents, pulped paper egg cartons"
+Hackney,Plastic film,HDPE Film,N,Cereal box boags and reusable carrier bags
+Hackney,Plastic film,LDPE,N,"Carrier bags, salad bags, bread bags, food bags, packaging films"
+Hackney,Plastic film,Mixed Plastic Film,N,"Crisp and sweet packets, pouches and plastic foils. Cheese wrappers"
+Hackney,Plastic film,PP Film,N,"Film lids from trays, salad bags, film seals on tubs"
+Hackney,Rigid plastic,HDPE,Y,"Milk bottles, bleach, cleaners, shampoo bottles"
+Hackney,Rigid plastic,Mixed Plastic,N,"Pouches for baby food, pet food, detergent or cleaning. Cheese packaging"
+Hackney,Rigid plastic,PET,Y,Drinks bottles. Clear trays. Sauce bottles
+Hackney,Rigid plastic,Polystyrene,N,"Foam packaging, meat trays, takeaway food containers"
+Hackney,Rigid plastic,PP,Y,"Plastic lids, margarine tubs, microwable meal trays"
+Hackney,Rigid plastic,PVC,N,"Pipes, fittings, window and door frames"
+Hammersmith and Fulham,Biodegradable,Biodegradable,N,Material that will break down naturally
+Hammersmith and Fulham,Biodegradable,Compostable,N,Plant based compostable packaging
+Hammersmith and Fulham,Glass,Glass,Y,"Beer and wine bottles, jars, oil bottles"
+Hammersmith and Fulham,Metals,Aluminium,Y,"Fizzy drinks cans, tin foil"
+Hammersmith and Fulham,Metals,Foil,N,"Kitchen foil, foil trays and bottle toppers"
+Hammersmith and Fulham,Metals,Steel,Y,"Tins of sardines, soups, tuna"
+Hammersmith and Fulham,Other,Composite,Y,Juice and milk cartons
+Hammersmith and Fulham,Paper,Card,Y,"Careal boxes, loo roll tubes, delivery boxes"
+Hammersmith and Fulham,Paper,Paper,Y,"Letters, envelopes, documents, pulped paper egg cartons"
+Hammersmith and Fulham,Plastic film,HDPE Film,N,Cereal box boags and reusable carrier bags
+Hammersmith and Fulham,Plastic film,LDPE,N,"Carrier bags, salad bags, bread bags, food bags, packaging films"
+Hammersmith and Fulham,Plastic film,Mixed Plastic Film,N,"Crisp and sweet packets, pouches and plastic foils. Cheese wrappers"
+Hammersmith and Fulham,Plastic film,PP Film,N,"Film lids from trays, salad bags, film seals on tubs"
+Hammersmith and Fulham,Rigid plastic,HDPE,Y,"Milk bottles, bleach, cleaners, shampoo bottles"
+Hammersmith and Fulham,Rigid plastic,Mixed Plastic,N,"Pouches for baby food, pet food, detergent or cleaning. Cheese packaging"
+Hammersmith and Fulham,Rigid plastic,PET,Y,Drinks bottles. Clear trays. Sauce bottles
+Hammersmith and Fulham,Rigid plastic,Polystyrene,N,"Foam packaging, meat trays, takeaway food containers"
+Hammersmith and Fulham,Rigid plastic,PP,Y,"Plastic lids, margarine tubs, microwable meal trays"
+Hammersmith and Fulham,Rigid plastic,PVC,N,"Pipes, fittings, window and door frames"
+Islington,Biodegradable,Biodegradable,N,Material that will break down naturally
+Islington,Biodegradable,Compostable,N,Plant based compostable packaging
+Islington,Glass,Glass,Y,"Beer and wine bottles, jars, oil bottles"
+Islington,Metals,Aluminium,Y,"Fizzy drinks cans, tin foil"
+Islington,Metals,Foil,Y,"Kitchen foil, foil trays and bottle toppers"
+Islington,Metals,Steel,Y,"Tins of sardines, soups, tuna"
+Islington,Other,Composite,Y,Juice and milk cartons
+Islington,Paper,Card,Y,"Careal boxes, loo roll tubes, delivery boxes"
+Islington,Paper,Paper,Y,"Letters, envelopes, documents, pulped paper egg cartons"
+Islington,Plastic film,HDPE Film,N,Cereal box boags and reusable carrier bags
+Islington,Plastic film,LDPE,N,"Carrier bags, salad bags, bread bags, food bags, packaging films"
+Islington,Plastic film,Mixed Plastic Film,N,"Crisp and sweet packets, pouches and plastic foils. Cheese wrappers"
+Islington,Plastic film,PP Film,N,"Film lids from trays, salad bags, film seals on tubs"
+Islington,Rigid plastic,HDPE,Y,"Milk bottles, bleach, cleaners, shampoo bottles"
+Islington,Rigid plastic,Mixed Plastic,N,"Pouches for baby food, pet food, detergent or cleaning. Cheese packaging"
+Islington,Rigid plastic,PET,Y,Drinks bottles. Clear trays. Sauce bottles
+Islington,Rigid plastic,Polystyrene,N,"Foam packaging, meat trays, takeaway food containers"
+Islington,Rigid plastic,PP,Y,"Plastic lids, margarine tubs, microwable meal trays"
+Islington,Rigid plastic,PVC,N,"Pipes, fittings, window and door frames"
+Tower Hamlets,Biodegradable,Biodegradable,N,Material that will break down naturally
+Tower Hamlets,Biodegradable,Compostable,N,Plant based compostable packaging
+Tower Hamlets,Glass,Glass,Y,"Beer and wine bottles, jars, oil bottles"
+Tower Hamlets,Metals,Aluminium,Y,"Fizzy drinks cans, tin foil"
+Tower Hamlets,Metals,Foil,Y,"Kitchen foil, foil trays and bottle toppers"
+Tower Hamlets,Metals,Steel,Y,"Tins of sardines, soups, tuna"
+Tower Hamlets,Other,Composite,Y,Juice and milk cartons
+Tower Hamlets,Paper,Card,Y,"Careal boxes, loo roll tubes, delivery boxes"
+Tower Hamlets,Paper,Paper,Y,"Letters, envelopes, documents, pulped paper egg cartons"
+Tower Hamlets,Plastic film,HDPE Film,N,Cereal box boags and reusable carrier bags
+Tower Hamlets,Plastic film,LDPE,N,"Carrier bags, salad bags, bread bags, food bags, packaging films"
+Tower Hamlets,Plastic film,Mixed Plastic Film,N,"Crisp and sweet packets, pouches and plastic foils. Cheese wrappers"
+Tower Hamlets,Plastic film,PP Film,N,"Film lids from trays, salad bags, film seals on tubs"
+Tower Hamlets,Rigid plastic,HDPE,Y,"Milk bottles, bleach, cleaners, shampoo bottles"
+Tower Hamlets,Rigid plastic,Mixed Plastic,N,"Pouches for baby food, pet food, detergent or cleaning. Cheese packaging"
+Tower Hamlets,Rigid plastic,PET,Y,Drinks bottles. Clear trays. Sauce bottles
+Tower Hamlets,Rigid plastic,Polystyrene,N,"Foam packaging, meat trays, takeaway food containers"
+Tower Hamlets,Rigid plastic,PP,Y,"Plastic lids, margarine tubs, microwable meal trays"
+Tower Hamlets,Rigid plastic,PVC,N,"Pipes, fittings, window and door frames"
+Westminster,Biodegradable,Biodegradable,N,Material that will break down naturally
+Westminster,Biodegradable,Compostable,N,Plant based compostable packaging
+Westminster,Glass,Glass,Y,"Beer and wine bottles, jars, oil bottles"
+Westminster,Metals,Aluminium,Y,"Fizzy drinks cans, tin foil"
+Westminster,Metals,Foil,Y,"Kitchen foil, foil trays and bottle toppers"
+Westminster,Metals,Steel,Y,"Tins of sardines, soups, tuna"
+Westminster,Other,Composite,Y,Juice and milk cartons
+Westminster,Paper,Card,Y,"Careal boxes, loo roll tubes, delivery boxes"
+Westminster,Paper,Paper,Y,"Letters, envelopes, documents, pulped paper egg cartons"
+Westminster,Plastic film,HDPE Film,N,Cereal box boags and reusable carrier bags
+Westminster,Plastic film,LDPE,N,"Carrier bags, salad bags, bread bags, food bags, packaging films"
+Westminster,Plastic film,Mixed Plastic Film,N,"Crisp and sweet packets, pouches and plastic foils. Cheese wrappers"
+Westminster,Plastic film,PP Film,N,"Film lids from trays, salad bags, film seals on tubs"
+Westminster,Rigid plastic,HDPE,Y,"Milk bottles, bleach, cleaners, shampoo bottles"
+Westminster,Rigid plastic,Mixed Plastic,N,"Pouches for baby food, pet food, detergent or cleaning. Cheese packaging"
+Westminster,Rigid plastic,PET,Y,Drinks bottles. Clear trays. Sauce bottles
+Westminster,Rigid plastic,Polystyrene,N,"Foam packaging, meat trays, takeaway food containers"
+Westminster,Rigid plastic,PP,Y,"Plastic lids, margarine tubs, microwable meal trays"
+Westminster,Rigid plastic,PVC,N,"Pipes, fittings, window and door frames"
+Kensington and Chelsea,Rigid plastic,PET,Y,Drinks bottles. Clear trays. Sauce bottles
+Kensington and Chelsea,Rigid plastic,HDPE,Y,"Milk bottles, bleach, cleaners, shampoo bottles"
+Kensington and Chelsea,Rigid plastic,PP,Y,"Plastic lids, margarine tubs, microwable meal trays"
+Kensington and Chelsea,Rigid plastic,PVC,N,"Pipes, fittings, window and door frames"
+Kensington and Chelsea,Rigid plastic,Polystyrene,N,"Foam packaging, meat trays, takeaway food containers"
+Kensington and Chelsea,Rigid plastic,Mixed Plastic,N,"Pouches for baby food, pet food, detergent or cleaning. Cheese packaging"
+Kensington and Chelsea,Plastic film,Mixed Plastic Film,N,"Crisp and sweet packets, pouches and plastic foils. Cheese wrappers"
+Kensington and Chelsea,Plastic film,HDPE Film,N,Cereal box boags and reusable carrier bags
+Kensington and Chelsea,Plastic film,LDPE,N,"Carrier bags, salad bags, bread bags, food bags, packaging films"
+Kensington and Chelsea,Plastic film,PP Film,N,"Film lids from trays, salad bags, film seals on tubs"
+Kensington and Chelsea,Glass,Glass,Y,"Beer and wine bottles, jars, oil bottles"
+Kensington and Chelsea,Metals,Aluminium,Y,"Fizzy drinks cans, tin foil"
+Kensington and Chelsea,Metals,Foil,N,"Kitchen foil, foil trays and bottle toppers"
+Kensington and Chelsea,Metals,Steel,Y,"Tins of sardines, soups, tuna"
+Kensington and Chelsea,Paper,Paper,Y,"Letters, envelopes, documents, pulped paper egg cartons"
+Kensington and Chelsea,Paper,Card,Y,"Careal boxes, loo roll tubes, delivery boxes"
+Kensington and Chelsea,Biodegradable,Compostable,N,Plant based compostable packaging
+Kensington and Chelsea,Biodegradable,Biodegradable,N,Material that will break down naturally
+Kensington and Chelsea,Other,Composite,Y,Juice and milk cartons
+Lambeth,Rigid plastic,PET,Y,Drinks bottles. Clear trays. Sauce bottles
+Lambeth,Rigid plastic,HDPE,Y,"Milk bottles, bleach, cleaners, shampoo bottles"
+Lambeth,Rigid plastic,PP,Y,"Plastic lids, margarine tubs, microwable meal trays"
+Lambeth,Rigid plastic,PVC,N,"Pipes, fittings, window and door frames"
+Lambeth,Rigid plastic,Polystyrene,N,"Foam packaging, meat trays, takeaway food containers"
+Lambeth,Rigid plastic,Mixed Plastic,N,"Pouches for baby food, pet food, detergent or cleaning. Cheese packaging"
+Lambeth,Plastic film,Mixed Plastic Film,N,"Crisp and sweet packets, pouches and plastic foils. Cheese wrappers"
+Lambeth,Plastic film,HDPE Film,N,Cereal box boags and reusable carrier bags
+Lambeth,Plastic film,LDPE,N,"Carrier bags, salad bags, bread bags, food bags, packaging films"
+Lambeth,Plastic film,PP Film,N,"Film lids from trays, salad bags, film seals on tubs"
+Lambeth,Glass,Glass,Y,"Beer and wine bottles, jars, oil bottles"
+Lambeth,Metals,Aluminium,Y,"Fizzy drinks cans, tin foil"
+Lambeth,Metals,Foil,N,"Kitchen foil, foil trays and bottle toppers"
+Lambeth,Metals,Steel,Y,"Tins of sardines, soups, tuna"
+Lambeth,Paper,Paper,Y,"Letters, envelopes, documents, pulped paper egg cartons"
+Lambeth,Paper,Card,Y,"Careal boxes, loo roll tubes, delivery boxes"
+Lambeth,Biodegradable,Compostable,N,Plant based compostable packaging
+Lambeth,Biodegradable,Biodegradable,N,Material that will break down naturally
+Lambeth,Other,Composite,Y,Juice and milk cartons
+Lewisham,Rigid plastic,PET,Y,Drinks bottles. Clear trays. Sauce bottles
+Lewisham,Rigid plastic,HDPE,Y,"Milk bottles, bleach, cleaners, shampoo bottles"
+Lewisham,Rigid plastic,PP,Y,"Plastic lids, margarine tubs, microwable meal trays"
+Lewisham,Rigid plastic,PVC,N,"Pipes, fittings, window and door frames"
+Lewisham,Rigid plastic,Polystyrene,N,"Foam packaging, meat trays, takeaway food containers"
+Lewisham,Rigid plastic,Mixed Plastic,N,"Pouches for baby food, pet food, detergent or cleaning. Cheese packaging"
+Lewisham,Plastic film,Mixed Plastic Film,N,"Crisp and sweet packets, pouches and plastic foils. Cheese wrappers"
+Lewisham,Plastic film,HDPE Film,N,Cereal box boags and reusable carrier bags
+Lewisham,Plastic film,LDPE,N,"Carrier bags, salad bags, bread bags, food bags, packaging films"
+Lewisham,Plastic film,PP Film,N,"Film lids from trays, salad bags, film seals on tubs"
+Lewisham,Glass,Glass,Y,"Beer and wine bottles, jars, oil bottles"
+Lewisham,Metals,Aluminium,Y,"Fizzy drinks cans, tin foil"
+Lewisham,Metals,Foil,Y,"Kitchen foil, foil trays and bottle toppers"
+Lewisham,Metals,Steel,Y,"Tins of sardines, soups, tuna"
+Lewisham,Paper,Paper,N,"Letters, envelopes, documents, pulped paper egg cartons"
+Lewisham,Paper,Card,N,"Careal boxes, loo roll tubes, delivery boxes"
+Lewisham,Biodegradable,Compostable,N,Plant based compostable packaging
+Lewisham,Biodegradable,Biodegradable,N,Material that will break down naturally
+Lewisham,Other,Composite,Y,Juice and milk cartons
+Southwark,Rigid plastic,PET,Y,Drinks bottles. Clear trays. Sauce bottles
+Southwark,Rigid plastic,HDPE,Y,"Milk bottles, bleach, cleaners, shampoo bottles"
+Southwark,Rigid plastic,PP,Y,"Plastic lids, margarine tubs, microwable meal trays"
+Southwark,Rigid plastic,PVC,N,"Pipes, fittings, window and door frames"
+Southwark,Rigid plastic,Polystyrene,N,"Foam packaging, meat trays, takeaway food containers"
+Southwark,Rigid plastic,Mixed Plastic,N,"Pouches for baby food, pet food, detergent or cleaning. Cheese packaging"
+Southwark,Plastic film,Mixed Plastic Film,N,"Crisp and sweet packets, pouches and plastic foils. Cheese wrappers"
+Southwark,Plastic film,HDPE Film,N,Cereal box boags and reusable carrier bags
+Southwark,Plastic film,LDPE,N,"Carrier bags, salad bags, bread bags, food bags, packaging films"
+Southwark,Plastic film,PP Film,N,"Film lids from trays, salad bags, film seals on tubs"
+Southwark,Glass,Glass,Y,"Beer and wine bottles, jars, oil bottles"
+Southwark,Metals,Aluminium,Y,"Fizzy drinks cans, tin foil"
+Southwark,Metals,Foil,Y,"Kitchen foil, foil trays and bottle toppers"
+Southwark,Metals,Steel,Y,"Tins of sardines, soups, tuna"
+Southwark,Paper,Paper,Y,"Letters, envelopes, documents, pulped paper egg cartons"
+Southwark,Paper,Card,Y,"Careal boxes, loo roll tubes, delivery boxes"
+Southwark,Biodegradable,Compostable,N,Plant based compostable packaging
+Southwark,Biodegradable,Biodegradable,N,Material that will break down naturally
+Southwark,Other,Composite,Y,Juice and milk cartons
+Wandsworth,Rigid plastic,PET,Y,Drinks bottles. Clear trays. Sauce bottles
+Wandsworth,Rigid plastic,HDPE,Y,"Milk bottles, bleach, cleaners, shampoo bottles"
+Wandsworth,Rigid plastic,PP,Y,"Plastic lids, margarine tubs, microwable meal trays"
+Wandsworth,Rigid plastic,PVC,N,"Pipes, fittings, window and door frames"
+Wandsworth,Rigid plastic,Polystyrene,N,"Foam packaging, meat trays, takeaway food containers"
+Wandsworth,Rigid plastic,Mixed Plastic,N,"Pouches for baby food, pet food, detergent or cleaning. Cheese packaging"
+Wandsworth,Plastic film,Mixed Plastic Film,N,"Crisp and sweet packets, pouches and plastic foils. Cheese wrappers"
+Wandsworth,Plastic film,HDPE Film,N,Cereal box boags and reusable carrier bags
+Wandsworth,Plastic film,LDPE,N,"Carrier bags, salad bags, bread bags, food bags, packaging films"
+Wandsworth,Plastic film,PP Film,N,"Film lids from trays, salad bags, film seals on tubs"
+Wandsworth,Glass,Glass,Y,"Beer and wine bottles, jars, oil bottles"
+Wandsworth,Metals,Aluminium,Y,"Fizzy drinks cans, tin foil"
+Wandsworth,Metals,Foil,N,"Kitchen foil, foil trays and bottle toppers"
+Wandsworth,Metals,Steel,Y,"Tins of sardines, soups, tuna"
+Wandsworth,Paper,Paper,Y,"Letters, envelopes, documents, pulped paper egg cartons"
+Wandsworth,Paper,Card,Y,"Careal boxes, loo roll tubes, delivery boxes"
+Wandsworth,Biodegradable,Compostable,N,Plant based compostable packaging
+Wandsworth,Biodegradable,Biodegradable,N,Material that will break down naturally
+Wandsworth,Other,Composite,Y,Juice and milk cartons

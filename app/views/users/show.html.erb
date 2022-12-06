@@ -9,8 +9,7 @@
                 style:"width: 150px; z-index: 1; border-color: #ae91c1fc; background-color: #cab3c9;"%>
             </div>
             <div class="ms-3" style="margin-top: 80px;">
-              <h5 style= "color:black;" >USER</h5>
-              <p style= "color:black;"><%= @user.borough.name%></p>
+              <h5 style= "color:black;" ><%=@user.borough.name  %></h5>
             </div>
           </div>
           <div class="p-4 text-black" style="background-color: #BDD2B6;">
@@ -30,7 +29,6 @@
               <p class="lead fw-normal mb-1">Account Details</p>
               <div class="p-4" style="background-color: #f8f9fa;">
                 <p class="font-italic mb-1">Email: <%= @user.email%> </p>
-		            <p class="font-italic mb-1">Borough: <%= @user.borough.name%></p>
               </div>
             </div>
 

@@ -1,12 +1,4 @@
 class ItemsController < ApplicationController
-  # def index
-  #   @items = Item.all
-  # end
-
-  # def show
-  #   @item = Item.find(params[:id])
-  # end
-
   def new
     @item = Item.new
   end
@@ -22,32 +14,40 @@ class ItemsController < ApplicationController
         ## Show the form for a new item
         @item = Item.new
         format.json # Follow the classic Rails flow and look for a create.json view
-        format.html {render :show }
+        format.html { render :show }
       else
         # Item here is from the database
-        format.json  # Follow the classic Rails flow and look for a create.json view
-        format.html {render :show }
+        # format.json  # Follow the classic Rails flow and look for a create.json view
+        # format.html {render :show }
+        @item_user = ItemUser.new
+        @item_user.user = current_user
+        @item_user.item = @item
+        @item_user.save
+        format.json
+        render json: @item_user
       end
     end
   end
 
-  # def create
-  #   @item = Item.new
-  #   @item.name = item_params[:name]
-  #   @item.name = item_params[:bar_code]
-  #   @item.name = item_params[:eco_score]
-  #   @item.save
-  #   item_params[:type].each do |type|
-  #     @packaging = Packaging.find_by(type)
-  #     @packaging = Packaging.find_by(type: 'Unknown') if @packaging.empty
-  #     ItemPackaging.create(item: @item, packaging: @packaging)
-  #   end
-  # end
-  # end
+  def create
+    @item = Item.new(item_params)
+    if @item.image_url.present?
+      file = URI.open(@item.image_url)
+      @item.photo.attach(io: file, filename: "#{@item.name}.jpg", content_type: "image/jpg")
+    end
+    @item.save
 
-  # private
+    @item_user = ItemUser.new
+    @item_user.user = current_user
+    @item_user.item = @item
+    @item_user.save
+    redirect_to product_path(@item_user.id)
+  end
 
-  # def item_params
-  #   params.require(:item).permit(:name, :bar_code, :eco_score, :photo, :type)
-  # end
+  private
+
+  def item_params
+    params.require(:item).permit(:name, :barcode, :eco_score, :photo, :image_url, packaging_ids: [])
+  end
+
 end
