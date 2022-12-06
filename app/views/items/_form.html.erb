@@ -15,7 +15,7 @@
     <%= f.input :image_url, input_html: {data: {barcode_target: "imageUrlInput"}} %>
 
     <div data-item-form-target="packagingWrapper">
-      <%= f.association :packagings, as: :check_boxes, label_method: :packaging_label, input_html: {data: {barcode_target:"packagingTagsInput", examples: "" }}, hint: ":examples" %>
+      <%= f.association :packagings, as: :check_boxes, label_method: :packaging_label, input_html: {data: {barcode_target:"packagingTagsInput", examples: "" }} %>
     </div>
 
     <%# <%= f.collection_check_boxes(
