@@ -2,8 +2,8 @@ class Packaging < ApplicationRecord
   has_many :rules
   self.inheritance_column = :_type_disabled
 
-  def name_of_method
-    "#{category} - #{type}"
+  def packaging_label
+    "#{category} - #{type}<hint class=\"custom-tooltip\" data-content=\"#{examples}\">?</hint>".html_safe
   end
 
   # include PgSearch::Model
