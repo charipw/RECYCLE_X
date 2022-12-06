@@ -4,4 +4,7 @@ class PagesController < ApplicationController
   def home
     @url = request.original_url
   end
+
+  def resources
+  end
 end

@@ -15,8 +15,7 @@ Rails.application.routes.draw do
   resources :rules
   get '/my_products', to: 'item_users#index'
   get '/my_products/:id', to: 'item_users#show', as: "product"
-
-
+  get '/resources', to: 'pages#resources', as: :resources
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
