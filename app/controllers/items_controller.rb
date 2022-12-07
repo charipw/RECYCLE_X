@@ -44,6 +44,7 @@ class ItemsController < ApplicationController
     redirect_to product_path(@item_user.id)
   end
 
+
   private
 
   def item_params
