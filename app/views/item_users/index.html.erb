@@ -3,7 +3,7 @@
 
 
 
-  <% @useritems.each do |item|%>
+  <% @useritems.sort_by{|a| a.created_at }.reverse.each do |item|%>
     <%i = Item.find_by id: item.item_id %>
        <%=link_to product_path(item.id), class: "text-decoration-none" do %>
         <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
