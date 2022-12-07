@@ -12,14 +12,11 @@
         <div class="card" style="border-radius: 15px; background-color: #ABD699;">
           <div class="card-body p-4 text-black">
               <div class="d-flex align-items-center justify-content-between mb-3">
-                <h5 class="mb-0">Your Profile</h5>
+                <h4 class="mb-0">Your Profile</h4>
             </div>
             <div class="d-flex align-items-center mb-4">
-              <div class="flex-shrink-0">
-                <%= image_tag asset_path('profile.png'), class:"img-fluid rounded-circle border border-dark border-3",
-                  style:"width: 70px;"%>
-              </div>
-              <div class="flex-grow-1 ms-3">
+
+              <div class="flex-grow-1 ">
                 <div class="d-flex flex-row align-items-center mb-2">
                   <p class="mb-0 me-2"><%= @user.email%> </p>
                 </div>

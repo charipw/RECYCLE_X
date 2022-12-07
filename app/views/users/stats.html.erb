@@ -6,41 +6,14 @@
         <div class="card shadow h-100" style="border-radius: 15px;">
           <div class="card-body pb-0">
             <div class="text-center">
+            <div style="background-color: #EFF5F5; padding: 10px;">
             <p class="small "><i class="fa-solid fa-award"></i> Congrats, you have properly disposed of </p>
             <h4><strong><%= @user.item_users.count%> Items</strong></h4>
-             <hr>
-             <%recycled = []%>
-             <%waste = []%>
-            <% @user.item_users.each do |item|
-                item.item.packagings.each do |packaging|%>
-                    <% packaging.rules.each do |rule| %>
-                      <% if rule.borough_id == @user.borough_id %>
-                        <% if rule.is_recycled == true %>
-                          <% recycled << item.item.name %>
-                        <% else %>
-                          <% waste << item %>
-                        <% end %>
-                      <% end %>
-                    <% end %><br>
-                  <% end %>
-                <% end %>
-                <% percentage = (recycled.size.to_f / @user.item_users.size.to_f) * 100 %>
-                <%= percentage.to_i %>% of the items you have scanned can be recycled in your area <%= @user.borough.name%>
-              </div>
             </div>
-        </div>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
-        <div class="card shadow h-100" style="border-radius: 15px;">
-          <div class="card-body pb-0">
-            <div class="text-center">
             <%recycled = []%>
             <%waste = []%>
-            <%items = ItemUser.all%>
-            <% items.each do |item|%>
-              <%item.item.packagings.each do |packaging|%>
+            <% @user.item_users.each do |item|
+              item.item.packagings.each do |packaging|%>
                 <% packaging.rules.each do |rule| %>
                   <% if rule.borough_id == @user.borough_id %>
                     <% if rule.is_recycled == true %>
@@ -52,12 +25,131 @@
                 <% end %><br>
               <% end %>
             <% end %>
-            <p class="small "><i class="fa-solid fa-award"></i> Together, we have properly disposed of</p>
-            <h4><strong><%= items.size%> Items</strong></h4>
-            <p class="small "><i class="fa-solid fa-award"></i> and we have recycled</p>
-            <h4><strong><%= recycled.size%> Items</strong></h4>
-            <% percentage = (recycled.size.to_f / items.size.to_f) * 100 %>
-            <%= percentage.to_i %>% of the items our users have scanned can be recycled in their respective areas
+            <% percentage = ((recycled.size.to_f / @user.item_users.size.to_f) * 100).to_i %>
+            <% wp = 100 - percentage %>
+            <div class="card">
+            <div class="card-body">
+            <div class="d-flex justify-content-between px-md-1">
+              <div>
+                <h3 class="text-success"><%=percentage%> %</h3>
+                <p class="mb-0">Recycled</p>
+              </div>
+              <div class="align-self-center">
+                <i class="fa-solid fa-recycle text-success fa-3x"></i>
+              </div>
+            </div>
+            <div class="px-md-1">
+              <div class="progress mt-3 mb-1 rounded" style="height: 7px;">
+                <div class="progress-bar bg-success" role="progressbar" style="width: <%=percentage%>%;" aria-valuenow="<%=percentage%>"
+                  aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <br>
+       <br>
+       <div class="card">
+            <div class="card-body">
+            <div class="d-flex justify-content-between px-md-1">
+              <div>
+                <h3 class="text-danger"><%=wp%> %</h3>
+                <p class="mb-0">Waste</p>
+              </div>
+              <div class="align-self-center">
+                <i class="fa-solid fa-trash text-danger fa-3x"></i>
+              </div>
+            </div>
+            <div class="px-md-1">
+              <div class="progress mt-3 mb-1 rounded" style="height: 7px;">
+                <div class="progress-bar bg-danger" role="progressbar" style="width: <%=wp%>%;" aria-valuenow="<%=wp%>"
+                  aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <br>
+       <br>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+        <div class="card shadow h-100" style="border-radius: 15px;">
+          <div class="card-body pb-0">
+            <div class="text-center">
+            <div style="background-color: #EFF5F5; padding: 10px;">
+            <p class="small "><i class="fa-solid fa-award"></i> Together, our community has properly disposed of</p>
+            <h4><strong><%= ItemUser.all.size%> Items</strong></h4>
+            </div>
+            <%recycled = []%>
+            <%waste = []%>
+            <%items = ItemUser.all%>
+            <%items.each do |item|%>
+              <%item.item.packagings.each do |packaging|%>
+                <%packaging.rules.each do |rule| %>
+                  <%if rule.borough_id == @user.borough_id %>
+                    <%if rule.is_recycled == true %>
+                      <%recycled << item.item.name %>
+                    <%else %>
+                      <%waste << item %>
+                    <%end%>
+                  <%end%>
+                <%end%>
+              <%end%>
+            <%end%>
+            <br>
+            <% percentage = ((recycled.size.to_f / items.size.to_f) * 100).to_i %>
+            <% wp = 100 - percentage %>
+            <div class="card">
+            <div class="card-body">
+            <div class="d-flex justify-content-between px-md-1">
+              <div>
+                <h3 class="text-success"><%=percentage%> %</h3>
+                <p class="mb-0">Recycled</p>
+              </div>
+              <div class="align-self-center">
+                <i class="fa-solid fa-recycle text-success fa-3x"></i>
+              </div>
+            </div>
+            <div class="px-md-1">
+              <div class="progress mt-3 mb-1 rounded" style="height: 7px;">
+                <div class="progress-bar bg-success" role="progressbar" style="width: <%=percentage%>%;" aria-valuenow="<%=percentage%>"
+                  aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <br>
+       <br>
+         <div class="card">
+            <div class="card-body">
+            <div class="d-flex justify-content-between px-md-1">
+              <div>
+                <h3 class="text-danger"><%=wp%> %</h3>
+                <p class="mb-0">Waste</p>
+              </div>
+              <div class="align-self-center">
+                <i class="fa-solid fa-trash text-danger fa-3x"></i>
+              </div>
+            </div>
+            <div class="px-md-1">
+              <div class="progress mt-3 mb-1 rounded" style="height: 7px;">
+                <div class="progress-bar bg-danger" role="progressbar" style="width: <%=wp%>%;" aria-valuenow="<%=wp%>"
+                  aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <br>
+       <br>
+        <p class="small "> Thank you for doing your part! <i class="fa-regular fa-heart"></i></p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
             </div>
           </div>
         </div>
