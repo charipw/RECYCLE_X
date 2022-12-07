@@ -22,8 +22,8 @@ Packaging.destroy_all
 puts "Destroying Packagings"
 ItemUser.destroy_all
 puts "Destroying Item User"
-
-
+Item.destroy_all
+puts "Destroying Item"
 
 
 
@@ -82,26 +82,29 @@ user_3 = User.create(email:"charleen@test.com", password:"123456", borough: Boro
 puts "Users created"
 
 item_1 = Item.create(eco_score: "A", name: "Whitworths sweet figs", barcode: "5000234047296" )
-# image = File.open("app/assets/images/Figs.jpeg")
-item_1.photo.attach(io: URI.open("https://www.bestwaywholesale.co.uk/img/products/1000/6/5000234047296.jpg"), filename: "figs", content_type: "image/jpg" )
-item_1.save
+f = URI.open("https://www.bestwaywholesale.co.uk/img/products/1000/6/5000234047296.jpg")
+p f
+item_1.photo.attach(io: f, filename: "figs.jpg", content_type: "image/jpg" )
+item_1.save!
 
-# item_2 = Item.create(name: "Marmite", barcode: "50184453" )
-# image = File.open("app/assets/images/Marmite.jpeg")
-# item_2.photo.attach(io: image, filename:"Marmite.jpeg", )
-# item_2.save
+item_2 = Item.create(eco_score: "B", name: "Marmite", barcode: "50184453" )
+f = URI.open("https://www.fruit4london.co.uk/wp-content/uploads/2020/10/Marmite-Vegan-Spread_____2.jpg")
+p f
+item_2.photo.attach(io: f, filename: "marmite.jpg", content_type: "image/jpg" )
+item_2.save!
+
 
 
 puts "Items created"
 
 ItemUser.create(user_id: user_3.id, item_id: item_1.id)
-# ItemUser.create(user_id: user_3.id, item_id: item_2.id)
+ItemUser.create(user_id: user_3.id, item_id: item_2.id)
 
 
 puts "Items Users created"
 
 ItemPackaging.create(packaging: Packaging.second, item_id: item_1.id)
-# ItemPackaging.create(packaging: Packaging.second, item_id: item_2.id)
+ItemPackaging.create(packaging: Packaging.second, item_id: item_2.id)
 
 
 puts "Item Packaging created"
