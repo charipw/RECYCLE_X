@@ -63,7 +63,7 @@
               <div>
                 <h3 style="color: green" > <strong><i class="fa-solid fa-recycle"></i> Recycling</strong></h3>
                   <% if @recycled_packagings.empty? %>
-                    <p><%= "Huh-huh better check for an alternative next time you need to buy this kind of item ;)" %></p>
+                    <p><%= "Next time you need to buy this kind of item, try an alternative ;)" %></p>
                   <% else %>
                     <% @recycled_packagings.each do |packaging|%>
                       <p> <%= "#{packaging.category} - #{packaging.type}" %></p>

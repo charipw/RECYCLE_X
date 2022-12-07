@@ -25,7 +25,4 @@ class ItemUsersController < ApplicationController
       end
     end
   end
-
-
-
 end
