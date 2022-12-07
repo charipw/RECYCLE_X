@@ -93,18 +93,87 @@ p f
 item_2.photo.attach(io: f, filename: "marmite.jpg", content_type: "image/jpg" )
 item_2.save!
 
+item_3 = Item.create(eco_score: "", name: "Fanta", barcode: "5449000011527" )
+f = URI.open("https://www.yummiesdeli.com/wp-content/uploads/2020/04/Fanta-Orange-Can-scaled.jpg")
+p f
+item_3.photo.attach(io: f, filename: "fanta.jpg", content_type: "image/jpg" )
+item_3.save!
+
+item_4 = Item.create(eco_score: "", name: "Nutella", barcode: "3017620422003" )
+f = URI.open("https://vicofoodbox.com/wp-content/uploads/2021/06/BL077.jpg")
+p f
+item_4.photo.attach(io: f, filename: "nutella.jpg", content_type: "image/jpg" )
+item_4.save!
+
+item_5 = Item.create(eco_score: "", name: "Coke", barcode: "04965802" )
+f = URI.open("https://images.openfoodfacts.org/images/products/04965802/front_en.17.400.jpg")
+p f
+item_5.photo.attach(io: f, filename: "coke.jpg", content_type: "image/jpg" )
+item_5.save!
+
+item_6 = Item.create(eco_score: "A", name: "Granola", barcode: "5060419540127" )
+f = URI.open("https://images.openfoodfacts.org/images/products/506/041/954/0127/front_en.3.400.jpg")
+p f
+item_6.photo.attach(io: f, filename: "granola.jpg", content_type: "image/jpg" )
+item_6.save!
+
+item_7 = Item.create(eco_score: "A", name: "Peroni", barcode: "8008440222008" )
+f = URI.open("https://www.clickndrink.co.uk/wp-content/uploads/2020/03/26690043-1.jpg")
+p f
+item_7.photo.attach(io: f, filename: "peroni.jpg", content_type: "image/jpg" )
+item_7.save!
+
+item_8 = Item.create(eco_score: "B", name: "Pop Chips", barcode: "5060292302256" )
+f = URI.open("https://images.openfoodfacts.org/images/products/506/029/230/2256/front_en.24.400.jpg")
+p f
+item_8.photo.attach(io: f, filename: "popchips.jpg", content_type: "image/jpg" )
+item_8.save!
+
+item_9 = Item.create(eco_score: "B", name: "M&S Hummous", barcode: "00348423" )
+f = URI.open("https://images.openfoodfacts.org/images/products/00348423/front_fr.4.400.jpg")
+p f
+item_9.photo.attach(io: f, filename: "hummus.jpg", content_type: "image/jpg" )
+item_9.save!
+
+item_10 = Item.create(eco_score: "B", name: "Activia", barcode: "0056800098297" )
+f = URI.open("https://images.openfoodfacts.org/images/products/005/680/009/8297/front_en.38.400.jpg")
+p f
+item_10.photo.attach(io: f, filename: "activia.jpg", content_type: "image/jpg" )
+item_10.save!
+
+
 
 
 puts "Items created"
 
 ItemUser.create(user_id: user_3.id, item_id: item_1.id)
 ItemUser.create(user_id: user_3.id, item_id: item_2.id)
+ItemUser.create(user_id: user_1.id, item_id: item_3.id)
+ItemUser.create(user_id: user_3.id, item_id: item_4.id)
+ItemUser.create(user_id: user_3.id, item_id: item_5.id)
+ItemUser.create(user_id: user_3.id, item_id: item_6.id)
+ItemUser.create(user_id: user_3.id, item_id: item_7.id)
+ItemUser.create(user_id: user_3.id, item_id: item_8.id)
+ItemUser.create(user_id: user_3.id, item_id: item_9.id)
+ItemUser.create(user_id: user_3.id, item_id: item_10.id)
+
+
+
 
 
 puts "Items Users created"
 
 ItemPackaging.create(packaging: Packaging.second, item_id: item_1.id)
 ItemPackaging.create(packaging: Packaging.second, item_id: item_2.id)
+ItemPackaging.create(packaging: Packaging.second, item_id: item_3.id)
+ItemPackaging.create(packaging: Packaging.second, item_id: item_4.id)
+ItemPackaging.create(packaging: Packaging.second, item_id: item_5.id)
+ItemPackaging.create(packaging: Packaging.second, item_id: item_6.id)
+ItemPackaging.create(packaging: Packaging.second, item_id: item_7.id)
+ItemPackaging.create(packaging: Packaging.second, item_id: item_8.id)
+ItemPackaging.create(packaging: Packaging.second, item_id: item_9.id)
+ItemPackaging.create(packaging: Packaging.second, item_id: item_10.id)
+
 
 
 puts "Item Packaging created"
