@@ -67,7 +67,7 @@ export default class extends Controller {
                     // console.log(`result["product"]`, result["product"])
                     // document.querySelector("#barcode-title").classList.add("d-none")
                     // console.log(this.barcodeInputTarget)
-                    // console.log(result["product"]);
+                    console.log(result["product"]);
                     // console.log(result["product"]["code"]);
                       if((result["product"]["code"]) == undefined) {
                         // console.log("hello")
@@ -76,12 +76,12 @@ export default class extends Controller {
                       }
 
                       // console.log(result["product"]["image_packaging_url"]);
-                      if((result["product"]["image_packaging_url"]) == undefined) {
+                      if((result["product"]["image_url"]) == undefined) {
                         // console.log("hello")
                       } else {
                         // console.log("inside else")
-                        console.log('setting image_url')
-                        this.imageUrlInputTarget.value = result["product"]["image_packaging_url"]
+                        console.log('image_url')
+                        this.imageUrlInputTarget.value = result["product"]["image_url"]
                       }
 
 
