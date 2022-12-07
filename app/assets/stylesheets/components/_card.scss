@@ -22,6 +22,11 @@
   align-items: center;
 }
 
+.imgs{
+  height: 100px;
+  width: 50%;
+}
+
 .card-product p {
   font-size: 12px;
   line-height: 1.4;
@@ -31,5 +36,42 @@
 }
 
 .card-product .card-product-infos {
+  padding: 16px;
+}
+
+
+.cards{
+  overflow: hidden;
+  height: 350px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+.cards p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.cards h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  align-items: center;
+}
+
+.cards img {
+  height: 340px;
+  width: 50%;
+  // object-fit: cover;
+  object-fit: contain;
+}
+
+.cards .cards-infos{
   padding: 16px;
 }
