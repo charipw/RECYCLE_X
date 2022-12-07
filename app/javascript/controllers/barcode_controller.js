@@ -80,6 +80,7 @@ export default class extends Controller {
                         // console.log("hello")
                       } else {
                         // console.log("inside else")
+                        console.log('setting image_url')
                         this.imageUrlInputTarget.value = result["product"]["image_packaging_url"]
                       }
 
