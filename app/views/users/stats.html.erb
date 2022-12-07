@@ -8,7 +8,12 @@
             <div class="text-center">
             <div style="background-color: #EFF5F5; padding: 10px;">
             <p class="small "><i class="fa-solid fa-award"></i> Congrats, you have properly disposed of </p>
-            <h4><strong><%= @user.item_users.count%> Items</strong></h4>
+            <%useritems = @user.item_users.count%>
+            <%if useritems == 1%>
+              <h4><strong><%= useritems%> Item</strong></h4>
+            <%else%>
+              <h4><strong><%= useritems%> Items</strong></h4>
+            <%end%>
             </div>
             <%recycled = []%>
             <%waste = []%>
@@ -87,7 +92,12 @@
               <div class="text-center">
                 <div style="background-color: #EFF5F5; padding: 10px;">
                   <p class="small "><i class="fa-solid fa-award"></i> Together, our community has properly disposed of</p>
-                  <h4><strong><%= ItemUser.all.size%> Items</strong></h4>
+                  <% allitems = ItemUser.all.size  %>
+                  <%if allitems == 1%>
+                    <h4><strong><%= allitems%> Item</strong></h4>
+                  <%else%>
+                    <h4><strong><%= allitems%> Items</strong></h4>
+                  <%end%>
                 </div>
                 <%recycled = []%>
                 <%waste = []%>
