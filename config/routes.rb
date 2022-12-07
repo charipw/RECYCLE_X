@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/stats', to: 'users#stats'
   get 'scan', to: 'item_users#new'
   get 'barcode', to: 'item_users#barcode', as: :barcode
-
+  get 'about', to: 'pages#about'
   resources :items, only: %i[new create show] do
     collection do
       get "find/:barcode", to: "items#find"
