@@ -105,7 +105,7 @@
                 <%items.each do |item|%>
                   <%item.item.packagings.each do |packaging|%>
                     <%packaging.rules.each do |rule| %>
-                      <%if rule.borough_id == @user.borough_id %>
+                      <%if rule.borough_id == item.user.borough_id %>
                         <%if rule.is_recycled == true %>
                           <%recycled << item.item.name %>
                         <%else %>
