@@ -11,7 +11,7 @@
         <h2><%= link_to "Recycle-X", root_path, style:"color: #abd699;", class: "nav-link" %></h2>
       </li>
     <% elsif user_signed_in? %>
-      <h1>hello</h1>
+        <h2><%= link_to "About Recycling", resources_path, style:"color: #abd699;", class: "nav-link" %></h2>
     <% else %>
       <li class="nav-item">
         <h2><%= link_to "Login", new_user_session_path, style:"color: #abd699;", class: "nav-link" %></h2>
