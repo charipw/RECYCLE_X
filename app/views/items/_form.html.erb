@@ -2,7 +2,7 @@
 
 <%= simple_form_for item do |f| %>
     <div class="container text-center">
-      <h4>This product does not exit on Recycle X yet!</h4>
+      <h4>This product does not exist on Recycle X yet!</h4>
       <h4>We found some information about the product</h4>
       <h4>Reviewing and/or filling the information is very valuable for us and the following users</h4>
       <h4>Thank you for contributing to making recycling easier, and the planet better!</h4>
@@ -10,23 +10,20 @@
 
     <p><%#= item.id %></p>
 
-    <%= f.input :name, input_html: {data: {barcode_target: "nameInput"}}%>
-    <%= f.input :barcode, input_html: {data: {barcode_target: "barcodeInput"}}%>
-    <%= f.input :eco_score, input_html: {data: {barcode_target: "ecoscoreInput"}, readonly: true } %>
-    <%= f.input :photo, as: :file %>
-    <%= f.input :image_url, input_html: {data: {barcode_target: "imageUrlInput"}, readonly: true } %>
+      <%= f.input :name, input_html: {data: {barcode_target: "nameInput"}}%>
+      <%= f.input :barcode, input_html: {data: {barcode_target: "barcodeInput"}}%>
+      <%= f.input :eco_score, input_html: {data: {barcode_target: "ecoscoreInput"}, readonly: true } %>
+      <%= f.input :photo, as: :file %>
+      <%= f.input :image_url, input_html: {data: {barcode_target: "imageUrlInput"}, readonly: true } %>
 
     <div data-item-form-target="packagingWrapper">
       <%= f.association :packagings, as: :check_boxes, label_method: :packaging_label, input_html: {data: {barcode_target:"packagingTagsInput", examples: "" }} %>
     </div>
 
-    <%# <%= f.collection_check_boxes(
-    :options, [[true, 'Yes'] ,[false, 'No']], :first, :last
-    ) do |b|
-    b.label { b.check_box + b.text } %>
-    <%# <% end %>
 
-    <%= f.submit %>
-    <% end %>
+    <div class="form-actions">
+      <%= f.button :submit, "Add product", class:"btn btn-rounded btn-block btn-lg", style:"background-color: #ABD699; color: white;"%>
+    </div>
+      <% end %>
 
 </div>
