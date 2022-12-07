@@ -8,11 +8,13 @@
       <h4>Thank you for contributing to making recycling easier, and the planet better!</h4>
     </div>
 
+    <p><%#= item.id %></p>
+
     <%= f.input :name, input_html: {data: {barcode_target: "nameInput"}}%>
     <%= f.input :barcode, input_html: {data: {barcode_target: "barcodeInput"}}%>
-    <%= f.input :eco_score, input_html: {data: {barcode_target: "ecoscoreInput"}}, disabled: true %>
+    <%= f.input :eco_score, input_html: {data: {barcode_target: "ecoscoreInput"}, readonly: true } %>
     <%= f.input :photo, as: :file %>
-    <%= f.input :image_url, input_html: {data: {barcode_target: "imageUrlInput"}}, disabled: true %>
+    <%= f.input :image_url, input_html: {data: {barcode_target: "imageUrlInput"}, readonly: true } %>
 
     <div data-item-form-target="packagingWrapper">
       <%= f.association :packagings, as: :check_boxes, label_method: :packaging_label, input_html: {data: {barcode_target:"packagingTagsInput", examples: "" }} %>

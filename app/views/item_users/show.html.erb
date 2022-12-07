@@ -66,7 +66,7 @@
                     <p><%= "Next time you need to buy this kind of item, try an alternative ;)" %></p>
                   <% else %>
                     <% @recycled_packagings.each do |packaging|%>
-                      <p> <%= "#{packaging.category} - #{packaging.type}" %></p>
+                      <p> <%= "#{packaging.category} - #{packaging.type} (e.g #{packaging.examples})" %></p>
                     <% end %>
                   <% end %>
               </div>
@@ -85,7 +85,7 @@
                   <p><%= "Great news, #{@item.name} is 100% recycled in #{@user.borough.name}!" %></p>
                   <% else %>
                     <% @non_recycled_packagings.each do |packaging|%>
-                        <p> <%= "#{packaging.category} - #{packaging.type}" %></p>
+                        <p> <%= "#{packaging.category} - #{packaging.type}(e.g #{packaging.examples})" %></p>
                     <% end %>
                   <%end %>
               </div><br>
