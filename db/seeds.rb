@@ -27,29 +27,51 @@ puts "Destroying Item"
 
 
 
-Packaging.create(
-  [
-    {category: "Rigid plastic", type: "PET", examples: "Drinks bottles. Clear trays. Sauce bottles"},
-    {category: "Rigid plastic", type: "HDPE", examples: "Milk bottles, bleach, cleaners, shampoo bottles"},
-    {category: "Rigid plastic", type: "PP", examples: "Plastic lids, margarine tubs, microwable meal trays"},
-    {category: "Rigid plastic", type: "PVC", examples: "Pipes, fittings, window and door frames"},
-    {category: "Rigid plastic", type: "Polystyrene", examples: "Foam packaging, meat trays, takeaway food containers"},
-    {category: "Rigid plastic", type: "Mixed Plastic", examples: "Pouches for baby food, pet food, detergent or cleaning. Cheese packaging"},
-    {category: "Plastic film", type: "Mixed Plastic Film", examples: "Crisp and sweet packets, pouches and plastic foils. Cheese wrappers"},
-    {category: "Plastic film", type: "HDPE Film", examples: "Cereal box boags and reusable carrier bags"},
-    {category: "Plastic film", type: "LDPE", examples: "Carrier bags, salad bags, bread bags, food bags, packaging films"},
-    {category: "Plastic film", type: "PP Film", examples: "Film lids from trays, salad bags, film seals on tubs"},
-    {category: "Glass", type: "Glass", examples: "Beer and wine bottles, jars, oil bottles"},
-    {category: "Metals", type: "Aluminium", examples: "Fizzy drinks cans, tin foil"},
-    {category: "Metals", type: "Foil", examples: "Kitchen foil, foil trays and bottle toppers"},
-    {category: "Metals", type: "Steel", examples: "Tins of sardines, soups, tuna"},
-    {category: "Paper", type: "Paper", examples: "Letters, envelopes, documents, pulped paper egg cartons"},
-    {category: "Paper", type: "Card", examples: "Careal boxes, loo roll tubes, delivery boxes"},
-    {category: "Biodegradable", type: "Compostable", examples: "Plant based compostable packaging"},
-    {category: "Biodegradable", type: "Biodegradable", examples: "Material that will break down naturally"},
-    {category: "Other", type: "Composite", examples: "Juice and milk cartons"},
-  ]
-)
+
+# Packaging.create(
+#   [
+#     {category: "Rigid plastic", type: "PET", examples: "Drinks bottles. Clear trays. Sauce bottles"},
+#     {category: "Rigid plastic", type: "HDPE", examples: "Milk bottles, bleach, cleaners, shampoo bottles"},
+#     {category: "Rigid plastic", type: "PP", examples: "Plastic lids, margarine tubs, microwable meal trays"},
+#     {category: "Rigid plastic", type: "PVC", examples: "Pipes, fittings, window and door frames"},
+#     {category: "Rigid plastic", type: "Polystyrene", examples: "Foam packaging, meat trays, takeaway food containers"},
+#     {category: "Rigid plastic", type: "Mixed Plastic", examples: "Pouches for baby food, pet food, detergent or cleaning. Cheese packaging"},
+#     {category: "Plastic film", type: "Mixed Plastic Film", examples: "Crisp and sweet packets, pouches and plastic foils. Cheese wrappers"},
+#     {category: "Plastic film", type: "HDPE Film", examples: "Cereal box boags and reusable carrier bags"},
+#     {category: "Plastic film", type: "LDPE", examples: "Carrier bags, salad bags, bread bags, food bags, packaging films"},
+#     {category: "Plastic film", type: "PP Film", examples: "Film lids from trays, salad bags, film seals on tubs"},
+#     {category: "Glass", type: "Glass", examples: "Beer and wine bottles, jars, oil bottles"},
+#     {category: "Metals", type: "Aluminium", examples: "Fizzy drinks cans, tin foil"},
+#     {category: "Metals", type: "Foil", examples: "Kitchen foil, foil trays and bottle toppers"},
+#     {category: "Metals", type: "Steel", examples: "Tins of sardines, soups, tuna"},
+#     {category: "Paper", type: "Paper", examples: "Letters, envelopes, documents, pulped paper egg cartons"},
+#     {category: "Paper", type: "Card", examples: "Careal boxes, loo roll tubes, delivery boxes"},
+#     {category: "Biodegradable", type: "Compostable", examples: "Plant based compostable packaging"},
+#     {category: "Biodegradable", type: "Biodegradable", examples: "Material that will break down naturally"},
+#     {category: "Other", type: "Composite", examples: "Juice and milk cartons"},
+#   ]
+# )
+
+PET = Packaging.create(category: "Rigid plastic", type: "PET", examples: "Drinks bottles. Clear trays. Sauce bottles")
+HDPE = Packaging.create(category: "Rigid plastic", type: "HDPE", examples: "Milk bottles, bleach, cleaners, shampoo bottles")
+PP = Packaging.create(category: "Rigid plastic", type: "PP", examples: "Plastic lids, margarine tubs, microwable meal trays")
+PVC = Packaging.create(category: "Rigid plastic", type: "PVC", examples: "Pipes, fittings, window and door frames")
+Polystyrene = Packaging.create(category: "Rigid plastic", type: "Polystyrene", examples: "Foam packaging, meat trays, takeaway food containers")
+Mixed_plastic = Packaging.create(category: "Rigid plastic", type: "Mixed Plastic", examples: "Pouches for baby food, pet food, detergent or cleaning. Cheese packaging")
+Mixed_plastic_film = Packaging.create(category: "Plastic film", type: "Mixed Plastic Film", examples: "Crisp and sweet packets, pouches and plastic foils. Cheese wrappers")
+HDPE_film = Packaging.create(category: "Plastic film", type: "HDPE Film", examples: "Cereal box boags and reusable carrier bags")
+LDPE = Packaging.create(category: "Plastic film", type: "LDPE", examples: "Carrier bags, salad bags, bread bags, food bags, packaging films")
+PP_film = Packaging.create(category: "Plastic film", type: "PP Film", examples: "Film lids from trays, salad bags, film seals on tubs")
+Glass = Packaging.create(category: "Glass", type: "Glass", examples: "Beer and wine bottles, jars, oil bottles")
+Aluminium = Packaging.create(category: "Metals", type: "Aluminium", examples: "Fizzy drinks cans, tin foil")
+Foil = Packaging.create(category: "Metals", type: "Foil", examples: "Kitchen foil, foil trays and bottle toppers")
+Steel = Packaging.create(category: "Metals", type: "Steel", examples: "Tins of sardines, soups, tuna")
+Paper = Packaging.create(category: "Paper", type: "Paper", examples: "Letters, envelopes, documents, pulped paper egg cartons")
+Card = Packaging.create(category: "Paper", type: "Card", examples: "Careal boxes, loo roll tubes, delivery boxes")
+Compostable = Packaging.create(category: "Biodegradable", type: "Compostable", examples: "Plant based compostable packaging")
+Biodegradable = Packaging.create(category: "Biodegradable", type: "Biodegradable", examples: "Material that will break down naturally")
+Composite = Packaging.create(category: "Other", type: "Composite", examples: "Juice and milk cartons")
+
 puts "Packagings created"
 
 
@@ -163,16 +185,16 @@ ItemUser.create(user_id: user_3.id, item_id: item_10.id)
 
 puts "Items Users created"
 
-ItemPackaging.create(packaging: Packaging.second, item_id: item_1.id)
-ItemPackaging.create(packaging: Packaging.second, item_id: item_2.id)
-ItemPackaging.create(packaging: Packaging.second, item_id: item_3.id)
-ItemPackaging.create(packaging: Packaging.second, item_id: item_4.id)
-ItemPackaging.create(packaging: Packaging.second, item_id: item_5.id)
-ItemPackaging.create(packaging: Packaging.second, item_id: item_6.id)
-ItemPackaging.create(packaging: Packaging.second, item_id: item_7.id)
-ItemPackaging.create(packaging: Packaging.second, item_id: item_8.id)
-ItemPackaging.create(packaging: Packaging.second, item_id: item_9.id)
-ItemPackaging.create(packaging: Packaging.second, item_id: item_10.id)
+ItemPackaging.create(packaging: LDPE, item_id: item_1.id)
+ItemPackaging.create(packaging: PET, item_id: item_2.id)
+ItemPackaging.create(packaging: PET, item_id: item_3.id)
+ItemPackaging.create(packaging: PET, item_id: item_4.id)
+ItemPackaging.create(packaging: PET, item_id: item_5.id)
+ItemPackaging.create(packaging: PET, item_id: item_6.id)
+ItemPackaging.create(packaging: PET, item_id: item_7.id)
+ItemPackaging.create(packaging: PET, item_id: item_8.id)
+ItemPackaging.create(packaging: PET, item_id: item_9.id)
+ItemPackaging.create(packaging: PET, item_id: item_10.id)
 
 
 
