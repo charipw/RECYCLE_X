@@ -6,12 +6,10 @@
     <div class="title">
     <%# <div class="collapse navbar-collapse" id="navbarSupportedContent"> %>
     <ul class="navbar-nav me-auto">
-    <% if user_signed_in? && @url != "http://localhost:3000/" %>
+    <% if user_signed_in? %>
       <li class="nav-item">
         <h2><%= link_to "Recycle-X", root_path, style:"color: #abd699;", class: "nav-link" %></h2>
       </li>
-    <% elsif user_signed_in? %>
-        <h2><%= link_to "Resources", resources_path, style:"color: #abd699;", class: "nav-link" %></h2>
     <% else %>
       <li class="nav-item">
         <h2><%= link_to "Login", new_user_session_path, style:"color: #abd699;", class: "nav-link" %></h2>
