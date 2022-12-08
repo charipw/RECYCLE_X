@@ -132,42 +132,46 @@ item_4.photo.attach(io: f, filename: "nutella.jpg", content_type: "image/jpg" )
 item_4.save!
 
 item_5 = Item.create(eco_score: "", name: "Coke", barcode: "04965802" )
-f = URI.open("https://images.openfoodfacts.org/images/products/04965802/front_en.17.400.jpg")
+f = URI.open("https://www.yummiesdeli.com/wp-content/uploads/2020/04/Coke-Can-scaled.jpg")
 p f
 item_5.photo.attach(io: f, filename: "coke.jpg", content_type: "image/jpg" )
 item_5.save!
 
 item_6 = Item.create(eco_score: "A", name: "Granola", barcode: "5060419540127" )
-f = URI.open("https://images.openfoodfacts.org/images/products/506/041/954/0127/front_en.3.400.jpg")
+f = URI.open("https://cdn.shopify.com/s/files/1/0433/0992/4509/products/LowSugar_single_1000x1000.jpg?v=1626092918")
 p f
 item_6.photo.attach(io: f, filename: "granola.jpg", content_type: "image/jpg" )
 item_6.save!
 
 item_7 = Item.create(eco_score: "A", name: "Peroni", barcode: "8008440222008" )
-f = URI.open("https://www.clickndrink.co.uk/wp-content/uploads/2020/03/26690043-1.jpg")
+f = URI.open("https://images.squarespace-cdn.com/content/v1/5a80a4b80abd04392241a64b/1561635293353-PR9Y0CUFK0W7K5UA8X31/Peroni+bottle+opening-1.jpg?format=2500w")
 p f
 item_7.photo.attach(io: f, filename: "peroni.jpg", content_type: "image/jpg" )
 item_7.save!
 
 item_8 = Item.create(eco_score: "B", name: "Pop Chips", barcode: "5060292302256" )
-f = URI.open("https://images.openfoodfacts.org/images/products/506/029/230/2256/front_en.24.400.jpg")
+f = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEMB3wtAavcccDfb5UetvDNyeEiE6FLNuB10Ucs9chdT4uzdkDsIj_CSR-kVrff7DpuZI&usqp=CAU")
 p f
 item_8.photo.attach(io: f, filename: "popchips.jpg", content_type: "image/jpg" )
 item_8.save!
 
 item_9 = Item.create(eco_score: "B", name: "M&S Hummous", barcode: "00348423" )
-f = URI.open("https://images.openfoodfacts.org/images/products/00348423/front_fr.4.400.jpg")
+f = URI.open("https://res.cloudinary.com/abillionveg/image/upload/f_webp,q_auto,w_480/v1617708657/kykj9wmfhvd90wadoxfz.jpg")
 p f
 item_9.photo.attach(io: f, filename: "hummus.jpg", content_type: "image/jpg" )
 item_9.save!
 
 item_10 = Item.create(eco_score: "B", name: "Activia", barcode: "0056800098297" )
-f = URI.open("https://images.openfoodfacts.org/images/products/005/680/009/8297/front_en.38.400.jpg")
+f = URI.open("https://ipcdn.freshop.com/resize?url=https://images.freshop.com/00036632015082/9efe4d06eca11a4167edcf5afc587251_large.png&width=512&type=webp&quality=90")
 p f
 item_10.photo.attach(io: f, filename: "activia.jpg", content_type: "image/jpg" )
 item_10.save!
 
-
+item_11 = Item.create(eco_score: "", name: "Sprite", barcode: "5449000286291" )
+f = URI.open("https://cdn.shopify.com/s/files/1/0251/1736/0221/products/IMG_20220810_171551_1024x1024@2x.jpg?v=1660156683")
+p f
+item_11.photo.attach(io: f, filename: "sprite.jpg", content_type: "image/jpg" )
+item_11.save!
 
 
 puts "Items created"
@@ -186,7 +190,7 @@ ItemUser.create(user_id: user_3.id, item_id: item_10.id)
 
 200.times do
   user = [user_1, user_2, user_4, user_5, user_6].sample
-  item = [item_1, item_2, item_3, item_4, item_5, item_6, item_7, item_8, item_9, item_10].sample
+  item = [item_1, item_2, item_3, item_4, item_5, item_6, item_7, item_8, item_9, item_10, item_11].sample
   ItemUser.create(user_id: user.id, item_id: item.id)
 end
 
