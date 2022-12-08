@@ -26,7 +26,7 @@
       <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
         <div class="card shadow h-100" style="border-radius: 15px;">
           <div class="card-body pb-2">
-            <h4 class="text-center">Ecoscore: <%=@item.eco_score %></h4>
+            <h4 class="text-center">Ecoscore: <%=@item.eco_score.capitalize %></h4>
                 <div class="text-center">
                   <% if @item.eco_score == "A" || @item.eco_score == "a" %>
                     <% 5.times do %>

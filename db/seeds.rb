@@ -167,10 +167,10 @@ p f
 item_10.photo.attach(io: f, filename: "activia.jpg", content_type: "image/jpg" )
 item_10.save!
 
-item_11 = Item.create(eco_score: "", name: "Sprite", barcode: "5449000286291" )
-f = URI.open("https://cdn.shopify.com/s/files/1/0251/1736/0221/products/IMG_20220810_171551_1024x1024@2x.jpg?v=1660156683")
+item_11 = Item.create(eco_score: "", name: "7up", barcode: "4060800304360" )
+f = URI.open("https://www.yummiesdeli.com/wp-content/uploads/2020/04/7up-Can-scaled.jpg")
 p f
-item_11.photo.attach(io: f, filename: "sprite.jpg", content_type: "image/jpg" )
+item_11.photo.attach(io: f, filename: "7up.jpg", content_type: "image/jpg" )
 item_11.save!
 
 
@@ -186,6 +186,8 @@ ItemUser.create(user_id: user_3.id, item_id: item_7.id)
 ItemUser.create(user_id: user_3.id, item_id: item_8.id)
 ItemUser.create(user_id: user_3.id, item_id: item_9.id)
 ItemUser.create(user_id: user_3.id, item_id: item_10.id)
+ItemUser.create(user_id: user_1.id, item_id: item_11.id)
+
 
 
 200.times do
@@ -211,7 +213,10 @@ ItemPackaging.create(packaging: HDPE_film, item_id: item_6.id)
 ItemPackaging.create(packaging: Glass, item_id: item_7.id)
 ItemPackaging.create(packaging: LDPE, item_id: item_8.id)
 ItemPackaging.create(packaging: PP, item_id: item_9.id)
+ItemPackaging.create(packaging: Card, item_id: item_9.id)
 ItemPackaging.create(packaging: PP, item_id: item_10.id)
+ItemPackaging.create(packaging: Aluminium, item_id: item_11.id)
+
 
 
 
