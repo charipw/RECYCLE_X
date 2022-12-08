@@ -9,9 +9,10 @@
 }
 
 .card-product img {
-  height: 120px;
-  width: 70%;
-  object-fit: cover;
+  // height: 120px;
+  // width: 40%;
+  height: 100%;
+  // object-fit: cover;
   // object-fit: contain;
 }
 
@@ -42,7 +43,6 @@
 
 .cards{
   overflow: hidden;
-  height: 350px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
