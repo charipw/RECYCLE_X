@@ -173,14 +173,15 @@
                   <% urplace = arr.select { |element| element == @user.item_users.count} %>
                   <% indexes = urplace.map { |element| arr.index(element) } %>
                   <% indexes.each do |i| %>
-                  <p><%= "WOW! Great job your on " %><%= placing = i+1 %><%= "!!! Keep going :partying_face:" %></p>
+                  <p><%= "WOW! Great job your on " %><%= placing = i+1 %><%= "!!! Keep going" %></p>
                   <% end %>
                   <% array = arr.take(5) %>
                   <% array.each.with_index do |item, index| %>
                     <% users.each do |user| %>
-                      <% if item == user.item_users.count %>
-                        <p><%= index+1 %><%= user.email%> <%= "Items=" %><%= item %></p>
-                      <% end %>
+                      <% parts= user.email.split("@") %>
+                        <% if item == user.item_users.count %>
+                          <p><%= index+1 %><%= "." %><%= parts[0].capitalize%> <%= "Items=" %><%= item %></p>
+                        <% end %>
                     <% end %>
                   <% end %>
                 </div>
