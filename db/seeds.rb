@@ -99,7 +99,7 @@ puts "Rules created"
 user_1 = User.create(email: "ben@test.com", password: "123456", borough: Borough.all.sample)
 user_2 = User.create(email: "pia@test.com", password: "123456", borough: Borough.all.sample)
 user_3 = User.create(email:"charleen@test.com", password:"123456", borough: Borough.first)
-user_4 = User.create(email:"matteo@test.com", password:"123456", borough: Borough.all.sample)
+user_4 = User.create(email:"mateo@test.com", password:"123456", borough: Borough.all.sample)
 user_5 = User.create(email:"adrian@test.com", password:"123456", borough: Borough.all.sample)
 user_6 = User.create(email:"louis@test.com", password:"123456", borough: Borough.all.sample)
 user_7 = User.create(email:"lukas@test.com", password:"123456", borough: Borough.all.sample)
@@ -193,7 +193,7 @@ ItemUser.create(user_id: user_1.id, item_id: item_11.id)
 
 
 500.times do
-  user = [user_1, user_2, user_4, user_5, user_6].sample
+  user = [user_1, user_2, user_4, user_5, user_6,user_7, user_8 ].sample
   item = [item_1, item_2, item_3, item_4, item_5, item_6, item_7, item_8, item_9, item_10, item_11].sample
   ItemUser.create(user_id: user.id, item_id: item.id)
 end
