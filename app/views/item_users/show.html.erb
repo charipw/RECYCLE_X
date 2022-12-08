@@ -66,8 +66,8 @@
                   <% if @recycled_packagings.empty? %>
                     <p><%=" Sorry, #{@item.name} is not recycable in #{@user.borough.name}. Next time you need to buy this kind of item, try an eco-friendly alternative ;)" %></p>
                   <% else %>
-                    <% @recycled_packagings.each do |packaging|%>
-                      <p> <%= "#{packaging.category} - #{packaging.type} (e.g #{packaging.examples})" %></p>
+                    <ul><% @recycled_packagings.each do |packaging|%></ul>
+                      <li> <%= "#{packaging.category} - #{packaging.type} (e.g #{packaging.examples})" %></li>
                     <% end %>
                   <% end %>
               </div>
@@ -83,10 +83,10 @@
               <div>
                 <h3 class="text-dark"><strong> <i class="fa-solid fa-trash"> </i> General Waste </strong></h3>
                   <% if @non_recycled_packagings.empty? %>
-                  <p><%= "Great news, #{@item.name} is 100% recycled in #{@user.borough.name}!" %></p>
+                  <%= "Great news, #{@item.name} is 100% recycled in #{@user.borough.name}!" %>
                   <% else %>
-                    <% @non_recycled_packagings.each do |packaging|%>
-                        <p> <%= "#{packaging.category} - #{packaging.type} (e.g #{packaging.examples})" %></p>
+                    <ul><% @non_recycled_packagings.each do |packaging|%></ul>
+                        <li> <%= "#{packaging.category} - #{packaging.type} (e.g #{packaging.examples})" %></li>
                     <% end %>
                   <%end %>
               </div><br>
