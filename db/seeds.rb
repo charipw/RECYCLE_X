@@ -167,7 +167,11 @@ p f
 item_10.photo.attach(io: f, filename: "activia.jpg", content_type: "image/jpg" )
 item_10.save!
 
-
+item_11 = Item.create(eco_score: "", name: "Sprite", barcode: "5449000286291" )
+f = URI.open("https://cdn.shopify.com/s/files/1/0251/1736/0221/products/IMG_20220810_171551_1024x1024@2x.jpg?v=1660156683")
+p f
+item_11.photo.attach(io: f, filename: "sprite.jpg", content_type: "image/jpg" )
+item_11.save!
 
 
 puts "Items created"
@@ -186,7 +190,7 @@ ItemUser.create(user_id: user_3.id, item_id: item_10.id)
 
 200.times do
   user = [user_1, user_2, user_4, user_5, user_6].sample
-  item = [item_1, item_2, item_3, item_4, item_5, item_6, item_7, item_8, item_9, item_10].sample
+  item = [item_1, item_2, item_3, item_4, item_5, item_6, item_7, item_8, item_9, item_10, item_11].sample
   ItemUser.create(user_id: user.id, item_id: item.id)
 end
 
