@@ -63,13 +63,15 @@
             <div class="d-flex justify-content-between">
               <div>
                 <h3 style="color: green" > <strong><i class="fa-solid fa-recycle"></i> Recycling</strong></h3>
-                  <% if @recycled_packagings.empty? %>
-                    <p><%=" Sorry, #{@item.name} is not recycable in #{@user.borough.name}. Next time you need to buy this kind of item, try an eco-friendly alternative ;)" %></p>
-                  <% else %>
-                    <% @recycled_packagings.each do |packaging|%>
-                      <p> <%= "#{packaging.category} - #{packaging.type} (e.g #{packaging.examples})" %></p>
+                  <div class="pb-3">
+                    <% if @recycled_packagings.empty? %>
+                      <p><%=" Sorry, #{@item.name} is not recycable in #{@user.borough.name}. Next time you need to buy this kind of item, try an eco-friendly alternative ;)" %></p>
+                    <% else %>
+                      <ul><% @recycled_packagings.each do |packaging|%></ul>
+                        <li> <%= "#{packaging.category} - #{packaging.type} (e.g #{packaging.examples})" %></li>
+                          <% end %>
                     <% end %>
-                  <% end %>
+                  </div>
               </div>
             </div>
           </div>
@@ -80,15 +82,17 @@
       <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
         <div class="card shadow h-100" style="border-radius: 15px;">
           <div class="card-body pb-0">
-              <div>
+              <div class="pb-3">
                 <h3 class="text-dark"><strong> <i class="fa-solid fa-trash"> </i> General Waste </strong></h3>
-                  <% if @non_recycled_packagings.empty? %>
-                  <p><%= "Great news, #{@item.name} is 100% recycled in #{@user.borough.name}!" %></p>
-                  <% else %>
-                    <% @non_recycled_packagings.each do |packaging|%>
-                        <p> <%= "#{packaging.category} - #{packaging.type} (e.g #{packaging.examples})" %></p>
-                    <% end %>
-                  <%end %>
+                  <div>
+                    <% if @non_recycled_packagings.empty? %>
+                    <%= "Great news, #{@item.name} is 100% recycled in #{@user.borough.name}!" %>
+                    <% else %>
+                      <ul><% @non_recycled_packagings.each do |packaging|%></ul>
+                        <li><%= "#{packaging.category} - #{packaging.type} (e.g #{packaging.examples})" %></li>
+                          <% end %>
+                    <%end %>
+                    </div>
               </div><br>
           </div>
         </div>
