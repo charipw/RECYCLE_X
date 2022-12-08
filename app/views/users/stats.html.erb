@@ -34,7 +34,8 @@
               <% percentage = 0 %>
               <% wp = 0 %>
             <% else %>
-              <% percentage = ((recycled.size.to_f / @user.item_users.size.to_f) * 100 ).to_i %>
+              <% total = recycled.size.to_f + waste.size.to_f%>
+              <% percentage = ((recycled.size.to_f / total) * 100 ).to_i %>
               <% wp = 100 - percentage %>
             <% end %>
             <br>
@@ -116,7 +117,8 @@
                   <%end%>
                 <%end%>
                 <br>
-                <% percentage = ((recycled.size.to_f / items.size.to_f) * 100 ).to_i %>
+                <% total = recycled.size.to_f + waste.size.to_f%>
+                <% percentage = ((recycled.size.to_f / total) * 100 ).to_i %>
                 <% wp = 100 - percentage %>
                 <br>
                 <div class="card">

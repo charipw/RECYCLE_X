@@ -13,6 +13,7 @@
   height: 120px;
   width: 80%;
   object-fit: cover;
+  //height: 100%;
   // object-fit: contain;
   //border-right: solid 2px rgba(154, 153, 153, 0.2);
 }
@@ -44,7 +45,6 @@
 
 .cards{
   overflow: hidden;
-  height: 350px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
