@@ -75,7 +75,7 @@ Composite = Packaging.create(category: "Other", type: "Composite", examples: "Ju
 puts "Packagings created"
 
 
-boroughs = ["Westminster","Tower Hamlets", "Islington","Hammersmith and Fulham", "Hackney", "Greenwich", "Camden", "Kensington and Chelsea", "Lambeth", "Lewisham","Southwark", "Wandsworth"]
+boroughs = ["Kensington and Chelsea","Westminster","Tower Hamlets", "Islington","Hammersmith and Fulham", "Hackney", "Greenwich", "Camden", "Lambeth", "Lewisham","Southwark", "Wandsworth"]
 boroughs.each do |b|
   Borough.create(name: b)
 end
@@ -98,7 +98,7 @@ puts "Rules created"
 
 user_1 = User.create(email: "ben@test.com", password: "123456", borough: Borough.all.sample)
 user_2 = User.create(email: "pia@test.com", password: "123456", borough: Borough.all.sample)
-user_3 = User.create(email:"charleen@test.com", password:"123456", borough: Borough.all.sample)
+user_3 = User.create(email:"charleen@test.com", password:"123456", borough: Borough.first)
 user_4 = User.create(email:"matteo@test.com", password:"123456", borough: Borough.all.sample)
 user_5 = User.create(email:"lara@test.com", password:"123456", borough: Borough.all.sample)
 user_6 = User.create(email:"amie@test.com", password:"123456", borough: Borough.all.sample)
