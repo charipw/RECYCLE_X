@@ -1,3 +1,7 @@
 <h1>individual Packaging</h1>
 <h3><%= @packaging.category %></h3>
 <h3>Type:<%= @packaging.type %></h3>
+
+<% content_for :meta_title, "#{@packaging.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @packaging.description %>
+<% content_for :meta_image, cl_image_path(@packaging.photo.path) %>

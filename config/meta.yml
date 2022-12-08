@@ -1,0 +1,5 @@
+meta_product_name: "Recycle-X"
+meta_title: "Recycle-X - The app made to make recycling easier"
+meta_description: "Us this app to recycle and do your part for the enviroment"
+meta_image: "logo_Recycle-X.pmg" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
