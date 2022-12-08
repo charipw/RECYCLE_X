@@ -117,3 +117,32 @@ p "results: #{results.count}"
 
 
 #/"[a-zA-Z]+(-)*[a-zA-Z]+(-)*[a-zA-Z]*(-)*[a-zA-Z]*(-)*[a-zA-Z]*"/
+
+# <style>
+# body {
+   # min-height: 100vh;
+   # background-color: #00d2ff;
+  # background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5 100%);
+# }
+
+# .bg-gradient {
+   # background-color: #00d2ff;
+   # background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5 100%);
+   # box-shadow: 2px 2px 10px rgba(57, 123, 213, 0.36)
+# }
+# </style>
+# <div class="card shadow mb-4">
+                # <div class="card-body p-5">
+                   #  <h4>Multiple progress bars</h4>
+                   #  <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+                   #  <!-- Multiple progress bar-->
+                   #  <div style="height: 4px" class="progress rounded-pill">
+                       #  <div role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%" class="progress-bar"></div>
+                       #  <div role="progressbar" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100" style="width: 22%" class="progress-bar bg-warning"></div>
+                       #  <div role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 15%" class="progress-bar bg-danger"></div>
+                   #  </div>
+               #  </div>
+           #  </div>
+
+# </section>
