@@ -97,19 +97,18 @@ puts "Rules created"
 
 
 user_1 = User.create(email: "ben@test.com", password: "123456", borough: Borough.all.sample)
-user_2 = User.create(email: "pia@test.com", password: "123456", borough: Borough.all.sample)
+user_2 = User.create(email: "lukas@test.com", password: "123456", borough: Borough.all.sample)
 user_3 = User.create(email:"charleen@test.com", password:"123456", borough: Borough.first)
 user_4 = User.create(email:"mateo@test.com", password:"123456", borough: Borough.all.sample)
 user_5 = User.create(email:"adrian@test.com", password:"123456", borough: Borough.all.sample)
 user_6 = User.create(email:"louis@test.com", password:"123456", borough: Borough.all.sample)
-# user_7 = User.create(email:"lukas@test.com", password:"123456", borough: Borough.all.sample)
-# user_8 = User.create(email:"heba@test.com", password:"123456", borough: Borough.all.sample)
+
 
 
 
 puts "Users created"
 
-item_1 = Item.create(eco_score: "A", name: "Whitworths sweet figs", barcode: "5000234047296" )
+item_1 = Item.create(eco_score: "B", name: "Whitworths sweet figs", barcode: "5000234047296" )
 f = URI.open("https://www.bestwaywholesale.co.uk/img/products/1000/6/5000234047296.jpg")
 p f
 item_1.photo.attach(io: f, filename: "figs.jpg", content_type: "image/jpg" )
@@ -121,19 +120,19 @@ p f
 item_2.photo.attach(io: f, filename: "marmite.jpg", content_type: "image/jpg" )
 item_2.save!
 
-item_3 = Item.create(eco_score: "", name: "Fanta", barcode: "5449000011527" )
+item_3 = Item.create(eco_score: "A", name: "Fanta", barcode: "5449000011527" )
 f = URI.open("https://www.yummiesdeli.com/wp-content/uploads/2020/04/Fanta-Orange-Can-scaled.jpg")
 p f
 item_3.photo.attach(io: f, filename: "fanta.jpg", content_type: "image/jpg" )
 item_3.save!
 
-item_4 = Item.create(eco_score: "", name: "Nutella", barcode: "3017620422003" )
+item_4 = Item.create(eco_score: "B", name: "Nutella", barcode: "3017620422003" )
 f = URI.open("https://vicofoodbox.com/wp-content/uploads/2021/06/BL077.jpg")
 p f
 item_4.photo.attach(io: f, filename: "nutella.jpg", content_type: "image/jpg" )
 item_4.save!
 
-item_5 = Item.create(eco_score: "", name: "Coke", barcode: "04965802" )
+item_5 = Item.create(eco_score: "A", name: "Coke", barcode: "04965802" )
 f = URI.open("https://www.yummiesdeli.com/wp-content/uploads/2020/04/Coke-Can-scaled.jpg")
 p f
 item_5.photo.attach(io: f, filename: "coke.jpg", content_type: "image/jpg" )
@@ -169,7 +168,7 @@ p f
 item_10.photo.attach(io: f, filename: "activia.jpg", content_type: "image/jpg" )
 item_10.save!
 
-item_11 = Item.create(eco_score: "", name: "7up", barcode: "4060800304360" )
+item_11 = Item.create(eco_score: "A", name: "7up", barcode: "4060800304360" )
 f = URI.open("https://www.yummiesdeli.com/wp-content/uploads/2020/04/7up-Can-scaled.jpg")
 p f
 item_11.photo.attach(io: f, filename: "7up.jpg", content_type: "image/jpg" )
@@ -180,8 +179,8 @@ puts "Items created"
 
 ItemUser.create(user_id: user_3.id, item_id: item_1.id)
 ItemUser.create(user_id: user_3.id, item_id: item_2.id)
-ItemUser.create(user_id: user_1.id, item_id: item_3.id)
-ItemUser.create(user_id: user_3.id, item_id: item_4.id)
+ItemUser.create(user_id: user_3.id, item_id: item_3.id)
+ItemUser.create(user_id: user_2.id, item_id: item_4.id)
 ItemUser.create(user_id: user_3.id, item_id: item_5.id)
 ItemUser.create(user_id: user_3.id, item_id: item_6.id)
 ItemUser.create(user_id: user_3.id, item_id: item_7.id)
