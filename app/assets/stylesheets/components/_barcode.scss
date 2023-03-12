@@ -1,3 +1,13 @@
-.barcode{
-  // min-height: 50% !important;
+#html5-qrcode-button-camera-start,
+#html5-qrcode-button-camera-stop {
+  color: red;
+  background-color: #abd699;
+}
+
+#qr-shaded-region {
+  color: red;
+}
+
+#qr-reader {
+  border: none;
 }
