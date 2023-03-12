@@ -61,76 +61,50 @@ export default class extends Controller {
             if (data.form) {
               this.contentTarget.innerHTML = data.form;
               fetch(
-                `https://world.openfoodfacts.org/api/v0/product/${decodedText}.json`,
-                {
-                  method: "GET",
-                  redirect: "follow",
-                }
+                `https://world.openfoodfacts.org/api/v0/product/${decodedText}.json`
               )
                 .then((response) => response.json())
                 .then((result) => {
-                  // console.log(`result["product"]`, result["product"])
-                  // document.querySelector("#barcode-title").classList.add("d-none")
-                  // console.log(this.barcodeInputTarget)
-                  console.log(result["product"]);
-                  // console.log(result["product"]["code"]);
-                  if (result["product"]["code"] == undefined) {
-                    // console.log("hello")
-                  } else {
+                  if (result["product"]["code"]) {
                     this.barcodeInputTarget.value = result["product"]["code"];
                   }
 
-                  // console.log(result["product"]["image_packaging_url"]);
-                  if (result["product"]["image_url"] == undefined) {
-                    // console.log("hello")
-                  } else {
-                    // console.log("inside else")
-                    console.log("image_url");
+                  if (result["product"]["image_url"]) {
                     this.imageUrlInputTarget.value =
                       result["product"]["image_url"];
                   }
 
-                  // console.log(result["product"]["product_name"]);
-                  if (result["product"]["product_name"] == undefined) {
-                    // console.log("hello")
-                  } else {
+                  if (result["product"]["product_name"]) {
                     this.nameInputTarget.value =
                       result["product"]["product_name"];
                   }
-                  // console.log(result["product"]["packaging"]);
-                  if (result["product"]["packaging"] == undefined) {
-                    // console.log("hello")
-                  }
-                  // console.log(result["product"]["packaging_tags"]);
-                  if (result["product"]["packaging_tags"] == undefined) {
-                    // console.log("hello")
-                  } else {
-                    //   this.packagingtagsInputTarget.value =
+
+                  if (result["product"]["packaging_tags"]) {
                     const packagingTypesFound = this.findPackagings(
                       result["product"]["packaging_tags"],
                       arrayTypes
                     );
                     // console.log(array_categories.categories_type.find(el => el === result["product"]["packaging_tags"]))
-                    console.log("input", this.packagingTagsInputTargets);
+                    // console.log("input", this.packagingTagsInputTargets);
                     packagingTypesFound.forEach((type) => {
-                      console.log(type);
+                      // console.log(type);
                       // console.log(this.packagingTagsInputTargets[this.packagingTagsInputTargets.length - 1].options)
                       this.packagingTagsInputTargets.forEach(
-                        (packagingInput, index) => {
-                          console.log(
-                            packagingInput.parentElement.querySelector("label")
-                              .innerText
-                          );
-                          console.log(
-                            packagingInput.parentElement
-                              .querySelector("label")
-                              .innerText.replace(
-                                packagingInput.parentElement
-                                  .querySelector("label")
-                                  .querySelector("hint").innerText,
-                                ""
-                              )
-                          );
+                        (packagingInput) => {
+                          // console.log(
+                          //   packagingInput.parentElement.querySelector("label")
+                          //     .innerText
+                          // );
+                          // console.log(
+                          //   packagingInput.parentElement
+                          //     .querySelector("label")
+                          //     .innerText.replace(
+                          //       packagingInput.parentElement
+                          //         .querySelector("label")
+                          //         .querySelector("hint").innerText,
+                          //       ""
+                          //     )
+                          // );
                           if (
                             packagingInput.parentElement
                               .querySelector("label")
@@ -149,23 +123,16 @@ export default class extends Controller {
                       );
                     });
                   }
-                  // console.log(result["product"]["ecoscore_grade"]);
-                  if (result["product"]["ecoscore_grade"] == undefined) {
-                    // console.log("hello")
-                  } else {
+
+                  if (result["product"]["ecoscore_grade"]) {
                     this.ecoscoreInputTarget.value =
                       result["product"]["ecoscore_grade"];
                   }
                 });
             } else {
-              // this.contentTarget.innerHTML = data.show
-              // console.log(data)
               window.location.replace(`/my_products/${data.id}`);
             }
           });
-
-        // .catch(error => console.log('error', error));
-        // console.log(typeof(result))
       } else {
         this.html5QrcodeScanner.stop();
       }
@@ -182,10 +149,8 @@ export default class extends Controller {
   findPackagings(apiArray, arrayTypes) {
     let foundTypes = [];
     apiArray.forEach((apiString) => {
-      // console.log(apiString)
       const cleanedString =
         apiString.split(":")[apiString.split(":").length - 1];
-      // console.log(cleanedString)
       let cleanedStringFound = false;
       arrayTypes.forEach((type) => {
         // console.log(`${type} and ${cleanedString}`)
