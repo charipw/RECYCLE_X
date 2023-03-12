@@ -12,6 +12,7 @@ export default class extends Controller {
     "imageUrlInput",
     "scanner",
   ];
+  html5QrcodeScanner = null;
   connect() {
     console.log("connecting barcode cont");
     let lastResult,
@@ -39,32 +40,32 @@ export default class extends Controller {
       "PET",
     ];
 
+    // Handle on success condition with the decoded message.
     const onScanSuccess = (decodedText) => {
       if (countResults === 0) {
         ++countResults;
         lastResult = decodedText;
-        // Handle on success condition with the decoded message.
-        // console.log(`Scan result ${decodedText}`, decodedResult);
-        html5QrcodeScanner.clear();
+        this.html5QrcodeScanner.clear();
 
-        const requestOptions = {
-          method: "GET",
-          redirect: "follow",
-        };
         // console.log(decodedText);
         fetch(`/items/find/${decodedText}`, {
           headers: { Accept: "application/json" },
         })
-          .then((response) => response.json())
+          .then((response) => {
+            return response.json();
+          })
           .then((data) => {
-            // console.log(data)
+            console.log(data);
             this.scannerTarget.classList.add("d-none");
 
             if (data.form) {
               this.contentTarget.innerHTML = data.form;
               fetch(
                 `https://world.openfoodfacts.org/api/v0/product/${decodedText}.json`,
-                requestOptions
+                {
+                  method: "GET",
+                  redirect: "follow",
+                }
               )
                 .then((response) => response.json())
                 .then((result) => {
@@ -166,16 +167,16 @@ export default class extends Controller {
         // .catch(error => console.log('error', error));
         // console.log(typeof(result))
       } else {
-        Html5QrcodeScanner.stop();
+        this.html5QrcodeScanner.stop();
       }
     };
 
-    const html5QrcodeScanner = new Html5QrcodeScanner("qr-reader", {
+    this.html5QrcodeScanner = new Html5QrcodeScanner("qr-reader", {
       fps: 10,
       qrbox: { width: 250, height: 250, border: "none" },
     });
 
-    html5QrcodeScanner.render(onScanSuccess);
+    this.html5QrcodeScanner.render(onScanSuccess);
   }
 
   findPackagings(apiArray, arrayTypes) {
@@ -220,7 +221,9 @@ export default class extends Controller {
   }
 
   disconnect() {
-    Html5QrcodeScanner.stop()
+    console.log(this.html5QrcodeScanner);
+    this.html5QrcodeScanner
+      .stop()
       .then((ignore) => {
         // QR Code scanning is stopped.
         console.log("stopping scanner");

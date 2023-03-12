@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
         ## Show the form for a new item
         @item = Item.new
         format.json # Follow the classic Rails flow and look for a create.json view
-        format.html { render :show }
+        # format.html { render :show }
       else
         # Item here is from the database
         # format.json  # Follow the classic Rails flow and look for a create.json view
