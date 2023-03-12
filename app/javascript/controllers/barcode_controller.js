@@ -16,9 +16,6 @@ export default class extends Controller {
     console.log("connecting barcode cont");
     let lastResult,
       countResults = 0;
-    // const arrayCategories = [
-    //     "Rigid plastic", "Plastic film", "Metal" , "Glass", "Biodegradable", "Paper"
-    //   ]
 
     const arrayTypes = [
       "HDPE",
@@ -42,9 +39,7 @@ export default class extends Controller {
       "PET",
     ];
 
-    const onScanSuccess = (decodedText, decodedResult) => {
-      // or we do type and category array
-
+    const onScanSuccess = (decodedText) => {
       if (countResults === 0) {
         ++countResults;
         lastResult = decodedText;
@@ -171,13 +166,7 @@ export default class extends Controller {
         // .catch(error => console.log('error', error));
         // console.log(typeof(result))
       } else {
-        Html5QrcodeScanner.stop()
-          .then((ignore) => {
-            // QR Code scanning is stopped.
-          })
-          .catch((err) => {
-            // Stop failed, handle it.
-          });
+        Html5QrcodeScanner.stop();
       }
     };
 
@@ -186,10 +175,7 @@ export default class extends Controller {
       qrbox: { width: 250, height: 250, border: "none" },
     });
 
-    console.log("styling div");
-
     html5QrcodeScanner.render(onScanSuccess);
-    // TODO move the function below to CSS
   }
 
   findPackagings(apiArray, arrayTypes) {
